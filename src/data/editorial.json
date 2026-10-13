@@ -514,5 +514,13 @@
   "view-projects-from-this-role": {
     "de": "Projekte aus dieser Station",
     "en": "Projects from this role"
+  },
+  "view-project-type": {
+    "de": "Projektart",
+    "en": "Project type"
+  },
+  "view-all-project-types": {
+    "de": "Alle Projektarten",
+    "en": "All project types"
   }
 }

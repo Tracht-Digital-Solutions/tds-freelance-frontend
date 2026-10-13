@@ -1,0 +1,893 @@
+[
+  {
+    "id": "toner-tintenoffice",
+    "approved": true,
+    "kind": "client",
+    "title": {
+      "de": "Toner-Tintenoffice",
+      "en": "Toner-Tintenoffice"
+    },
+    "summary": {
+      "de": "Ein von mir gebauter Onlineshop für Toner, Tintenpatronen und Bürobedarf.",
+      "en": "An online shop I built for toner, ink cartridges and office supplies."
+    },
+    "category": {
+      "de": "E-Commerce",
+      "en": "E-commerce"
+    },
+    "stage": {
+      "de": "Veröffentlichter Onlineshop",
+      "en": "Published online shop"
+    },
+    "role": {
+      "de": "Webentwicklung · Kundenprojekt",
+      "en": "Web development · Client project"
+    },
+    "tech": ["WordPress", "WooCommerce", "E-Commerce"],
+    "sections": [
+      {
+        "title": {
+          "de": "Projekt",
+          "en": "Project"
+        },
+        "text": {
+          "de": "Ich habe toner-tintenoffice.de gebaut. Der Shop präsentiert Druckerzubehör und Bürobedarf mit Produktsuche, Kategorien, Produktseiten und Warenkorb.",
+          "en": "I built toner-tintenoffice.de. The shop presents printer consumables and office supplies with product search, categories, product pages and a shopping cart."
+        }
+      },
+      {
+        "title": {
+          "de": "Technische Grundlage",
+          "en": "Technical foundation"
+        },
+        "text": {
+          "de": "Die veröffentlichte Website verwendet WordPress und WooCommerce. Produktsuche, Kategorien, Produktseiten und Warenkorb bilden die zentralen Einstiege in das Sortiment.",
+          "en": "The published website uses WordPress and WooCommerce. Product search, categories, product pages and the shopping cart are the main entry points into the catalogue."
+        }
+      }
+    ],
+    "website": "https://toner-tintenoffice.de/",
+    "careerId": "tracht-digital-solutions",
+    "image": "/images/projects/toner-tintenoffice.webp",
+    "imageWidth": 1000,
+    "imageHeight": 563
+  },
+  {
+    "id": "hof-meerheck",
+    "approved": true,
+    "kind": "client",
+    "title": {
+      "de": "Hof Meerheck",
+      "en": "Hof Meerheck"
+    },
+    "summary": {
+      "de": "Überarbeitung und laufende Betreuung einer bestehenden Website für eine Schäferei mit Direktvermarktung.",
+      "en": "Reworking and maintaining an existing website for a sheep farm selling directly to its customers."
+    },
+    "category": {
+      "de": "Webentwicklung",
+      "en": "Web development"
+    },
+    "stage": {
+      "de": "Bestehende Website überarbeitet",
+      "en": "Existing website reworked"
+    },
+    "role": {
+      "de": "Übernahme, Überarbeitung & Wartung",
+      "en": "Takeover, rework & maintenance"
+    },
+    "tech": ["WordPress", "Responsive Design", "Wartung"],
+    "sections": [
+      {
+        "title": {
+          "de": "Ausgangslage",
+          "en": "Starting point"
+        },
+        "text": {
+          "de": "Die bestehende Website war veraltet, hatte Fehler im Detail und war auf dem Telefon umständlich zu bedienen.",
+          "en": "The existing website was out of date, had faults in the detail and was awkward to use on a phone."
+        }
+      },
+      {
+        "title": {
+          "de": "Mein Beitrag",
+          "en": "My contribution"
+        },
+        "text": {
+          "de": "Ich habe die Seite übernommen, aktualisiert, das Design überarbeitet, Fehler behoben und die mobile Darstellung sowie Grundlagen für die Auffindbarkeit verbessert. Seither betreue ich die Wartung und die E-Mail-Postfächer.",
+          "en": "I took over and updated the site, reworked the design, fixed faults and improved its mobile layout and groundwork for being found. I have since maintained the website and email accounts."
+        }
+      }
+    ],
+    "image": "/images/projects/hof-meerheck.webp",
+    "website": "https://hof-meerheck.de/",
+    "careerId": "tracht-digital-solutions",
+    "imageWidth": 960,
+    "imageHeight": 600
+  },
+  {
+    "id": "bueroartikel-shop",
+    "approved": true,
+    "kind": "client",
+    "title": {
+      "de": "Vom Baukasten-Shop zum eigenen Shop",
+      "en": "From a hosted shop builder to an independent shop"
+    },
+    "summary": {
+      "de": "Eine anonymisierte Kundenreferenz zu Shop-Migration, Artikeldaten und automatisierter Preispflege.",
+      "en": "An anonymised client reference covering shop migration, product data and automated price maintenance."
+    },
+    "category": {
+      "de": "E-Commerce",
+      "en": "E-commerce"
+    },
+    "stage": {
+      "de": "Umgesetzte Kundenreferenz",
+      "en": "Implemented client reference"
+    },
+    "role": {
+      "de": "Shop-Aufbau, Datenmigration & laufende Pflege",
+      "en": "Shop development, data migration & ongoing maintenance"
+    },
+    "tech": ["E-Commerce", "Datenmigration", "Automatisierung"],
+    "sections": [
+      {
+        "title": {
+          "de": "Anforderung",
+          "en": "Requirement"
+        },
+        "text": {
+          "de": "Ein gehosteter Baukasten-Shop konnte mit dem wachsenden Sortiment nicht mehr mithalten. Einzelne Preisänderungen und starre Importformulare erschwerten die laufende Pflege. Die Referenz bleibt wie auf der Hauptwebsite anonymisiert.",
+          "en": "A hosted shop builder could no longer keep up with the growing catalogue. Individual price edits and rigid import forms complicated ongoing maintenance. This reference remains anonymous, as on the main website."
+        }
+      },
+      {
+        "title": {
+          "de": "Umsetzung",
+          "en": "Implementation"
+        },
+        "text": {
+          "de": "Ich habe einen eigenen Shop aufgebaut, das Sortiment migriert und Artikeldaten bereinigt. Die laufende Pflege umfasst Bestandsauswertung, Filterung nach Marke, Serie und Marge sowie nachvollziehbare Preisläufe für den Shop und weitere Vertriebskanäle.",
+          "en": "I built an independent shop, migrated the catalogue and cleaned up product data. Ongoing maintenance includes catalogue analysis, filters by brand, series and margin, and traceable price runs for the shop and other sales channels."
+        }
+      }
+    ],
+    "careerId": "tracht-digital-solutions"
+  },
+  {
+    "id": "idlearcade",
+    "approved": true,
+    "kind": "own",
+    "title": {
+      "de": "IdleArcade",
+      "en": "IdleArcade"
+    },
+    "summary": {
+      "de": "Mein Idle-/Clicker-Spiel mit Android- und Web-Export, Ressourcenökonomie und speicherbarem Spielfortschritt.",
+      "en": "My idle/clicker game with Android and web exports, a resource economy and persistent progress."
+    },
+    "category": {
+      "de": "Spiele & Mobile",
+      "en": "Games & mobile"
+    },
+    "stage": {
+      "de": "GitHub-Release v1.0.1",
+      "en": "GitHub release v1.0.1"
+    },
+    "role": {
+      "de": "Eigenes Spieleprojekt",
+      "en": "Own game project"
+    },
+    "tech": ["Godot 4.3", "GDScript", "Android", "Nakama"],
+    "sections": [
+      {
+        "title": {
+          "de": "Spielmechanik",
+          "en": "Game mechanics"
+        },
+        "text": {
+          "de": "Aktive Eingaben und passive Produktion erzeugen Ressourcen. Upgrades, Bonus-Funken und Combo-Multiplikatoren bilden die Spielmechanik; der Fortschritt wird lokal als JSON gespeichert und beim Laden um Offline-Fortschritt ergänzt.",
+          "en": "Active input and passive production generate resources. Upgrades, bonus sparks and combo multipliers form the gameplay; progress is stored locally as JSON and includes offline catch-up when loaded."
+        }
+      },
+      {
+        "title": {
+          "de": "Technischer Aufbau",
+          "en": "Technical structure"
+        },
+        "text": {
+          "de": "Die Codebasis nutzt Godot 4.3 und GDScript. Sie enthält einen zentralen GameState, HUD- und Dialog-Szenen sowie eine Nakama-Anbindung für Online-Funktionen. Die Exportkonfiguration sieht Android und Web vor.",
+          "en": "The codebase uses Godot 4.3 and GDScript. It includes a central GameState, HUD and dialog scenes, and a Nakama integration for online features. Export presets cover Android and web."
+        }
+      },
+      {
+        "title": {
+          "de": "Veröffentlichung",
+          "en": "Release"
+        },
+        "text": {
+          "de": "Im öffentlichen GitHub-Repository steht Release v1.0.1 mit einer Android-APK und einem Web-Build bereit. Der Quellcode und die Release-Artefakte sind dort einsehbar.",
+          "en": "The public GitHub repository offers release v1.0.1 with an Android APK and a web build. The source code and release artifacts are available there."
+        }
+      }
+    ],
+    "github": "https://github.com/jtracht/IdleArcade"
+  },
+  {
+    "id": "licht-schatten-framework",
+    "approved": true,
+    "kind": "development",
+    "title": {
+      "de": "Licht & Schatten in JavaScript",
+      "en": "Light & shadows in JavaScript"
+    },
+    "summary": {
+      "de": "Ein eigenes JavaScript-Framework für Licht und Schatten, an dem ich derzeit arbeite.",
+      "en": "My own JavaScript framework for light and shadows, currently in development."
+    },
+    "category": {
+      "de": "Grafik & Frameworks",
+      "en": "Graphics & frameworks"
+    },
+    "stage": {
+      "de": "In Entwicklung",
+      "en": "In development"
+    },
+    "role": {
+      "de": "Eigenes Entwicklungsprojekt",
+      "en": "Own development project"
+    },
+    "tech": ["JavaScript"],
+    "sections": [
+      {
+        "title": {
+          "de": "Idee",
+          "en": "Idea"
+        },
+        "text": {
+          "de": "Ich entwickle ein eigenes Licht- und Schattenframework in JavaScript. Das Projekt ist Teil meiner persönlichen Arbeit an Software und technischen Herausforderungen.",
+          "en": "I am developing my own light and shadow framework in JavaScript. The project is part of my personal work on software and technical challenges."
+        }
+      },
+      {
+        "title": {
+          "de": "Aktueller Stand",
+          "en": "Current status"
+        },
+        "text": {
+          "de": "Das Framework ist noch in Arbeit.",
+          "en": "The framework is still in development."
+        }
+      }
+    ]
+  },
+  {
+    "id": "tdshop",
+    "approved": true,
+    "kind": "own",
+    "title": {
+      "de": "TDShop",
+      "en": "TDShop"
+    },
+    "summary": {
+      "de": "Eigener Technik-Shop mit einem kuratierten Katalog für Digitalisierung im Betrieb.",
+      "en": "My own technology shop with a curated catalogue for business digitalisation."
+    },
+    "category": {
+      "de": "E-Commerce",
+      "en": "E-commerce"
+    },
+    "stage": {
+      "de": "Eigenes Webprojekt",
+      "en": "Own web project"
+    },
+    "role": {
+      "de": "Konzeption & Webentwicklung",
+      "en": "Concept & web development"
+    },
+    "tech": ["Webentwicklung", "Produktkatalog", "E-Commerce"],
+    "sections": [
+      {
+        "title": {
+          "de": "Konzept",
+          "en": "Concept"
+        },
+        "text": {
+          "de": "TDShop präsentiert Hardware, Netzwerk und Software für die Digitalisierung im Betrieb. Die Produktdarstellung ergänzt Herstellerinformationen um eine eigene Einordnung.",
+          "en": "TDShop presents hardware, networking and software for business digitalisation. Product presentation complements manufacturer information with my own assessment."
+        }
+      },
+      {
+        "title": {
+          "de": "Einordnung",
+          "en": "Context"
+        },
+        "text": {
+          "de": "Die Referenz wird auf der TDS-Hauptwebsite als eigenes Projekt geführt. Der Webauftritt zeigt den Produktkatalog und seine Einordnung für die Digitalisierung im Betrieb.",
+          "en": "The TDS website lists this as my own project. The website presents the catalogue and its role in business digitalisation."
+        }
+      }
+    ],
+    "image": "/images/projects/tdshop.webp",
+    "website": "https://shop.tracht-digital.de/",
+    "careerId": "tracht-digital-solutions",
+    "imageWidth": 960,
+    "imageHeight": 600
+  },
+  {
+    "id": "demo-kanzlei",
+    "approved": true,
+    "kind": "demo",
+    "title": {
+      "de": "Demo & Partner Rechtsanwälte",
+      "en": "Demo & Partner Rechtsanwälte"
+    },
+    "summary": {
+      "de": "Demonstrationsseite einer fiktiven Wirtschaftskanzlei.",
+      "en": "A demonstration website for a fictional commercial law firm."
+    },
+    "category": {
+      "de": "Interaktive Demos",
+      "en": "Interactive demos"
+    },
+    "stage": {
+      "de": "Demonstration",
+      "en": "Demonstration"
+    },
+    "role": {
+      "de": "Konzeption, Gestaltung & Umsetzung",
+      "en": "Concept, design & implementation"
+    },
+    "tech": ["Webentwicklung", "UI/UX"],
+    "sections": [
+      {
+        "title": {
+          "de": "Arbeitsprobe",
+          "en": "Demonstration"
+        },
+        "text": {
+          "de": "Demonstrationsseite einer fiktiven Wirtschaftskanzlei. Die Anwendung dient als Arbeitsprobe und beschreibt keinen realen Kundenbetrieb.",
+          "en": "A demonstration website for a fictional commercial law firm. This application is a demonstration, not an account of a real client business."
+        }
+      },
+      {
+        "title": {
+          "de": "Gestaltung & Nutzung",
+          "en": "Design & use"
+        },
+        "text": {
+          "de": "Die Demo macht Navigation, Inhaltsstruktur und Bedienung konkret erlebbar. Namen und dargestellte Geschäftsinhalte gehören zur Beispielgestaltung.",
+          "en": "The demo makes navigation, content structure and interaction tangible. Names and business content are part of the example design."
+        }
+      }
+    ],
+    "image": "/images/projects/demo1.webp",
+    "website": "https://demo1.tracht-digital.de/",
+    "careerId": "tracht-digital-solutions",
+    "imageWidth": 960,
+    "imageHeight": 600
+  },
+  {
+    "id": "block-01",
+    "approved": true,
+    "kind": "demo",
+    "title": {
+      "de": "BLOCK/01",
+      "en": "BLOCK/01"
+    },
+    "summary": {
+      "de": "Interaktive Shop-Arbeitsprobe für eine fiktive Streetwear-Marke.",
+      "en": "An interactive shop demonstration for a fictional streetwear brand."
+    },
+    "category": {
+      "de": "Interaktive Demos",
+      "en": "Interactive demos"
+    },
+    "stage": {
+      "de": "Demonstration",
+      "en": "Demonstration"
+    },
+    "role": {
+      "de": "Konzeption, Gestaltung & Umsetzung",
+      "en": "Concept, design & implementation"
+    },
+    "tech": ["Webentwicklung", "UI/UX"],
+    "sections": [
+      {
+        "title": {
+          "de": "Arbeitsprobe",
+          "en": "Demonstration"
+        },
+        "text": {
+          "de": "Interaktive Shop-Arbeitsprobe für eine fiktive Streetwear-Marke. Die Anwendung dient als Arbeitsprobe und beschreibt keinen realen Kundenbetrieb.",
+          "en": "An interactive shop demonstration for a fictional streetwear brand. This application is a demonstration, not an account of a real client business."
+        }
+      },
+      {
+        "title": {
+          "de": "Gestaltung & Nutzung",
+          "en": "Design & use"
+        },
+        "text": {
+          "de": "Die Demo macht Navigation, Inhaltsstruktur und Bedienung konkret erlebbar. Namen und dargestellte Geschäftsinhalte gehören zur Beispielgestaltung.",
+          "en": "The demo makes navigation, content structure and interaction tangible. Names and business content are part of the example design."
+        }
+      }
+    ],
+    "image": "/images/projects/demo2.webp",
+    "website": "https://demo2.tracht-digital.de/de/",
+    "careerId": "tracht-digital-solutions",
+    "imageWidth": 960,
+    "imageHeight": 600
+  },
+  {
+    "id": "nordstern-immobilien",
+    "approved": true,
+    "kind": "demo",
+    "title": {
+      "de": "Nordstern Immobilien",
+      "en": "Nordstern Immobilien"
+    },
+    "summary": {
+      "de": "Immobilien-Verwaltungspanel mit Beispieldaten.",
+      "en": "A property management dashboard using sample data."
+    },
+    "category": {
+      "de": "Interaktive Demos",
+      "en": "Interactive demos"
+    },
+    "stage": {
+      "de": "Demonstration",
+      "en": "Demonstration"
+    },
+    "role": {
+      "de": "Konzeption, Gestaltung & Umsetzung",
+      "en": "Concept, design & implementation"
+    },
+    "tech": ["Webentwicklung", "UI/UX"],
+    "sections": [
+      {
+        "title": {
+          "de": "Arbeitsprobe",
+          "en": "Demonstration"
+        },
+        "text": {
+          "de": "Immobilien-Verwaltungspanel mit Beispieldaten. Die Anwendung dient als Arbeitsprobe und beschreibt keinen realen Kundenbetrieb.",
+          "en": "A property management dashboard using sample data. This application is a demonstration, not an account of a real client business."
+        }
+      },
+      {
+        "title": {
+          "de": "Gestaltung & Nutzung",
+          "en": "Design & use"
+        },
+        "text": {
+          "de": "Die Demo macht Navigation, Inhaltsstruktur und Bedienung konkret erlebbar. Namen und dargestellte Geschäftsinhalte gehören zur Beispielgestaltung.",
+          "en": "The demo makes navigation, content structure and interaction tangible. Names and business content are part of the example design."
+        }
+      }
+    ],
+    "image": "/images/projects/demo3.webp",
+    "website": "https://demo3.tracht-digital.de/",
+    "careerId": "tracht-digital-solutions",
+    "imageWidth": 960,
+    "imageHeight": 600
+  },
+  {
+    "id": "kinderarztpraxis-sonnengarten",
+    "approved": true,
+    "kind": "study",
+    "title": {
+      "de": "Kinderarztpraxis Sonnengarten",
+      "en": "Kinderarztpraxis Sonnengarten"
+    },
+    "summary": {
+      "de": "Eine Praxisseite mit Leistungen, Sprechzeiten und Anfahrt; ergänzt um eine mobile Ansicht.",
+      "en": "A practice website with services, opening hours and directions, complemented by a mobile layout."
+    },
+    "category": {
+      "de": "UI/UX & Design",
+      "en": "UI/UX & design"
+    },
+    "stage": {
+      "de": "Designstudie",
+      "en": "Design study"
+    },
+    "role": {
+      "de": "Eigene Gestaltung & Oberflächenkonzeption",
+      "en": "Own design & interface concept"
+    },
+    "tech": ["UI/UX", "Webdesign", "Informationsarchitektur"],
+    "sections": [
+      {
+        "title": {
+          "de": "Gestaltungsaufgabe",
+          "en": "Design brief"
+        },
+        "text": {
+          "de": "Eine Praxisseite mit Leistungen, Sprechzeiten und Anfahrt; ergänzt um eine mobile Ansicht.",
+          "en": "A practice website with services, opening hours and directions, complemented by a mobile layout."
+        }
+      },
+      {
+        "title": {
+          "de": "Einordnung",
+          "en": "Context"
+        },
+        "text": {
+          "de": "Diese Arbeit ist eine Designstudie. Die Abbildung zeigt meinen Entwurf und ist kein Beleg für einen Kundenauftrag oder eine veröffentlichte Software.",
+          "en": "This work is a design study. The image shows my design, not evidence of a client commission or released software."
+        }
+      }
+    ],
+    "image": "/images/projects/kinderarztpraxis-sonnengarten.webp",
+    "careerId": "tracht-digital-solutions",
+    "imageWidth": 960,
+    "imageHeight": 1440
+  },
+  {
+    "id": "jurisblick",
+    "approved": true,
+    "kind": "study",
+    "title": {
+      "de": "Jurisblick.de",
+      "en": "Jurisblick.de"
+    },
+    "summary": {
+      "de": "Ein Rechtsportal, dessen Navigation die Struktur umfangreicher Inhalte trägt.",
+      "en": "A legal information portal with navigation that structures extensive content."
+    },
+    "category": {
+      "de": "UI/UX & Design",
+      "en": "UI/UX & design"
+    },
+    "stage": {
+      "de": "Designstudie",
+      "en": "Design study"
+    },
+    "role": {
+      "de": "Eigene Gestaltung & Oberflächenkonzeption",
+      "en": "Own design & interface concept"
+    },
+    "tech": ["UI/UX", "Webdesign", "Informationsarchitektur"],
+    "sections": [
+      {
+        "title": {
+          "de": "Gestaltungsaufgabe",
+          "en": "Design brief"
+        },
+        "text": {
+          "de": "Ein Rechtsportal, dessen Navigation die Struktur umfangreicher Inhalte trägt.",
+          "en": "A legal information portal with navigation that structures extensive content."
+        }
+      },
+      {
+        "title": {
+          "de": "Einordnung",
+          "en": "Context"
+        },
+        "text": {
+          "de": "Diese Arbeit ist eine Designstudie. Die Abbildung zeigt meinen Entwurf und ist kein Beleg für einen Kundenauftrag oder eine veröffentlichte Software.",
+          "en": "This work is a design study. The image shows my design, not evidence of a client commission or released software."
+        }
+      }
+    ],
+    "image": "/images/projects/jurisblick.webp",
+    "careerId": "tracht-digital-solutions",
+    "imageWidth": 960,
+    "imageHeight": 1440
+  },
+  {
+    "id": "serverspace24",
+    "approved": true,
+    "kind": "study",
+    "title": {
+      "de": "ServerSpace24",
+      "en": "ServerSpace24"
+    },
+    "summary": {
+      "de": "Hosting- und Domainoberfläche mit Tarifübersicht und Produktberater.",
+      "en": "A hosting and domain interface with pricing plans and a product advisor."
+    },
+    "category": {
+      "de": "UI/UX & Design",
+      "en": "UI/UX & design"
+    },
+    "stage": {
+      "de": "Designstudie",
+      "en": "Design study"
+    },
+    "role": {
+      "de": "Eigene Gestaltung & Oberflächenkonzeption",
+      "en": "Own design & interface concept"
+    },
+    "tech": ["UI/UX", "Webdesign", "Informationsarchitektur"],
+    "sections": [
+      {
+        "title": {
+          "de": "Gestaltungsaufgabe",
+          "en": "Design brief"
+        },
+        "text": {
+          "de": "Hosting- und Domainoberfläche mit Tarifübersicht und Produktberater.",
+          "en": "A hosting and domain interface with pricing plans and a product advisor."
+        }
+      },
+      {
+        "title": {
+          "de": "Einordnung",
+          "en": "Context"
+        },
+        "text": {
+          "de": "Diese Arbeit ist eine Designstudie. Die Abbildung zeigt meinen Entwurf und ist kein Beleg für einen Kundenauftrag oder eine veröffentlichte Software.",
+          "en": "This work is a design study. The image shows my design, not evidence of a client commission or released software."
+        }
+      }
+    ],
+    "image": "/images/projects/serverspace24.webp",
+    "careerId": "tracht-digital-solutions",
+    "imageWidth": 960,
+    "imageHeight": 1440
+  },
+  {
+    "id": "nordholz-tischlerei",
+    "approved": true,
+    "kind": "study",
+    "title": {
+      "de": "Nordholz Tischlerei",
+      "en": "Nordholz Tischlerei"
+    },
+    "summary": {
+      "de": "Eine Handwerksseite mit Werkstattfotos, Leistungen, Teamvorstellung und Anfrage-Einstieg.",
+      "en": "A craft business website with workshop photography, services, team introduction and an enquiry entry point."
+    },
+    "category": {
+      "de": "UI/UX & Design",
+      "en": "UI/UX & design"
+    },
+    "stage": {
+      "de": "Designstudie",
+      "en": "Design study"
+    },
+    "role": {
+      "de": "Eigene Gestaltung & Oberflächenkonzeption",
+      "en": "Own design & interface concept"
+    },
+    "tech": ["UI/UX", "Webdesign", "Informationsarchitektur"],
+    "sections": [
+      {
+        "title": {
+          "de": "Gestaltungsaufgabe",
+          "en": "Design brief"
+        },
+        "text": {
+          "de": "Eine Handwerksseite mit Werkstattfotos, Leistungen, Teamvorstellung und Anfrage-Einstieg.",
+          "en": "A craft business website with workshop photography, services, team introduction and an enquiry entry point."
+        }
+      },
+      {
+        "title": {
+          "de": "Einordnung",
+          "en": "Context"
+        },
+        "text": {
+          "de": "Diese Arbeit ist eine Designstudie. Die Abbildung zeigt meinen Entwurf und ist kein Beleg für einen Kundenauftrag oder eine veröffentlichte Software.",
+          "en": "This work is a design study. The image shows my design, not evidence of a client commission or released software."
+        }
+      }
+    ],
+    "image": "/images/projects/nordholz-tischlerei.webp",
+    "careerId": "tracht-digital-solutions",
+    "imageWidth": 949,
+    "imageHeight": 1658
+  },
+  {
+    "id": "mira-markt",
+    "approved": true,
+    "kind": "study",
+    "title": {
+      "de": "Mira Markt",
+      "en": "Mira Markt"
+    },
+    "summary": {
+      "de": "Marktgestaltung mit Onlinebestellung, Abholung und mehrsprachiger Navigation.",
+      "en": "A market interface with online ordering, local pickup and multilingual navigation."
+    },
+    "category": {
+      "de": "UI/UX & Design",
+      "en": "UI/UX & design"
+    },
+    "stage": {
+      "de": "Designstudie",
+      "en": "Design study"
+    },
+    "role": {
+      "de": "Eigene Gestaltung & Oberflächenkonzeption",
+      "en": "Own design & interface concept"
+    },
+    "tech": ["UI/UX", "Webdesign", "Informationsarchitektur"],
+    "sections": [
+      {
+        "title": {
+          "de": "Gestaltungsaufgabe",
+          "en": "Design brief"
+        },
+        "text": {
+          "de": "Marktgestaltung mit Onlinebestellung, Abholung und mehrsprachiger Navigation.",
+          "en": "A market interface with online ordering, local pickup and multilingual navigation."
+        }
+      },
+      {
+        "title": {
+          "de": "Einordnung",
+          "en": "Context"
+        },
+        "text": {
+          "de": "Diese Arbeit ist eine Designstudie. Die Abbildung zeigt meinen Entwurf und ist kein Beleg für einen Kundenauftrag oder eine veröffentlichte Software.",
+          "en": "This work is a design study. The image shows my design, not evidence of a client commission or released software."
+        }
+      }
+    ],
+    "image": "/images/projects/mira-markt.webp",
+    "careerId": "tracht-digital-solutions",
+    "imageWidth": 960,
+    "imageHeight": 540
+  },
+  {
+    "id": "mkb-beratung",
+    "approved": true,
+    "kind": "study",
+    "title": {
+      "de": "MKB · Psychosoziale Beratung",
+      "en": "MKB · Psychosocial counselling"
+    },
+    "summary": {
+      "de": "Ruhige Gestaltung für eine Beratungspraxis mit Ablauf, Qualifikationen und häufigen Fragen.",
+      "en": "A calm design for a counselling practice, presenting its process, qualifications and common questions."
+    },
+    "category": {
+      "de": "UI/UX & Design",
+      "en": "UI/UX & design"
+    },
+    "stage": {
+      "de": "Designstudie",
+      "en": "Design study"
+    },
+    "role": {
+      "de": "Eigene Gestaltung & Oberflächenkonzeption",
+      "en": "Own design & interface concept"
+    },
+    "tech": ["UI/UX", "Webdesign", "Informationsarchitektur"],
+    "sections": [
+      {
+        "title": {
+          "de": "Gestaltungsaufgabe",
+          "en": "Design brief"
+        },
+        "text": {
+          "de": "Ruhige Gestaltung für eine Beratungspraxis mit Ablauf, Qualifikationen und häufigen Fragen.",
+          "en": "A calm design for a counselling practice, presenting its process, qualifications and common questions."
+        }
+      },
+      {
+        "title": {
+          "de": "Einordnung",
+          "en": "Context"
+        },
+        "text": {
+          "de": "Diese Arbeit ist eine Designstudie. Die Abbildung zeigt meinen Entwurf und ist kein Beleg für einen Kundenauftrag oder eine veröffentlichte Software.",
+          "en": "This work is a design study. The image shows my design, not evidence of a client commission or released software."
+        }
+      }
+    ],
+    "image": "/images/projects/mkb-beratung.webp",
+    "careerId": "tracht-digital-solutions",
+    "imageWidth": 724,
+    "imageHeight": 2172
+  },
+  {
+    "id": "prisma-coat",
+    "approved": true,
+    "kind": "study",
+    "title": {
+      "de": "PRISMA COAT",
+      "en": "PRISMA COAT"
+    },
+    "summary": {
+      "de": "Industrie-Webauftritt mit Leistungen, Branchen und einer direkt eingebundenen Anfrage.",
+      "en": "An industrial business website with services, sectors and an integrated enquiry entry point."
+    },
+    "category": {
+      "de": "UI/UX & Design",
+      "en": "UI/UX & design"
+    },
+    "stage": {
+      "de": "Designstudie",
+      "en": "Design study"
+    },
+    "role": {
+      "de": "Eigene Gestaltung & Oberflächenkonzeption",
+      "en": "Own design & interface concept"
+    },
+    "tech": ["UI/UX", "Webdesign", "Informationsarchitektur"],
+    "sections": [
+      {
+        "title": {
+          "de": "Gestaltungsaufgabe",
+          "en": "Design brief"
+        },
+        "text": {
+          "de": "Industrie-Webauftritt mit Leistungen, Branchen und einer direkt eingebundenen Anfrage.",
+          "en": "An industrial business website with services, sectors and an integrated enquiry entry point."
+        }
+      },
+      {
+        "title": {
+          "de": "Einordnung",
+          "en": "Context"
+        },
+        "text": {
+          "de": "Diese Arbeit ist eine Designstudie. Die Abbildung zeigt meinen Entwurf und ist kein Beleg für einen Kundenauftrag oder eine veröffentlichte Software.",
+          "en": "This work is a design study. The image shows my design, not evidence of a client commission or released software."
+        }
+      }
+    ],
+    "image": "/images/projects/prisma-coat.webp",
+    "careerId": "tracht-digital-solutions",
+    "imageWidth": 960,
+    "imageHeight": 960
+  },
+  {
+    "id": "digitale-visitenkarte",
+    "approved": true,
+    "kind": "own",
+    "title": {
+      "de": "Digitale Visitenkarte",
+      "en": "Digital business card"
+    },
+    "summary": {
+      "de": "Meine eigene digitale Visitenkarte: Kontaktdaten zum Scannen statt Abtippen.",
+      "en": "My own digital business card: contact details that can be scanned rather than typed."
+    },
+    "category": {
+      "de": "Webentwicklung",
+      "en": "Web development"
+    },
+    "stage": {
+      "de": "Eigenes Webprojekt",
+      "en": "Own web project"
+    },
+    "role": {
+      "de": "Konzeption & Webentwicklung",
+      "en": "Concept & web development"
+    },
+    "tech": ["Webentwicklung", "Digitale Visitenkarte"],
+    "sections": [
+      {
+        "title": {
+          "de": "Idee",
+          "en": "Idea"
+        },
+        "text": {
+          "de": "Die digitale Visitenkarte bündelt meine geschäftlichen Kontaktdaten in einer direkt aufrufbaren Webansicht.",
+          "en": "The digital business card brings my business contact details together in a directly accessible web view."
+        }
+      },
+      {
+        "title": {
+          "de": "Eigener Einsatz",
+          "en": "Personal use"
+        },
+        "text": {
+          "de": "Ich nutze sie als eigene Karte und als konkrete Arbeitsprobe für diesen Kontaktweg.",
+          "en": "I use it as my own card and as a practical example of this contact format."
+        }
+      }
+    ],
+    "image": "/images/projects/digitale-visitenkarte.webp",
+    "website": "https://tracht-digital.de/visitenkarte",
+    "careerId": "tracht-digital-solutions",
+    "imageWidth": 1440,
+    "imageHeight": 900
+  }
+]

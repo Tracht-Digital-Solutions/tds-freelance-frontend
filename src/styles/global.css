@@ -176,29 +176,47 @@ main:focus {
 .desktop-nav {
   display: flex;
   flex-direction: column;
+  position: static;
+}
+.sidebar-content {
   position: sticky;
-  top: 32px;
+  top: 24px;
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  padding-right: 5px;
 }
 .desktop-nav a {
-  display: flex;
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr) 12px;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   font-size: 0.84rem;
   padding: 11px 0;
   min-height: 44px;
   color: var(--color-muted);
 }
-.desktop-nav a > span,
-.mobile-menu nav a > span {
+.desktop-nav a > span:not(.nav-title),
+.mobile-menu nav a > span:not(.nav-title) {
   font-family: var(--font-mono);
   font-size: 0.62rem;
-  opacity: 0.75;
+  opacity: 1;
 }
 .desktop-nav a b {
   margin-left: auto;
   font-size: 1rem;
   font-weight: 400;
   opacity: 0;
+}
+.desktop-nav .nav-title {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+.desktop-nav a:focus-visible {
+  outline-offset: -2px;
 }
 .desktop-nav a[aria-current],
 .desktop-nav a:hover {
@@ -210,7 +228,7 @@ main:focus {
   opacity: 1;
 }
 .sidebar-note {
-  margin-top: 85px;
+  margin-top: clamp(28px, 6vh, 65px);
 }
 .tiny-label,
 .eyebrow {
@@ -229,6 +247,8 @@ main:focus {
   margin: 18px 0;
 }
 .sidebar-note > a {
+  display: block;
+  overflow-wrap: anywhere;
   font-size: 0.7rem;
   color: var(--color-muted);
 }
@@ -325,7 +345,8 @@ main {
   align-self: end;
   min-height: 490px;
   overflow: hidden;
-  border-radius: 180px 180px var(--tds-radius-card) var(--tds-radius-card);
+  border-radius: 180px var(--tds-radius-card) var(--tds-radius-card)
+    var(--tds-radius-card);
   background: var(--color-surface-navy);
 }
 .portrait-type {
@@ -346,7 +367,7 @@ main {
   width: 100%;
   height: 95%;
   object-fit: contain;
-  object-position: bottom;
+  object-position: right bottom;
   z-index: 1;
 }
 .portrait-orbit {
@@ -365,7 +386,8 @@ main {
   left: 0;
   right: 0;
   padding: 22px 25px;
-  background: linear-gradient(transparent, #050f68e6);
+  background: var(--color-surface-navy);
+  border-top: 1px solid #ff7a9c66;
   color: white;
   z-index: 2;
   display: flex;
@@ -845,6 +867,44 @@ footer > div {
 .project-card p {
   font-size: 0.9rem;
 }
+.project-kind {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background: var(--color-card);
+  padding: 5px 9px;
+  border-radius: var(--tds-radius-chip);
+  margin: 16px 0 10px;
+}
+.project-cover {
+  aspect-ratio: 1.6;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  background: var(--color-surface-navy);
+  color: white;
+  border-radius: var(--tds-radius-card);
+  overflow: hidden;
+}
+.project-cover > span {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #ffb4c6;
+}
+.project-cover strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 2.1rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+.project-cover-development {
+  background: linear-gradient(115deg, #050f68 0 50%, #0b0a07 50%);
+}
 .cert-intro {
   display: flex;
   align-items: center;
@@ -1116,7 +1176,7 @@ dialog img {
 }
 @media (max-width: 1150px) {
   .workspace {
-    grid-template-columns: 185px minmax(0, 1fr);
+    grid-template-columns: 224px minmax(0, 1fr);
   }
   .sidebar {
     padding-left: 25px;
@@ -1138,7 +1198,7 @@ dialog img {
     min-height: 430px;
   }
   .hero h1 {
-    font-size: 6rem;
+    font-size: clamp(3.7rem, 7vw, 6rem);
   }
   .hero h1 > span {
     padding-left: 20px;
@@ -1242,6 +1302,7 @@ dialog img {
     border-bottom: 1px solid var(--color-line);
   }
   .desktop-nav,
+  .sidebar-content,
   .sidebar-note {
     display: none;
   }
@@ -1392,10 +1453,11 @@ dialog img {
     width: 100%;
     min-height: 420px;
     align-self: stretch;
-    border-radius: 140px 140px var(--tds-radius-card) var(--tds-radius-card);
+    border-radius: 140px var(--tds-radius-card) var(--tds-radius-card)
+      var(--tds-radius-card);
   }
   .portrait-stage > img {
-    height: 108%;
+    height: 95%;
     width: 100%;
     object-fit: contain;
   }
