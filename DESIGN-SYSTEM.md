@@ -26,3 +26,9 @@ Responsive breakpoints: 1150, 800 and 590px. Below 800px a native disclosure
 navigation replaces the sidebar. Actions and controls are at least 44px high.
 Dialogs use `margin:auto`, native focus trapping, Escape, a labeled close button
 and native focus return. Filtering uses accessible controls and live result counts.
+
+The portrait is right-aligned inside an asymmetric frame: its existing cut edge
+coincides with the frame edge. The original photo is unchanged. The caption is
+a separate solid band. Navigation and the values block share one sticky container
+with bounded height so they cannot scroll over one another; short desktop
+viewports may scroll the sidebar internally.

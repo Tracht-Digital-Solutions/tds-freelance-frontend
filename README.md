@@ -13,8 +13,9 @@ CI builds on main and pull requests; production is **manual only**.
 
 ## Features
 
-- Eight views in German and English, four career details per language and two
-  individually approved project details per language (28 public URLs).
+- Eight views in German and English, four career details per language and 19
+  approved portfolio entries per language (62 public URLs), with client work,
+  own projects, demos, design studies and work in development clearly labelled.
 - Shared TDS tokens, primitives, theme bootstrap and preference handling from
   the pinned private package `@tracht-digital-solutions/tds-shared@0.55.1`.
 - Local fonts, responsive portrait, search/category/context/evidence filters,

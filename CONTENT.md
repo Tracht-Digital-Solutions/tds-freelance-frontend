@@ -1,6 +1,6 @@
 # Content editing
 
-Public facts live in `src/data/content.ts` and `src/data/certificates.json`.
+Public facts live in `src/data/content.ts`, `src/data/projects.json` and `src/data/certificates.json`.
 Keep technical IDs stable; translate editorial values with `{de,en}` / `l()`.
 Editorial headings, story, values, AI position and all interface labels live in
 `src/data/editorial.json`, validated through `editorial.ts`. Components call typed
@@ -40,6 +40,9 @@ An approval flag in code does **not** replace a human approval in the task.
 Use a stable ID; optional image must be an authorized local web asset. GitHub and
 website URLs are optional. Never fabricate screenshots, client quotes, metrics
 or a finished/live status. Named examples from an employer require usage clearance.
+Use `kind` to distinguish client, own, demo, study and development. Link a project
+to a career station only with a supported `careerId`. Capture dimensions in
+`imageWidth` and `imageHeight` to reserve the correct space on detail pages.
 Project routes, sitemap and language links update automatically. Add regression
 coverage when publishing new content; update the expected inventory count in tests.
 

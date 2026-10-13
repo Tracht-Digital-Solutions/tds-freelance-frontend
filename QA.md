@@ -4,14 +4,14 @@
 
 - Astro/TypeScript content checks: no errors. Zod validates public records,
   bilingual editorial strings, unique IDs/paths and project approval flags.
-- Four content tests pass; 28 public URLs plus a noindex 404 build successfully.
+- Four content tests pass; 62 public URLs plus a noindex 404 build successfully.
 - Static output check verifies complete main content, exactly one H1, unique
   titles, descriptions, canonical/hreflang pairs, sitemap inclusion, valid JSON-LD,
   internal resources, local fonts, social assets and absence of PDFs.
-- Seven Playwright scenarios pass: route audits in light/dark, SPA/history/focus,
+- Eight Playwright scenarios pass: route audits in light/dark, SPA/history/focus,
   theme persistence, language correspondence, skill/project/credential filters,
   native modal Escape/focus return, no-JS details/navigation and reduced motion.
-- axe-core WCAG A/AA checks pass on all 28 routes in both themes. This is automated
+- axe-core WCAG A/AA checks pass on all 62 routes in both themes. This is automated
   coverage, not a claim of a complete human WCAG certification or a complete
   screen-reader audit.
 - Widths 360, 768, 1280 and 1920px checked for overflow, with mobile navigation.
@@ -30,7 +30,7 @@ The `static-site` artifact contains the verified static document root and a comm
 
 Budget: all emitted JS combined <100KB raw, all emitted CSS combined <150KB raw,
 individual assets <1.2MB, Lighthouse homepage performance ≥90 and CLS <0.1 in
-mobile/desktop lab runs. Local output: approximately 21.5KB JS and 114KB CSS.
+mobile/desktop lab runs. Local output: approximately 21.5KB JS and 118KB CSS.
 
 Lighthouse 13.5.0 local production preview, cold lab navigation:
 
@@ -58,3 +58,8 @@ No host access was provided; CI success does not prove host access.
 browser checks. `npm run audit:perf` expects a preview server (default port 4390).
 `npm audit` checks the locked dependency installation. Test results and research
 live in ignored folders and must not be published as source artifacts.
+
+The scroll regression checks multiple document positions at 1024, 1280 and
+1920px wide with a 640px-high viewport. It asserts that navigation never intersects
+the values block and that the sidebar has no horizontal overflow. Project filters
+cover the seven design studies and the one explicitly in-development framework.
