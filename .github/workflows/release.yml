@@ -1,0 +1,77 @@
+name: Production release (manual)
+on:
+  workflow_dispatch:
+    inputs:
+      source_commit:
+        description: Approved full 40-character commit SHA on main
+        required: true
+        type: string
+permissions:
+  contents: read
+  packages: read
+concurrency:
+  group: production-release
+  cancel-in-progress: false
+jobs:
+  quality:
+    uses: ./.github/workflows/quality.yml
+    with:
+      source_commit: ${{ inputs.source_commit }}
+    secrets: inherit
+  deploy:
+    needs: quality
+    environment: production
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: static-site
+          path: dist
+      - name: Check host configuration before publishing
+        env:
+          DEPLOY_WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL }}
+        run: |
+          [ -n "$DEPLOY_WEBHOOK_URL" ] || { echo 'DEPLOY_WEBHOOK_URL is missing'; exit 1; }
+          [[ "$DEPLOY_WEBHOOK_URL" == https://* ]] || exit 1
+      - name: Publish static release branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ github.token }}
+          publish_dir: ./dist
+          publish_branch: release
+          force_orphan: true
+          enable_jekyll: true
+          commit_message: Release ${{ needs.quality.outputs.source_commit }}
+      - name: Notify hosting system
+        env:
+          DEPLOY_WEBHOOK_URL: ${{ secrets.DEPLOY_WEBHOOK_URL }}
+        run: |
+          # A Plesk deployment hook commonly expects GET. URL is a secret.
+          curl --silent --output /dev/null --fail --retry 3 --retry-delay 5 --max-time 30 "$DEPLOY_WEBHOOK_URL"
+      - name: Verify deployed commit and all public routes
+        env:
+          SOURCE_COMMIT: ${{ needs.quality.outputs.source_commit }}
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          const origin='https://freelance.tracht-digital.de';
+          let matched=false;
+          for(let attempt=0;attempt<24;attempt++) {
+            try {
+              const r=await fetch(`${origin}/build-info.json?verify=${process.env.SOURCE_COMMIT}`,{cache:'no-store',signal:AbortSignal.timeout(15000)});
+              const stamp=await r.json();
+              if(r.ok&&stamp.commit===process.env.SOURCE_COMMIT){matched=true;break;}
+            } catch {}
+            await new Promise(r=>setTimeout(r,10000));
+          }
+          if(!matched)throw new Error('The approved commit is not serving on the host');
+          const sitemap=fs.readFileSync('dist/sitemap.xml','utf8');
+          for(const [,url] of sitemap.matchAll(/<loc>(.*?)<\/loc>/g)) {
+            const r=await fetch(url,{signal:AbortSignal.timeout(15000)});const html=await r.text();
+            if(!r.ok||!html.includes('<h1')||!html.includes('rel="canonical"'))throw new Error(`Smoke failed: ${url}`);
+          }
+          console.log('Approved commit and all sitemap routes verified live.');
+          JS

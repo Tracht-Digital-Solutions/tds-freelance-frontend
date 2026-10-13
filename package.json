@@ -1,0 +1,46 @@
+{
+  "name": "tds-freelance-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "type-check": "astro check",
+    "test": "tsx --test tests/*.test.ts",
+    "verify": "tsx scripts/verify-build.ts",
+    "test:e2e": "playwright test",
+    "quality": "npm run type-check && npm test && npm run build && npm run verify && npm run test:e2e",
+    "audit:perf": "node scripts/performance.mjs",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "5.2.8",
+    "@fontsource-variable/plus-jakarta-sans": "5.2.8",
+    "@fontsource/lato": "5.2.7",
+    "@tailwindcss/postcss": "4.3.3",
+    "@tracht-digital-solutions/tds-shared": "0.55.1",
+    "astro": "7.3.8",
+    "tailwindcss": "4.3.3",
+    "zod": "4.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@axe-core/playwright": "4.11.0",
+    "@playwright/test": "1.62.1",
+    "@types/node": "26.2.0",
+    "cheerio": "1.2.0",
+    "lighthouse": "13.5.0",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.1",
+    "sharp": "0.35.5",
+    "tsx": "4.23.12",
+    "typescript": "6.0.3",
+    "chrome-launcher": "1.2.2"
+  },
+  "overrides": {
+    "playwright-core": "1.62.1"
+  }
+}

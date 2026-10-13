@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  lang="de"
+  view="home"
+  title="Seite nicht gefunden / Page not found"
+  notFound
+>
+  <section class="page-heading">
+    <span class="eyebrow">404</span>
+    <h1>
+      Hier geht’s
+      <br />
+      nicht weiter.
+    </h1>
+    <p>Die gesuchte Seite existiert nicht. / This page could not be found.</p>
+    <div class="actions">
+      <a class="button primary" href="/">
+        Zur Startseite
+      </a>
+      <a class="button secondary" href="/en/">
+        English home
+      </a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,890 @@
+---
+import { copy } from '../data/editorial';
+import {
+  profile,
+  views,
+  pathFor,
+  contactUrl,
+  career,
+  education,
+  skills,
+  categories,
+  levels,
+  certificates,
+  certCategories,
+  projects,
+  type Locale,
+  type ViewId,
+} from '../data/content';
+interface Props {
+  lang: Locale;
+  view: ViewId;
+  detail?: string;
+}
+const { lang, view, detail } = Astro.props;
+
+const page = views.find((v) => v.id === view)!;
+const entry = career.find((c) => c.id === detail);
+const project = projects.find((p) => p.id === detail);
+const date = (value: string) =>
+  new Intl.DateTimeFormat(lang === 'de' ? 'de-DE' : 'en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(new Date(value));
+const intro = {
+  about: copy(
+    'view-curiosity-is-where-i-start-good-software-is-where-i-m-headed',
+    lang,
+  ),
+  career: copy('view-one-journey-many-perspectives', lang),
+  skills: copy('view-the-right-tools-for-the-right-solution', lang),
+  projects: copy('view-from-an-idea-to-software-that-works', lang),
+  certifications: copy('view-learning-doesn-t-end-with-graduation', lang),
+  ai: copy('view-develop-faster-decide-with-care', lang),
+  contact: copy('view-good-collaboration-starts-with-a-conversation', lang),
+  home: '',
+};
+---
+
+{view === 'home' ? (
+  <>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">
+          <span class="little-cross" aria-hidden="true">
+            ＋
+          </span>{' '}
+          {copy('view-software-processes-personality', lang)}
+        </span>
+        <h1>
+          Julian
+          <br />
+          <span>
+            Tracht<span class="pink-dot">.</span>
+          </span>
+        </h1>
+        <h2>{profile.role[lang]}</h2>
+        <p>
+          {copy(
+            'view-i-connect-technical-implementation-with-the-bigger-picture-building-software-that-sta',
+            lang,
+          )}
+        </p>
+        <div class="actions">
+          <a class="button primary" href={pathFor('projects', lang)}>
+            {copy('view-explore-projects', lang)}{' '}
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="text-link" href={pathFor('career', lang)}>
+            {copy('view-my-journey', lang)} <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="portrait-stage">
+        <span class="portrait-type" aria-hidden="true">
+          JT
+        </span>
+        <div class="portrait-orbit" aria-hidden="true"></div>
+        <img
+          src="/images/julian-840.webp"
+          srcset="/images/julian-420.webp 420w, /images/julian-840.webp 840w"
+          sizes="(max-width: 700px) 85vw, 38vw"
+          width="840"
+          height="1176"
+          fetchpriority="high"
+          alt={copy('view-portrait-of-julian-tracht', lang)}
+        />
+        <div class="portrait-caption">
+          <span class="tiny-label">
+            {copy('view-technology-with-personality', lang)}
+          </span>
+          <span>Schwarzenbek, {copy('view-germany', lang)}</span>
+        </div>
+      </div>
+    </section>
+    <div class="tech-strip">
+      <span class="tiny-label">{copy('view-my-technical-focus', lang)}</span>
+      <div>
+        <span>C# / .NET</span>
+        <span>TypeScript</span>
+        <span>Vue / React</span>
+        <span>REST APIs</span>
+        <span>{copy('view-project-management', lang)}</span>
+      </div>
+    </div>
+    <section class="home-grid">
+      <a class="feature-card navy" href={pathFor('about', lang)}>
+        <span class="tiny-label">
+          01 / {copy('view-the-person-behind-the-code', lang)}
+        </span>
+        <h2>{copy('view-always-curious', lang)}</h2>
+        <p>
+          {copy(
+            'view-from-lego-mindstorms-and-early-c-experiments-to-building-software-independently',
+            lang,
+          )}
+        </p>
+        <span class="card-link">{copy('view-my-story', lang)} ↗</span>
+      </a>
+      <a class="feature-card soft" href={pathFor('career', lang)}>
+        <span class="tiny-label">
+          02 / {copy('view-experience-with-perspective', lang)}
+        </span>
+        <h2>{copy('view-frontend-backend-the-whole-picture', lang)}</h2>
+        <p>
+          {copy(
+            'view-vocational-training-from-2018-frontend-and-backend-development-independent-since-late',
+            lang,
+          )}
+        </p>
+        <span class="card-link">{copy('view-explore-my-career', lang)} ↗</span>
+      </a>
+      <a class="feature-card rose" href={pathFor('ai', lang)}>
+        <span class="tiny-label">
+          03 / {copy('view-quality-is-a-choice', lang)}
+        </span>
+        <h2>{copy('view-ai-as-a-tool-responsibility-stays', lang)}</h2>
+        <p>
+          {copy(
+            'view-why-faster-code-needs-understanding-and-validation-to-become-good-software',
+            lang,
+          )}
+        </p>
+        <span class="card-link">{copy('view-my-approach', lang)} ↗</span>
+      </a>
+    </section>
+    <section class="closing-line">
+      <h2>{copy('view-something-good-starts-with-a-clear-idea', lang)}</h2>
+      <a class="text-link" href={pathFor('contact', lang)}>
+        {copy('view-let-s-talk', lang)} ↗
+      </a>
+    </section>
+  </>
+) : (
+  <>
+    <section class="page-heading">
+      <a class="eyebrow" href={page.paths[lang]}>
+        {String(views.findIndex((v) => v.id === view) + 1).padStart(2, '0')} /{' '}
+        {page.title[lang].toUpperCase()}
+      </a>
+      <h1 transition:name={project ? `project-${project.id}` : 'page-heading'}>
+        {detail ? (entry?.company ?? project?.title[lang]) : intro[view]}
+      </h1>
+      {detail ? (
+        <p>{entry?.summary[lang] ?? project?.summary[lang]}</p>
+      ) : (
+        <p>{page.description[lang]}</p>
+      )}
+    </section>
+    {view === 'about' && (
+      <>
+        <section class="story-grid">
+          <div class="story-lead">
+            <span class="tiny-label">
+              {copy('view-where-it-all-started', lang)}
+            </span>
+            <h2>{copy('view-first-a-robot-then-a-whole-new-world', lang)}</h2>
+            <p>
+              {copy(
+                'view-my-interest-in-programming-began-with-lego-mindstorms-nxt-suddenly-technology-could-r',
+                lang,
+              )}
+            </p>
+            <p>
+              {copy(
+                'view-that-curiosity-has-stayed-with-me-i-still-build-software-in-my-spare-time-because-tec',
+                lang,
+              )}
+            </p>
+          </div>
+          <div class="quote-panel">
+            <span aria-hidden="true">“</span>
+            <blockquote>
+              {copy(
+                'view-software-should-make-everyday-tasks-easier-its-complexity-shouldn-t-become-a-burden-f',
+                lang,
+              )}
+            </blockquote>
+            <p>Julian Tracht</p>
+          </div>
+        </section>
+        <section class="prose-section">
+          <span class="tiny-label">{copy('view-what-drives-me', lang)}</span>
+          <h2>{copy('view-digitalisation-can-be-better', lang)}</h2>
+          <p>
+            {copy(
+              'view-everyday-life-is-full-of-digital-systems-that-are-unnecessarily-complicated-unstable',
+              lang,
+            )}
+          </p>
+        </section>
+        <section class="values-grid">
+          {[
+            [
+              copy('view-quality', lang),
+              copy(
+                'view-the-first-version-is-only-the-beginning-software-must-remain-understandable-testable',
+                lang,
+              ),
+            ],
+            [
+              copy('view-transparency', lang),
+              copy(
+                'view-technical-decisions-and-their-implications-need-to-be-visible-clear-communication-cre',
+                lang,
+              ),
+            ],
+            [
+              copy('view-fairness', lang),
+              copy(
+                'view-good-collaboration-needs-honest-expectations-clear-agreements-and-mutual-respect',
+                lang,
+              ),
+            ],
+          ].map(([title, text], i) => (
+            <article>
+              <span class="value-number">0{i + 1}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </section>
+      </>
+    )}
+    {view === 'career' &&
+      (entry ? (
+        <>
+          <section class="detail-layout">
+            <div>
+              <span class="eyebrow">{entry.period[lang]}</span>
+              <h2>{entry.role[lang]}</h2>
+              <h3>{copy('view-responsibilities', lang)}</h3>
+              <ul class="task-list">
+                {entry.tasks.map((task) => (
+                  <li>{task[lang]}</li>
+                ))}
+              </ul>
+              {entry.id === 'tracht-digital-solutions' && (
+                <section class="career-projects">
+                  <h3>{copy('view-projects-from-this-role', lang)}</h3>
+                  {projects.map((p) => (
+                    <a
+                      class="text-link"
+                      href={`${pathFor('projects', lang)}${p.id}/`}
+                    >
+                      {p.title[lang]} ↗
+                    </a>
+                  ))}
+                </section>
+              )}
+            </div>
+            <aside class="detail-note">
+              <span class="tiny-label">
+                {copy('view-technologies-topics', lang)}
+              </span>
+              <div class="tags">
+                {entry.tech.map((t) => (
+                  <span>{t}</span>
+                ))}
+              </div>
+              <p>
+                {copy(
+                  'view-professional-background-as-documented-in-my-cv-updated-september-2026',
+                  lang,
+                )}
+              </p>
+            </aside>
+          </section>
+          <a class="text-link back-link" href={pathFor('career', lang)}>
+            ← {copy('view-back-to-the-full-journey', lang)}
+          </a>
+        </>
+      ) : (
+        <>
+          <section
+            class="timeline"
+            aria-label={copy('view-professional-experience', lang)}
+          >
+            {career.map((c, i) => (
+              <article class="timeline-row">
+                <div class="timeline-date">
+                  <span class="timeline-dot" aria-hidden="true"></span>
+                  <span class="tiny-label">{c.period[lang]}</span>
+                  <span class="timeline-index" aria-hidden="true">
+                    0{career.length - i}
+                  </span>
+                </div>
+                <div>
+                  <h2>
+                    <a href={`${pathFor('career', lang)}${c.id}/`}>
+                      {c.company}
+                      <span aria-hidden="true"> ↗</span>
+                    </a>
+                  </h2>
+                  <h3>{c.role[lang]}</h3>
+                  <p>{c.summary[lang]}</p>
+                  <div class="tags">
+                    {c.tech.map((t) => (
+                      <span>{t}</span>
+                    ))}
+                  </div>
+                  <a
+                    class="text-link"
+                    href={`${pathFor('career', lang)}${c.id}/`}
+                  >
+                    {copy('view-explore-this-role', lang)} →
+                  </a>
+                </div>
+              </article>
+            ))}
+          </section>
+          <section class="education">
+            <span class="tiny-label">
+              {copy('view-education-languages', lang)}
+            </span>
+            <h2>{copy('view-the-foundations', lang)}</h2>
+            <div class="education-grid">
+              {education.map((e) => (
+                <article>
+                  <span class="eyebrow">{e.period}</span>
+                  <h3>{e.title[lang]}</h3>
+                  <p>{e.institution}</p>
+                </article>
+              ))}
+              <article>
+                <span class="eyebrow">{copy('view-languages', lang)}</span>
+                <h3>{copy('view-german-english', lang)}</h3>
+                <p>{copy('view-german-native-english-fluent', lang)}</p>
+              </article>
+            </div>
+          </section>
+        </>
+      ))}
+    {view === 'skills' && (
+      <section
+        data-filter-scope
+        data-count-label={copy('interaction-entries', lang)}
+      >
+        <div class="filter-panel" hidden data-filter-panel>
+          <label>
+            {copy('view-search-technologies', lang)}
+            <input
+              type="search"
+              data-search
+              placeholder={copy('view-e-g-c-vue-rest', lang)}
+            />
+          </label>
+          <label>
+            {copy('view-category', lang)}
+            <select data-category>
+              <option value="all">{copy('view-all-categories', lang)}</option>
+              {Object.entries(categories).map(([id, t]) => (
+                <option value={id}>{t[lang]}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            {copy('view-context', lang)}
+            <select data-context>
+              <option value="all">{copy('view-all-contexts', lang)}</option>
+              {[...new Set(skills.map((s) => s.context[lang]))].map((c) => (
+                <option value={c}>{c}</option>
+              ))}
+            </select>
+          </label>
+          <label>
+            {copy('view-experience-evidence', lang)}
+            <select data-level>
+              <option value="all">{copy('view-all-evidence', lang)}</option>
+              {Object.entries(levels)
+                .filter(([id]) => skills.some((s) => s.level === id))
+                .map(([id, t]) => (
+                  <option value={id}>{t[lang]}</option>
+                ))}
+            </select>
+          </label>
+          <button type="button" class="reset-filter">
+            {copy('view-reset', lang)}
+          </button>
+        </div>
+        <p
+          class="filter-count"
+          role="status"
+          aria-live="polite"
+          data-filter-count
+        ></p>
+        <p class="subtle-note">
+          {copy(
+            'view-skills-documented-in-my-cv-without-unconfirmed-proficiency-ratings-or-percentage-bars',
+            lang,
+          )}
+        </p>
+        <div class="skill-grid">
+          {skills.map((s) => (
+            <details
+              class="skill-card"
+              data-filter-item
+              data-category={s.category}
+              data-context={s.context[lang]}
+              data-level={s.level}
+              data-search-text={`${s.name} ${categories[s.category][lang]} ${s.context[lang]}`}
+            >
+              <summary>
+                <span class="skill-symbol" aria-hidden="true">
+                  {s.name.slice(0, 2)}
+                </span>
+                <span>
+                  <strong>{s.name}</strong>
+                  <small>{categories[s.category][lang]}</small>
+                </span>
+                <span class="expand-icon" aria-hidden="true">
+                  ＋
+                </span>
+              </summary>
+              <div class="skill-detail">
+                <span class="tiny-label">{levels[s.level][lang]}</span>
+                <p>{s.description[lang]}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+        <p class="no-results" data-no-results hidden>
+          {copy(
+            'view-no-matching-skills-found-try-adjusting-the-filters',
+            lang,
+          )}
+        </p>
+      </section>
+    )}
+    {view === 'projects' &&
+      (project ? (
+        <>
+          <section class="detail-layout">
+            <div>
+              {project.image && (
+                <img
+                  class="project-image"
+                  src={project.image}
+                  alt={project.title[lang]}
+                  width="1000"
+                  height="625"
+                />
+              )}
+              {project.sections.map((s) => (
+                <section class="prose-section">
+                  <h2>{s.title[lang]}</h2>
+                  <p>{s.text[lang]}</p>
+                </section>
+              ))}
+            </div>
+            <aside class="detail-note">
+              <h2>{project.stage[lang]}</h2>
+              <p>{project.role[lang]}</p>
+              <div class="tags">
+                {project.tech.map((t) => (
+                  <span>{t}</span>
+                ))}
+              </div>
+              {project.github && <a href={project.github}>GitHub ↗</a>}
+              {project.website && (
+                <a href={project.website}>
+                  {copy('view-project-website', lang)} ↗
+                </a>
+              )}
+            </aside>
+          </section>
+          <a href={pathFor('projects', lang)} class="text-link">
+            ← {copy('view-all-projects', lang)}
+          </a>
+        </>
+      ) : (
+        <>
+          {projects.length > 0 && (
+            <section
+              data-filter-scope
+              data-count-label={copy('interaction-entries', lang)}
+            >
+              <div class="filter-panel" data-filter-panel hidden>
+                <label>
+                  {copy('view-search-projects', lang)}
+                  <input type="search" data-search />
+                </label>
+                <label>
+                  {copy('view-category', lang)}
+                  <select data-category>
+                    <option value="all">
+                      {copy('view-all-categories', lang)}
+                    </option>
+                    {[...new Set(projects.map((p) => p.category[lang]))].map(
+                      (c) => (
+                        <option>{c}</option>
+                      ),
+                    )}
+                  </select>
+                </label>
+                <button type="button" class="reset-filter">
+                  {copy('view-reset', lang)}
+                </button>
+              </div>
+              <p data-filter-count role="status" aria-live="polite"></p>
+              <div class="project-grid">
+                {projects.map((p) => (
+                  <a
+                    class="project-card"
+                    data-filter-item
+                    data-category={p.category[lang]}
+                    data-search-text={`${p.title[lang]} ${p.tech.join(' ')}`}
+                    href={`${pathFor('projects', lang)}${p.id}/`}
+                  >
+                    {p.image && (
+                      <img
+                        src={p.image}
+                        alt=""
+                        width="800"
+                        height="500"
+                        loading="lazy"
+                      />
+                    )}
+                    <span class="eyebrow">{p.stage[lang]}</span>
+                    <h2 transition:name={`project-${p.id}`}>
+                      {p.title[lang]} ↗
+                    </h2>
+                    <span class="project-category">{p.category[lang]}</span>
+                    <p>{p.summary[lang]}</p>
+                    <p class="project-role">{p.role[lang]}</p>
+                    <div class="tags">
+                      {p.tech.map((t) => (
+                        <span>{t}</span>
+                      ))}
+                    </div>
+                  </a>
+                ))}
+              </div>
+              <p data-no-results hidden>
+                {copy('view-no-matching-projects', lang)}
+              </p>
+            </section>
+          )}
+          <section class="project-intro">
+            <div class="abstract-code" aria-hidden="true">
+              <span>01 / understand</span>
+              <span>02 / design</span>
+              <span>03 / develop</span>
+              <span>
+                04 / validate<span class="code-dot">_</span>
+              </span>
+            </div>
+            <div>
+              <span class="tiny-label">
+                {copy('view-how-i-build-solutions', lang)}
+              </span>
+              <h2>{copy('view-the-process-is-part-of-the-result', lang)}</h2>
+              <p>
+                {copy(
+                  'view-i-guide-custom-software-and-web-projects-from-requirements-and-design-through-technic',
+                  lang,
+                )}
+              </p>
+              <p>
+                {copy(
+                  'view-i-discuss-specific-references-in-person-respecting-confidentiality-and-usage-rights',
+                  lang,
+                )}
+              </p>
+              <a class="button primary" href={contactUrl(lang)}>
+                {copy('view-discuss-a-project', lang)} ↗
+              </a>
+            </div>
+          </section>
+          <section class="values-grid">
+            {[
+              [
+                copy('view-understand', lang),
+                copy(
+                  'view-requirements-people-and-existing-processes-come-first',
+                  lang,
+                ),
+              ],
+              [
+                copy('view-develop', lang),
+                copy(
+                  'view-architecture-and-implementation-follow-the-task-and-its-long-term-use',
+                  lang,
+                ),
+              ],
+              [
+                copy('view-validate', lang),
+                copy(
+                  'view-tests-clear-decisions-and-documentation-make-the-result-dependable',
+                  lang,
+                ),
+              ],
+            ].map(([title, text], i) => (
+              <article>
+                <span class="value-number">0{i + 1}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </section>
+        </>
+      ))}
+    {view === 'certifications' && (
+      <>
+        <div class="cert-intro">
+          <span class="credential-number">
+            13<span> / {copy('view-learning-certificates', lang)}</span>
+          </span>
+          <p>
+            {copy(
+              'view-these-certificates-document-completed-learning-paths-on-linkedin-learning-they-comple',
+              lang,
+            )}
+          </p>
+        </div>
+        <section
+          data-filter-scope
+          data-count-label={copy('interaction-entries', lang)}
+        >
+          <div class="filter-panel" data-filter-panel hidden>
+            <label>
+              {copy('view-search-certificates', lang)}
+              <input
+                type="search"
+                data-search
+                placeholder={copy('view-title-issuer-subject', lang)}
+              />
+            </label>
+            <label>
+              {copy('view-subject', lang)}
+              <select data-category>
+                <option value="all">{copy('view-all-subjects', lang)}</option>
+                {Object.entries(certCategories).map(([id, t]) => (
+                  <option value={id}>{t[lang]}</option>
+                ))}
+              </select>
+            </label>
+            <button type="button" class="reset-filter">
+              {copy('view-reset', lang)}
+            </button>
+          </div>
+          <p
+            data-filter-count
+            class="filter-count"
+            role="status"
+            aria-live="polite"
+          ></p>
+          <div class="certificate-grid">
+            {certificates.map((c, i) => (
+              <article
+                class:list={['certificate-card', { highlight: i < 3 }]}
+                data-filter-item
+                data-category={c.category}
+                data-search-text={`${c.title} ${c.issuer} ${c.skills.join(' ')}`}
+              >
+                <span class="certificate-label tiny-label">
+                  {certCategories[c.category][lang]}
+                  <span aria-hidden="true">↗</span>
+                </span>
+                <img
+                  src={c.image}
+                  alt={`${copy('view-certificate-preview', lang)}: ${c.title}`}
+                  width="1100"
+                  height="711"
+                  loading="lazy"
+                />
+                <div class="certificate-body">
+                  <h2>{c.title}</h2>
+                  <p>{c.issuer}</p>
+                  <time datetime={c.date}>{date(c.date)}</time>
+                  <details>
+                    <summary>{copy('view-details-skills', lang)}</summary>
+                    <div class="tags">
+                      {c.skills.map((s) => (
+                        <span>{s}</span>
+                      ))}
+                    </div>
+                    <button
+                      type="button"
+                      class="text-link preview-button"
+                      data-dialog-target={`cert-${c.id}`}
+                      hidden
+                    >
+                      {copy('view-enlarge-preview', lang)} ↗
+                    </button>
+                  </details>
+                </div>
+                <dialog id={`cert-${c.id}`} aria-labelledby={`title-${c.id}`}>
+                  <button
+                    type="button"
+                    data-close-dialog
+                    class="dialog-close"
+                    aria-label={copy('view-close-preview', lang)}
+                  >
+                    ×
+                  </button>
+                  <h2 id={`title-${c.id}`}>{c.title}</h2>
+                  <img
+                    src={c.image}
+                    alt={copy('view-certificate-preview', lang)}
+                    width="1100"
+                    height="711"
+                    loading="lazy"
+                  />
+                  <p>
+                    {c.issuer} · {date(c.date)}
+                  </p>
+                </dialog>
+                <script
+                  type="application/ld+json"
+                  set:html={JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'EducationalOccupationalCredential',
+                    name: c.title,
+                    credentialCategory: 'Learning path completion certificate',
+                    recognizedBy: { '@type': 'Organization', name: c.issuer },
+                    dateCreated: c.date,
+                  }).replace(/</g, '\\u003c')}
+                />
+              </article>
+            ))}
+          </div>
+          <p data-no-results class="no-results" hidden>
+            {copy(
+              'view-no-matching-certificates-found-try-adjusting-the-filters',
+              lang,
+            )}
+          </p>
+        </section>
+      </>
+    )}
+    {view === 'ai' && (
+      <>
+        <section class="manifesto">
+          <span class="tiny-label">
+            {copy('view-my-approach-alternative', lang)}
+          </span>
+          <h2>
+            {copy(
+              'view-ai-speeds-up-development-it-doesn-t-take-responsibility',
+              lang,
+            )}
+          </h2>
+          <p>
+            {copy(
+              'view-i-m-open-to-ai-and-interested-in-exploring-its-possibilities-my-standard-remains-the',
+              lang,
+            )}
+          </p>
+        </section>
+        <section class="ai-sections">
+          {[
+            [
+              copy('view-a-tool-for-better-work', lang),
+              copy(
+                'view-ai-can-help-structure-ideas-explore-alternatives-document-decisions-and-draft-code-it',
+                lang,
+              ),
+            ],
+            [
+              copy('view-architecture-before-volume', lang),
+              copy(
+                'view-a-large-volume-of-generated-code-is-not-evidence-of-quality-without-clear-boundaries',
+                lang,
+              ),
+            ],
+            [
+              copy('view-validation-means-understanding', lang),
+              copy(
+                'view-i-consider-requirements-code-review-meaningful-tests-and-integration-and-security-che',
+                lang,
+              ),
+            ],
+            [
+              copy('view-human-oversight-remains-essential', lang),
+              copy(
+                'view-developers-remain-responsible-for-correctness-maintainability-and-the-overall-system',
+                lang,
+              ),
+            ],
+          ].map(([title, text], i) => (
+            <article>
+              <span class="value-number">0{i + 1}</span>
+              <div>
+                <h2>{title}</h2>
+                <p>{text}</p>
+              </div>
+            </article>
+          ))}
+        </section>
+        <p class="subtle-note">
+          {copy(
+            'view-this-page-describes-my-personal-approach-to-software-development',
+            lang,
+          )}
+        </p>
+      </>
+    )}
+    {view === 'contact' && (
+      <>
+        <section class="contact-grid">
+          <a class="contact-card navy" href={contactUrl(lang)}>
+            <span class="tiny-label">
+              {copy('view-for-businesses-clients', lang)}
+            </span>
+            <h2>{copy('view-discuss-a-project-alternative', lang)}</h2>
+            <p>
+              {copy(
+                'view-an-idea-an-existing-system-or-a-process-that-could-be-simpler',
+                lang,
+              )}
+            </p>
+            <span class="contact-arrow" aria-hidden="true">
+              ↗
+            </span>
+            <span class="card-link">Tracht Digital Solutions</span>
+          </a>
+          <a class="contact-card rose" href={contactUrl(lang)}>
+            <span class="tiny-label">
+              {copy('view-for-recruiters-employers', lang)}
+            </span>
+            <h2>{copy('view-share-a-job-opportunity', lang)}</h2>
+            <p>
+              {copy(
+                'view-a-role-that-brings-together-technical-depth-and-an-understanding-of-the-whole-project',
+                lang,
+              )}
+            </p>
+            <span class="contact-arrow" aria-hidden="true">
+              ↗
+            </span>
+            <span class="card-link">Tracht Digital Solutions</span>
+          </a>
+        </section>
+        <section class="contact-details">
+          <div>
+            <span class="tiny-label">
+              {copy('view-connect-directly', lang)}
+            </span>
+            <h2>Julian Tracht</h2>
+            <p>
+              Tracht Digital Solutions
+              <br />
+              Schwarzenbek, {copy('view-germany', lang)}
+            </p>
+          </div>
+          <div>
+            <a href={`mailto:${profile.email}`}>{profile.email} ↗</a>
+            <a href="tel:+491788224022">{profile.phone} ↗</a>
+            <div class="social-links">
+              <a href={profile.linkedin}>LinkedIn ↗</a>
+              <a href={profile.github}>GitHub ↗</a>
+            </div>
+          </div>
+        </section>
+      </>
+    )}
+  </>
+)}

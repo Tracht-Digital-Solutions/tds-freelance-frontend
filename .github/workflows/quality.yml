@@ -1,0 +1,71 @@
+name: Quality gates
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_call:
+    inputs:
+      source_commit:
+        required: true
+        type: string
+    outputs:
+      source_commit:
+        value: ${{ jobs.check.outputs.source_commit }}
+permissions:
+  contents: read
+  packages: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      source_commit: ${{ steps.source.outputs.commit }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.source_commit || github.sha }}
+          fetch-depth: 0
+      - name: Resolve source
+        id: source
+        env:
+          RELEASE_COMMIT: ${{ inputs.source_commit }}
+        run: |
+          if [ -n "$RELEASE_COMMIT" ]; then
+            [[ "$RELEASE_COMMIT" =~ ^[a-f0-9]{40}$ ]] || exit 1
+            git merge-base --is-ancestor HEAD origin/main
+          fi
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN || github.token }}
+      - run: npx playwright install --with-deps chromium
+      - run: npm run quality
+      - name: Performance budgets (mobile and desktop)
+        run: |
+          npm run preview -- --port 4390 --force > /tmp/portfolio-preview.log 2>&1 &
+          trap 'npx astro preview stop' EXIT
+          node --input-type=module <<'JS'
+          let ready=false;
+          for(let i=0;i<40;i++) {
+            try { if((await fetch('http://127.0.0.1:4390/')).ok){ready=true;break;} } catch {}
+            await new Promise(r=>setTimeout(r,250));
+          }
+          if(!ready)throw new Error('Preview did not start');
+          JS
+          npm run audit:perf
+      - run: npm audit --omit=dev --audit-level=high
+      - name: Stamp build
+        env:
+          SOURCE_COMMIT: ${{ steps.source.outputs.commit }}
+        run: node -e 'require("fs").writeFileSync("dist/build-info.json", JSON.stringify({commit:process.env.SOURCE_COMMIT,run:process.env.GITHUB_RUN_ID}))'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: static-site
+          path: dist/
+          include-hidden-files: true
+          retention-days: 14

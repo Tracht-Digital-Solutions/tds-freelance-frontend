@@ -1,0 +1,324 @@
+---
+import { copy } from '../data/editorial';
+import displayFont from '@fontsource/lato/files/lato-latin-700-normal.woff2?url';
+import { ClientRouter } from 'astro:transitions';
+import { themeBootstrapScript } from '@tracht-digital-solutions/tds-shared/astro';
+import '@fontsource/lato/latin-400.css';
+import '@fontsource/lato/latin-700.css';
+import '@fontsource-variable/plus-jakarta-sans/index.css';
+import '@fontsource-variable/jetbrains-mono/index.css';
+import '../styles/global.css';
+import {
+  profile,
+  projects,
+  views,
+  pathFor,
+  type Locale,
+  type ViewId,
+} from '../data/content';
+interface Props {
+  lang: Locale;
+  view: ViewId;
+  detail?: string;
+  title?: string;
+  description?: string;
+  notFound?: boolean;
+}
+const {
+  lang,
+  view,
+  detail,
+  title,
+  description,
+  notFound = false,
+} = Astro.props;
+const page = views.find((v) => v.id === view)!;
+const other = lang === 'de' ? 'en' : 'de';
+const path = page.paths[lang] + (detail ? `${detail}/` : '');
+const alternate = page.paths[other] + (detail ? `${detail}/` : '');
+const canonical = new URL(path, Astro.site).href;
+const pageTitle =
+  title ?? (view === 'home' ? profile.role[lang] : page.title[lang]);
+const desc = description ?? page.description[lang];
+const currentProject =
+  view === 'projects' ? projects.find((p) => p.id === detail) : undefined;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${Astro.site}#julian`,
+      name: profile.name,
+      jobTitle: profile.role[lang],
+      url: Astro.site?.href,
+      image: new URL('/images/julian-840.webp', Astro.site).href,
+      sameAs: [profile.github, profile.linkedin],
+      worksFor: {
+        '@type': 'Organization',
+        name: profile.company,
+        url: 'https://tracht-digital.de',
+      },
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: profile.city,
+        addressCountry: 'DE',
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${Astro.site}#website`,
+      url: Astro.site?.href,
+      name: profile.name,
+      inLanguage: ['de', 'en'],
+    },
+    {
+      '@type': view === 'home' || view === 'about' ? 'ProfilePage' : 'WebPage',
+      '@id': canonical,
+      url: canonical,
+      name: pageTitle,
+      description: desc,
+      inLanguage: lang,
+      mainEntity: {
+        '@id': currentProject ? `${canonical}#project` : `${Astro.site}#julian`,
+      },
+    },
+    ...(currentProject
+      ? [
+          {
+            '@type': 'SoftwareSourceCode',
+            '@id': `${canonical}#project`,
+            name: currentProject.title[lang],
+            description: currentProject.summary[lang],
+            url: currentProject.website,
+            codeRepository: currentProject.github,
+            author: { '@id': `${Astro.site}#julian` },
+            inLanguage: lang,
+            ...(currentProject.image
+              ? { image: new URL(currentProject.image, Astro.site).href }
+              : {}),
+          },
+        ]
+      : []),
+    ...(view === 'home'
+      ? []
+      : [
+          {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: copy('shell-home', lang),
+                item: new URL(pathFor('home', lang), Astro.site).href,
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: page.title[lang],
+                item: new URL(page.paths[lang], Astro.site).href,
+              },
+              ...(detail
+                ? [
+                    {
+                      '@type': 'ListItem',
+                      position: 3,
+                      name: pageTitle,
+                      item: canonical,
+                    },
+                  ]
+                : []),
+            ],
+          },
+        ]),
+  ],
+};
+---
+
+<!doctype html>
+<html lang={lang} data-surface="marketing">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle} · Julian Tracht</title>
+    <meta name="description" content={desc} />
+    {notFound ? (
+      <meta name="robots" content="noindex" />
+    ) : (
+      <>
+        <link rel="canonical" href={canonical} />
+        {(['de', 'en'] as const).map((code) => (
+          <link
+            rel="alternate"
+            hreflang={code}
+            href={
+              new URL(
+                page.paths[code] + (detail ? `${detail}/` : ''),
+                Astro.site,
+              ).href
+            }
+          />
+        ))}
+        <link
+          rel="alternate"
+          hreflang="x-default"
+          href={
+            new URL(page.paths.de + (detail ? `${detail}/` : ''), Astro.site)
+              .href
+          }
+        />
+      </>
+    )}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${pageTitle} · Julian Tracht`} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_GB'} />
+    <meta
+      property="og:image"
+      content={new URL(`/images/og-${lang}.png`, Astro.site).href}
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content={`${profile.name} — ${profile.role[lang]}`}
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="preload"
+      href={displayFont}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="color-scheme" content="light dark" />
+    <script is:inline set:html={themeBootstrapScript} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(schema).replace(/</g, '\\u003c')}
+    />
+    <ClientRouter />
+  </head>
+  <body data-view={view} data-lang={lang}>
+    <a class="skip" href="#main">
+      {copy('shell-skip-to-content', lang)}
+    </a>
+    <header class="site-header" transition:name="header">
+      <a
+        href={pathFor('home', lang)}
+        class="identity"
+        aria-label="Julian Tracht — Home"
+      >
+        <span class="monogram" aria-hidden="true">
+          jt<span>.</span>
+        </span>
+        <span>
+          Julian Tracht
+          <small>{copy('shell-developer-with-purpose', lang)}</small>
+        </span>
+      </a>
+      <div class="header-actions">
+        <a
+          class="language"
+          href={alternate}
+          data-locale={other}
+          lang={other}
+          aria-label={copy('shell-auf-deutsch-wechseln', lang)}
+        >
+          DE <span aria-hidden="true">/</span> EN
+          <span class="lang-marker">{lang.toUpperCase()}</span>
+        </a>
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label={copy('shell-change-colour-theme', lang)}
+          aria-pressed="false"
+          hidden
+        >
+          <span aria-hidden="true">◐</span>
+        </button>
+        <a
+          class="contact-top"
+          href={pathFor('contact', lang)}
+          aria-label={copy('shell-get-in-touch', lang)}
+        >
+          <span class="contact-label">{copy('shell-get-in-touch', lang)}</span>{' '}
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </header>
+    <div class="workspace">
+      <aside class="sidebar" transition:name="navigation">
+        <details class="mobile-menu">
+          <summary>
+            {copy('shell-navigation', lang)} <span aria-hidden="true">＋</span>
+          </summary>
+          <nav aria-label={copy('shell-mobile-main-navigation', lang)}>
+            {views.map((v, i) => (
+              <a
+                href={v.paths[lang]}
+                aria-current={view === v.id ? 'page' : undefined}
+              >
+                <span>{String(i + 1).padStart(2, '0')}</span>
+                {v.title[lang]}
+              </a>
+            ))}
+          </nav>
+        </details>
+        <nav
+          class="desktop-nav"
+          aria-label={copy('shell-main-navigation', lang)}
+        >
+          {views.map((v, i) => (
+            <a
+              href={v.paths[lang]}
+              aria-current={view === v.id ? 'page' : undefined}
+            >
+              <span>{String(i + 1).padStart(2, '0')}</span>
+              {v.title[lang]}
+              <b aria-hidden="true">↗</b>
+            </a>
+          ))}
+        </nav>
+        <div class="sidebar-note">
+          <span class="tiny-label">{copy('shell-my-commitment', lang)}</span>
+          <p>
+            {copy('shell-quality', lang)}
+            <br />
+            {copy('shell-transparency', lang)}
+            <br />
+            {copy('shell-fairness', lang)}
+          </p>
+          <a href="https://tracht-digital.de">Tracht Digital Solutions ↗</a>
+        </div>
+      </aside>
+      <main
+        id="main"
+        tabindex="-1"
+        transition:name="view"
+        transition:animate="fade"
+      >
+        <slot />
+      </main>
+    </div>
+    <footer>
+      <span>© {new Date().getUTCFullYear()} Julian Tracht</span>
+      <span>
+        {copy('shell-built-with-curiosity-developed-with-care', lang)}
+      </span>
+      <div>
+        <a href="https://tracht-digital.de/legal/impressum">
+          {copy('shell-legal-notice', lang)}
+        </a>
+        <a href="https://tracht-digital.de/legal/datenschutz">
+          {copy('shell-privacy', lang)}
+        </a>
+      </div>
+    </footer>
+    <script>
+      import '../scripts/client';
+    </script>
+  </body>
+</html>

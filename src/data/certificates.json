@@ -1,0 +1,144 @@
+[
+  {
+    "id": "aha-product",
+    "title": "Aha! Product Management Professional Certificate",
+    "issuer": "Aha! / LinkedIn Learning",
+    "date": "2026-09-16",
+    "category": "management",
+    "skills": [
+      "Product Management",
+      "Product Road Mapping",
+      "Product Strategy"
+    ],
+    "image": "/images/certificates/aha-product.webp"
+  },
+  {
+    "id": "atlassian-agile",
+    "title": "Atlassian Agile Project Management Professional Certificate",
+    "issuer": "Atlassian / LinkedIn Learning",
+    "date": "2026-08-30",
+    "category": "management",
+    "skills": ["Jira", "Agile Methodologies", "Agile Project Management"],
+    "image": "/images/certificates/atlassian-agile.webp"
+  },
+  {
+    "id": "atlassian-itsm",
+    "title": "Atlassian IT Service Management (ITSM) Professional Certificate",
+    "issuer": "Atlassian / LinkedIn Learning",
+    "date": "2026-08-30",
+    "category": "management",
+    "skills": [
+      "IT Service Management",
+      "IT Management",
+      "Monitoring",
+      "Change Management"
+    ],
+    "image": "/images/certificates/atlassian-itsm.webp"
+  },
+  {
+    "id": "generative-ai",
+    "title": "Build Your Generative AI Productivity Skills with Microsoft and LinkedIn",
+    "issuer": "Microsoft / LinkedIn Learning",
+    "date": "2026-08-28",
+    "category": "ai",
+    "skills": ["AI for Business", "AI Productivity", "Generative AI"],
+    "image": "/images/certificates/generative-ai.webp"
+  },
+  {
+    "id": "business-analysis",
+    "title": "Career Essentials in Business Analysis by Microsoft and LinkedIn",
+    "issuer": "Microsoft / LinkedIn Learning",
+    "date": "2026-09-17",
+    "category": "management",
+    "skills": [
+      "Requirements Gathering",
+      "Project Management",
+      "Business Analysis"
+    ],
+    "image": "/images/certificates/business-analysis.webp"
+  },
+  {
+    "id": "data-analysis",
+    "title": "Career Essentials in Data Analysis by Microsoft and LinkedIn",
+    "issuer": "Microsoft / LinkedIn Learning",
+    "date": "2026-09-28",
+    "category": "data",
+    "skills": ["Data Analysis", "Data Visualization", "Data Analytics"],
+    "image": "/images/certificates/data-analysis.webp"
+  },
+  {
+    "id": "github",
+    "title": "Career Essentials in GitHub Professional Certificate",
+    "issuer": "GitHub / LinkedIn Learning",
+    "date": "2026-08-30",
+    "category": "development",
+    "skills": ["GitHub"],
+    "image": "/images/certificates/github.webp"
+  },
+  {
+    "id": "project-management",
+    "title": "Career Essentials in Project Management by Microsoft and LinkedIn",
+    "issuer": "Microsoft / LinkedIn Learning",
+    "date": "2026-09-16",
+    "category": "management",
+    "skills": [
+      "Budget Development",
+      "Project Management",
+      "Project Communications"
+    ],
+    "image": "/images/certificates/project-management.webp"
+  },
+  {
+    "id": "knime-data-science",
+    "title": "Data Science Professional Certificate by KNIME",
+    "issuer": "KNIME / LinkedIn Learning",
+    "date": "2026-09-16",
+    "category": "data",
+    "skills": [
+      "AI for Business",
+      "Artificial Intelligence (AI)",
+      "Data Science"
+    ],
+    "image": "/images/certificates/knime-data-science.webp"
+  },
+  {
+    "id": "docker",
+    "title": "Docker Foundations Professional Certificate",
+    "issuer": "Docker / LinkedIn Learning",
+    "date": "2026-08-30",
+    "category": "development",
+    "skills": ["Containerization", "Docker Products"],
+    "image": "/images/certificates/docker.webp"
+  },
+  {
+    "id": "azure",
+    "title": "Microsoft Azure Essentials Professional Certificate by Microsoft and LinkedIn",
+    "issuer": "Microsoft / LinkedIn Learning",
+    "date": "2026-08-28",
+    "category": "development",
+    "skills": ["Microsoft Azure", "Cloud Computing"],
+    "image": "/images/certificates/azure.webp"
+  },
+  {
+    "id": "cybrary-security",
+    "title": "Penetration Testing Professional Certificate by Cybrary",
+    "issuer": "Cybrary / LinkedIn Learning",
+    "date": "2026-09-28",
+    "category": "security",
+    "skills": ["Ethical Hacking", "Penetration Testing"],
+    "image": "/images/certificates/cybrary-security.webp"
+  },
+  {
+    "id": "moz-seo",
+    "title": "Search Engine Optimization Professional Certificate by Moz",
+    "issuer": "Moz / LinkedIn Learning",
+    "date": "2026-09-27",
+    "category": "marketing",
+    "skills": [
+      "AI for Marketing",
+      "Search Engine Optimization (SEO)",
+      "SEO Copywriting"
+    ],
+    "image": "/images/certificates/moz-seo.webp"
+  }
+]

@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import View from '../components/View.astro';
+import { allRoutes, career, projects, views } from '../data/content';
+export function getStaticPaths() {
+  return allRoutes().map((route) => ({
+    params: { path: route.path.replace(/^\/|\/$/g, '') || undefined },
+    props: route,
+  }));
+}
+const { lang, id, detail } = Astro.props;
+const entry = detail
+  ? id === 'career'
+    ? career.find((c) => c.id === detail)
+    : projects.find((p) => p.id === detail)
+  : undefined;
+const title =
+  entry &&
+  `${'company' in entry ? entry.company : entry.title[lang]} · ${views.find((v) => v.id === id)!.title[lang]}`;
+const description = entry?.summary[lang];
+---
+
+<Layout
+  lang={lang}
+  view={id}
+  detail={detail}
+  title={title}
+  description={description}
+>
+  <View lang={lang} view={id} detail={detail} />
+</Layout>
