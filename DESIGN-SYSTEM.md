@@ -32,3 +32,9 @@ coincides with the frame edge. The original photo is unchanged. The caption is
 a separate solid band. Navigation and the values block share one sticky container
 with bounded height so they cannot scroll over one another; short desktop
 viewports may scroll the sidebar internally.
+
+Minimal shadows match the main site: shared hard 6px card offsets and 3px
+button offsets, with translucent navy ink in light mode and the shared dark ink.
+Primary buttons use the shared primitive, including its coral shadow. Interactive
+cards lift 2px on hover/focus; buttons press into their shadow. Shadows are never
+animated, decorative/text elements stay flat, and reduced motion disables lifting.

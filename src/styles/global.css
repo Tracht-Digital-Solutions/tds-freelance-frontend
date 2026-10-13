@@ -8,6 +8,10 @@
 :root {
   --portfolio-width: 1500px;
 }
+/* Match the main site's translucent ink; the shared dark-theme ink wins there. */
+[data-surface='marketing'] {
+  --tds-shadow-ink: rgb(5 15 104 / 0.6);
+}
 * {
   box-sizing: border-box;
 }
@@ -318,10 +322,7 @@ main {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  transition: transform 0.2s;
-}
-.button:hover {
-  transform: translateY(-3px);
+  transition: translate 160ms ease;
 }
 .button.primary {
   background: var(--color-primary);
@@ -433,10 +434,7 @@ main {
   display: flex;
   flex-direction: column;
   border-radius: var(--tds-radius-card);
-  transition: transform 0.25s;
-}
-.feature-card:hover {
-  transform: translateY(-5px);
+  transition: translate 160ms ease;
 }
 .navy {
   background: var(--color-surface-navy);
@@ -997,7 +995,7 @@ dialog {
   color: var(--color-ink);
   padding: 38px 30px 25px;
   border-radius: var(--tds-radius-card);
-  box-shadow: var(--tds-shadow-lg);
+  box-shadow: var(--tds-shadow-hard);
 }
 dialog::backdrop {
   background: #050f6899;
@@ -1067,10 +1065,7 @@ dialog img {
   display: flex;
   flex-direction: column;
   min-height: 340px;
-  transition: transform 0.2s;
-}
-.contact-card:hover {
-  transform: translateY(-5px);
+  transition: translate 160ms ease;
 }
 .contact-card h2 {
   font-size: 2rem;
@@ -1119,6 +1114,43 @@ dialog img {
 .desktop-nav a > span,
 .mobile-menu nav a > span {
   opacity: 1;
+}
+/* Portfolio surfaces compose the published TDS shadow scale. No shadow animation. */
+:where(
+  .portrait-stage,
+  .feature-card,
+  .quote-panel,
+  .detail-note,
+  .filter-panel,
+  .skill-card,
+  .project-card,
+  .certificate-card,
+  .manifesto,
+  .contact-card
+) {
+  box-shadow: var(--tds-shadow-hard);
+}
+:where(
+  .feature-card,
+  .project-card,
+  .skill-card,
+  .certificate-card,
+  .contact-card
+) {
+  transition: translate 160ms ease;
+}
+:where(
+    .feature-card,
+    .project-card,
+    .skill-card,
+    .certificate-card,
+    .contact-card
+  ):where(:hover, :focus-within):not(:active) {
+  translate: -2px -2px;
+  box-shadow: var(--tds-shadow-hard-hover);
+}
+.filter-panel :where(input, select) {
+  box-shadow: var(--tds-shadow-inset);
 }
 .timeline-index {
   color: var(--color-muted);
@@ -1671,5 +1703,15 @@ dialog img {
   .feature-card:hover,
   .contact-card:hover {
     transform: none;
+  }
+  :where(
+    .button,
+    .feature-card,
+    .project-card,
+    .skill-card,
+    .certificate-card,
+    .contact-card
+  ):where(:hover, :focus-visible, :focus-within, :active) {
+    translate: none;
   }
 }
