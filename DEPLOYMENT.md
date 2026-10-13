@@ -31,8 +31,8 @@ Only manual `release.yml` publishes `release` and calls a hosting webhook.
 - Allow this repository to read the private `tds-shared` package with GITHUB_TOKEN,
   or set `NPM_TOKEN` with authorized `read:packages`. Cross-repository private
   Packages access does not follow from source repository visibility alone.
-- Create the `production` environment with required reviewer approval and
-  deployment restricted to main. Protect main with the `check` quality gate.
+- The `production` environment is configured with required review by `jtracht`
+  and deployment restricted to main. Protect main with the `check` quality gate.
 - Set secret `DEPLOY_WEBHOOK_URL` in production. Do not log it or commit it.
 - Production build needs no public environment variables. Workflow permissions
   are read-only for verification and contents:write only for release publication.

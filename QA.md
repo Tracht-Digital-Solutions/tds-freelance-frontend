@@ -22,6 +22,10 @@
   captures, not invented mockups.
 - npm security audit reports zero known vulnerabilities for the pinned install.
 
+GitHub Linux CI also passed all gates, including the performance audit and artifact
+upload: [Quality gates run](https://github.com/Tracht-Digital-Solutions/tds-freelance-frontend/actions/runs/38454124519).
+The `static-site` artifact contains the verified static document root and a commit stamp.
+
 ## Performance budget and measurement
 
 Budget: all emitted JS combined <100KB raw, all emitted CSS combined <150KB raw,
@@ -32,8 +36,8 @@ Lighthouse 13.5.0 local production preview, cold lab navigation:
 
 | Mode    | Performance | Accessibility | Best practices | SEO |   LCP |   CLS |
 | ------- | ----------: | ------------: | -------------: | --: | ----: | ----: |
-| Mobile  |          97 |           100 |            100 | 100 | 2.28s | 0.058 |
-| Desktop |         100 |           100 |            100 | 100 | 0.49s | 0.001 |
+| Mobile  |          97 |           100 |            100 | 100 | 2.26s | 0.023 |
+| Desktop |         100 |           100 |            100 | 100 | 0.45s | 0.001 |
 
 These are local lab results, not production field Core Web Vitals or guaranteed
 scores. CPU, browser version and hosting/network conditions affect results.
@@ -45,8 +49,8 @@ CI also runs the mobile/desktop performance gate before producing its artifact.
 Host/DNS/TLS/webhook configuration, protected production approval, applicability
 of the main-domain privacy notice, actual security headers, serving commit stamp
 and live smoke tests must be verified before calling the site deployed. Use
-DEPLOYMENT.md. A package credential or Actions package permission may be needed
-for GitHub's isolated install. Local success does not prove CI/host access.
+DEPLOYMENT.md. The GitHub runner has successfully installed the package with its built-in token.
+No host access was provided; CI success does not prove host access.
 
 ## Repeatable commands
 
