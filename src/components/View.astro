@@ -74,7 +74,10 @@ const intro = {
           )}
         </p>
         <div class="actions">
-          <a class="button primary" href={pathFor('projects', lang)}>
+          <a
+            class="button primary btn-primary"
+            href={pathFor('projects', lang)}
+          >
             {copy('view-explore-projects', lang)}{' '}
             <span aria-hidden="true">↗</span>
           </a>
@@ -633,7 +636,7 @@ const intro = {
                   lang,
                 )}
               </p>
-              <a class="button primary" href={contactUrl(lang)}>
+              <a class="button primary btn-primary" href={contactUrl(lang)}>
                 {copy('view-discuss-a-project', lang)} ↗
               </a>
             </div>
