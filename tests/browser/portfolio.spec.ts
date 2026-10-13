@@ -81,12 +81,53 @@ test('filters, details and certificate dialog work in both languages', async ({
       page.locator('.certificate-card:visible .preview-button'),
     ).toBeFocused();
     await page.goto(lang === 'de' ? '/projekte/' : '/en/projects/');
-    await page.locator('select[data-category]').selectOption({ index: 1 });
+    await page
+      .locator('select[data-category]')
+      .selectOption(lang === 'de' ? 'Spiele & Mobile' : 'Games & mobile');
+    await expect(page.locator('[data-filter-item]:visible')).toHaveCount(1);
+    await page.locator('.reset-filter').click();
+    await page.locator('select[data-kind]').selectOption('study');
+    await expect(page.locator('[data-filter-item]:visible')).toHaveCount(7);
+    await page.locator('select[data-kind]').selectOption('development');
     await expect(page.locator('[data-filter-item]:visible')).toHaveCount(1);
   }
 });
+
+test('sidebar navigation and values never overlap while scrolling', async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  for (const width of [1024, 1280, 1920]) {
+    await page.setViewportSize({ width, height: 640 });
+    await page.goto('/projekte/');
+    for (const y of [0, 250, 650, 1200, 3000]) {
+      await page.evaluate((y) => window.scrollTo(0, y), y);
+      const bounds = await page.evaluate(() => {
+        const nav = document
+          .querySelector('.desktop-nav')!
+          .getBoundingClientRect();
+        const note = document
+          .querySelector('.sidebar-note')!
+          .getBoundingClientRect();
+        const wrapper = document.querySelector(
+          '.sidebar-content',
+        ) as HTMLElement;
+        return {
+          navBottom: nav.bottom,
+          noteTop: note.top,
+          horizontalOverflow: wrapper.scrollWidth > wrapper.clientWidth + 1,
+        };
+      });
+      expect(
+        bounds.navBottom,
+        `Navigation overlaps the values at ${width}px / scroll ${y}`,
+      ).toBeLessThanOrEqual(bounds.noteTop);
+      expect(bounds.horizontalOverflow).toBe(false);
+    }
+  }
+});
 test('responsive layouts stay within viewport', async ({ page }) => {
-  for (const width of [360, 768, 1280, 1920]) {
+  for (const width of [360, 768, 900, 1024, 1280, 1920]) {
     await page.setViewportSize({ width, height: 900 });
     for (const route of ['/', '/faehigkeiten/', '/zertifikate/', '/kontakt/']) {
       await page.goto(route);

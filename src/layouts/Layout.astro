@@ -86,7 +86,9 @@ const schema = {
     ...(currentProject
       ? [
           {
-            '@type': 'SoftwareSourceCode',
+            '@type': currentProject.github
+              ? 'SoftwareSourceCode'
+              : 'CreativeWork',
             '@id': `${canonical}#project`,
             name: currentProject.title[lang],
             description: currentProject.summary[lang],
@@ -262,36 +264,38 @@ const schema = {
                 aria-current={view === v.id ? 'page' : undefined}
               >
                 <span>{String(i + 1).padStart(2, '0')}</span>
-                {v.title[lang]}
+                <span class="nav-title">{v.title[lang]}</span>
               </a>
             ))}
           </nav>
         </details>
-        <nav
-          class="desktop-nav"
-          aria-label={copy('shell-main-navigation', lang)}
-        >
-          {views.map((v, i) => (
-            <a
-              href={v.paths[lang]}
-              aria-current={view === v.id ? 'page' : undefined}
-            >
-              <span>{String(i + 1).padStart(2, '0')}</span>
-              {v.title[lang]}
-              <b aria-hidden="true">↗</b>
-            </a>
-          ))}
-        </nav>
-        <div class="sidebar-note">
-          <span class="tiny-label">{copy('shell-my-commitment', lang)}</span>
-          <p>
-            {copy('shell-quality', lang)}
-            <br />
-            {copy('shell-transparency', lang)}
-            <br />
-            {copy('shell-fairness', lang)}
-          </p>
-          <a href="https://tracht-digital.de">Tracht Digital Solutions ↗</a>
+        <div class="sidebar-content">
+          <nav
+            class="desktop-nav"
+            aria-label={copy('shell-main-navigation', lang)}
+          >
+            {views.map((v, i) => (
+              <a
+                href={v.paths[lang]}
+                aria-current={view === v.id ? 'page' : undefined}
+              >
+                <span>{String(i + 1).padStart(2, '0')}</span>
+                <span class="nav-title">{v.title[lang]}</span>
+                <b aria-hidden="true">↗</b>
+              </a>
+            ))}
+          </nav>
+          <div class="sidebar-note">
+            <span class="tiny-label">{copy('shell-my-commitment', lang)}</span>
+            <p>
+              {copy('shell-quality', lang)}
+              <br />
+              {copy('shell-transparency', lang)}
+              <br />
+              {copy('shell-fairness', lang)}
+            </p>
+            <a href="https://tracht-digital.de">Tracht Digital Solutions ↗</a>
+          </div>
         </div>
       </aside>
       <main

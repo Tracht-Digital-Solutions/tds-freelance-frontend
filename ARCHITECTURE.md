@@ -24,7 +24,10 @@
 
 `src/data/content.ts` owns stable IDs, language routes, profile, career, education,
 skills, project schemas and approved records. `certificates.json` owns credential
-facts. Zod parses records and rejects duplicate IDs, duplicate routes and
+facts. `projects.json` contains additional approved work, including the main-site
+references and design studies, IdleArcade and the in-development JavaScript light/
+shadow framework. Source evidence is the public reference catalogue and GitHub
+code; project status and ownership were confirmed by Julian in this task. Zod parses records and rejects duplicate IDs, duplicate routes and
 unapproved projects. `allRoutes()` is the common inventory for generation,
 sitemap and tests.
 

@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import certificateData from './certificates.json' with { type: 'json' };
+import additionalProjects from './projects.json' with { type: 'json' };
 export type Locale = 'de' | 'en';
 export const localized = z.object({
   de: z.string().min(1),
@@ -357,6 +358,10 @@ export const certCategories = {
 export const projectSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   approved: z.literal(true),
+  kind: z
+    .enum(['client', 'own', 'demo', 'study', 'development'])
+    .default('own'),
+  careerId: z.string().optional(),
   title: localized,
   summary: localized,
   category: localized,
@@ -365,6 +370,8 @@ export const projectSchema = z.object({
   tech: z.array(z.string()).min(1),
   sections: z.array(z.object({ title: localized, text: localized })).min(1),
   image: z.string().optional(),
+  imageWidth: z.number().positive().default(1000),
+  imageHeight: z.number().positive().default(625),
   github: z.url().optional(),
   website: z.url().optional(),
 });
@@ -373,6 +380,10 @@ export type Project = z.infer<typeof projectSchema>;
 export const projects: Project[] = [
   {
     id: 'tds-hauptwebsite',
+    kind: 'own',
+    imageWidth: 1000,
+    imageHeight: 625,
+    careerId: 'tracht-digital-solutions',
     approved: true,
     image: '/images/tds-hauptwebsite.webp',
     title: l('Tracht Digital Solutions', 'Tracht Digital Solutions'),
@@ -429,6 +440,10 @@ export const projects: Project[] = [
   },
   {
     id: 'td-tools',
+    kind: 'own',
+    imageWidth: 1000,
+    imageHeight: 625,
+    careerId: 'tracht-digital-solutions',
     approved: true,
     image: '/images/td-tools.webp',
     title: l('TD Tools', 'TD Tools'),
@@ -476,7 +491,15 @@ export const projects: Project[] = [
       },
     ],
   },
+  ...z.array(projectSchema).parse(additionalProjects),
 ];
+export const projectKinds = {
+  client: l('Kundenprojekt', 'Client project'),
+  own: l('Eigenes Projekt', 'Own project'),
+  demo: l('Demo', 'Demo'),
+  study: l('Designstudie', 'Design study'),
+  development: l('In Entwicklung', 'In development'),
+};
 export function validateContent() {
   for (const [name, items] of Object.entries({
     career,
@@ -488,7 +511,14 @@ export function validateContent() {
     if (new Set(ids).size !== ids.length)
       throw new Error(`Duplicate ${name} ID`);
   }
-  for (const project of projects) projectSchema.parse(project);
+  for (const project of projects) {
+    projectSchema.parse(project);
+    if (
+      project.careerId &&
+      !career.some((entry) => entry.id === project.careerId)
+    )
+      throw new Error(`Unknown career reference: ${project.id}`);
+  }
   const paths = views.flatMap((v) => Object.values(v.paths));
   if (new Set(paths).size !== paths.length) throw new Error('Duplicate route');
 }

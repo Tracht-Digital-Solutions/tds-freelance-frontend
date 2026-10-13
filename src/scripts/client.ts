@@ -60,11 +60,9 @@ function initialize() {
               (s) =>
                 s.value === 'all' ||
                 item.dataset[
-                  s.hasAttribute('data-category')
-                    ? 'category'
-                    : s.hasAttribute('data-context')
-                      ? 'context'
-                      : 'level'
+                  ['category', 'context', 'level', 'kind'].find((key) =>
+                    s.hasAttribute(`data-${key}`),
+                  )!
                 ] === s.value,
             );
           item.hidden = !matches;

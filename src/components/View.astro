@@ -13,6 +13,7 @@ import {
   certificates,
   certCategories,
   projects,
+  projectKinds,
   type Locale,
   type ViewId,
 } from '../data/content';
@@ -269,14 +270,16 @@ const intro = {
               {entry.id === 'tracht-digital-solutions' && (
                 <section class="career-projects">
                   <h3>{copy('view-projects-from-this-role', lang)}</h3>
-                  {projects.map((p) => (
-                    <a
-                      class="text-link"
-                      href={`${pathFor('projects', lang)}${p.id}/`}
-                    >
-                      {p.title[lang]} ↗
-                    </a>
-                  ))}
+                  {projects
+                    .filter((p) => p.careerId === entry.id)
+                    .map((p) => (
+                      <a
+                        class="text-link"
+                        href={`${pathFor('projects', lang)}${p.id}/`}
+                      >
+                        {p.title[lang]} ↗
+                      </a>
+                    ))}
                 </section>
               )}
             </div>
@@ -468,8 +471,8 @@ const intro = {
                   class="project-image"
                   src={project.image}
                   alt={project.title[lang]}
-                  width="1000"
-                  height="625"
+                  width={project.imageWidth}
+                  height={project.imageHeight}
                 />
               )}
               {project.sections.map((s) => (
@@ -480,6 +483,9 @@ const intro = {
               ))}
             </div>
             <aside class="detail-note">
+              <span class="project-kind">
+                {projectKinds[project.kind][lang]}
+              </span>
               <h2>{project.stage[lang]}</h2>
               <p>{project.role[lang]}</p>
               <div class="tags">
@@ -508,6 +514,17 @@ const intro = {
             >
               <div class="filter-panel" data-filter-panel hidden>
                 <label>
+                  {copy('view-project-type', lang)}
+                  <select data-kind>
+                    <option value="all">
+                      {copy('view-all-project-types', lang)}
+                    </option>
+                    {Object.entries(projectKinds).map(([id, label]) => (
+                      <option value={id}>{label[lang]}</option>
+                    ))}
+                  </select>
+                </label>
+                <label>
                   {copy('view-search-projects', lang)}
                   <input type="search" data-search />
                 </label>
@@ -534,6 +551,7 @@ const intro = {
                   <a
                     class="project-card"
                     data-filter-item
+                    data-kind={p.kind}
                     data-category={p.category[lang]}
                     data-search-text={`${p.title[lang]} ${p.tech.join(' ')}`}
                     href={`${pathFor('projects', lang)}${p.id}/`}
@@ -542,11 +560,33 @@ const intro = {
                       <img
                         src={p.image}
                         alt=""
-                        width="800"
-                        height="500"
+                        width={p.imageWidth}
+                        height={p.imageHeight}
                         loading="lazy"
                       />
                     )}
+                    {!p.image && (
+                      <div
+                        class:list={[
+                          'project-cover',
+                          `project-cover-${p.kind}`,
+                        ]}
+                        aria-hidden="true"
+                      >
+                        <span>{p.tech[0]}</span>
+                        <strong>
+                          {p.id === 'idlearcade'
+                            ? 'IDLE / ARCADE'
+                            : p.kind === 'development'
+                              ? 'LIGHT / SHADOW'
+                              : 'DATA / FLOW'}
+                        </strong>
+                        <span>Julian Tracht</span>
+                      </div>
+                    )}
+                    <span class="project-kind">
+                      {projectKinds[p.kind][lang]}
+                    </span>
                     <span class="eyebrow">{p.stage[lang]}</span>
                     <h2 transition:name={`project-${p.id}`}>
                       {p.title[lang]} ↗
