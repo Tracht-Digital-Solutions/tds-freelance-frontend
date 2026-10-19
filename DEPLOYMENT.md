@@ -16,7 +16,7 @@ Only manual `release.yml` publishes `release` and calls a hosting webhook.
    without a package token; the compiled release has no private package install.
 4. Use the provider-generated deployment webhook. If using Plesk Git, configure
    its documented repository pull/deployment hook and deployment target. The
-   workflow currently calls the secret URL with GET; verify that matches this
+   workflow calls the secret URL with POST (Plesk's hook answers a GET with 404); verify that matches this
    actual host before the first release. No custom shell-execution endpoint.
 5. Serve directory index.html for every route; do not rewrite missing routes to
    the home page. Configure the 404 document and equivalent security headers for
