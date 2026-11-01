@@ -6,7 +6,7 @@
   React islands and a file-backed page cache. Its main contact anchor is `contact`
   in both languages. Live responses for both roots and legal pages returned 200.
 - Shared package source is locally 0.56.0; the landing site's installed, published
-  dependency is 0.55.1. This portfolio pins **0.55.1**, not a local sibling path.
+  dependency is 0.62.0. This portfolio pins **0.62.0**, not a local sibling path.
   No sibling repository was modified. Shared CSS is bundled by Vite but the
   private package source is not vendored or committed publicly.
 - The core frontend package is a host for composed product extensions, not a
