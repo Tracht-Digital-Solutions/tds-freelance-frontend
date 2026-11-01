@@ -23,7 +23,11 @@
       "de": "Webentwicklung · Kundenprojekt",
       "en": "Web development · Client project"
     },
-    "tech": ["WordPress", "WooCommerce", "E-Commerce"],
+    "tech": [
+      "WordPress",
+      "WooCommerce",
+      "E-Commerce"
+    ],
     "sections": [
       {
         "title": {
@@ -76,7 +80,11 @@
       "de": "Übernahme, Überarbeitung & Wartung",
       "en": "Takeover, rework & maintenance"
     },
-    "tech": ["WordPress", "Responsive Design", "Wartung"],
+    "tech": [
+      "WordPress",
+      "Responsive Design",
+      "Wartung"
+    ],
     "sections": [
       {
         "title": {
@@ -129,7 +137,11 @@
       "de": "Shop-Aufbau, Datenmigration & laufende Pflege",
       "en": "Shop development, data migration & ongoing maintenance"
     },
-    "tech": ["E-Commerce", "Datenmigration", "Automatisierung"],
+    "tech": [
+      "E-Commerce",
+      "Datenmigration",
+      "Automatisierung"
+    ],
     "sections": [
       {
         "title": {
@@ -178,7 +190,12 @@
       "de": "Eigenes Spieleprojekt",
       "en": "Own game project"
     },
-    "tech": ["Godot 4.3", "GDScript", "Android", "Nakama"],
+    "tech": [
+      "Godot 4.3",
+      "GDScript",
+      "Android",
+      "Nakama"
+    ],
     "sections": [
       {
         "title": {
@@ -237,7 +254,9 @@
       "de": "Eigenes Entwicklungsprojekt",
       "en": "Own development project"
     },
-    "tech": ["JavaScript"],
+    "tech": [
+      "JavaScript"
+    ],
     "sections": [
       {
         "title": {
@@ -285,7 +304,11 @@
       "de": "Konzeption & Webentwicklung",
       "en": "Concept & web development"
     },
-    "tech": ["Webentwicklung", "Produktkatalog", "E-Commerce"],
+    "tech": [
+      "Webentwicklung",
+      "Produktkatalog",
+      "E-Commerce"
+    ],
     "sections": [
       {
         "title": {
@@ -338,7 +361,10 @@
       "de": "Konzeption, Gestaltung & Umsetzung",
       "en": "Concept, design & implementation"
     },
-    "tech": ["Webentwicklung", "UI/UX"],
+    "tech": [
+      "Webentwicklung",
+      "UI/UX"
+    ],
     "sections": [
       {
         "title": {
@@ -391,7 +417,10 @@
       "de": "Konzeption, Gestaltung & Umsetzung",
       "en": "Concept, design & implementation"
     },
-    "tech": ["Webentwicklung", "UI/UX"],
+    "tech": [
+      "Webentwicklung",
+      "UI/UX"
+    ],
     "sections": [
       {
         "title": {
@@ -444,7 +473,10 @@
       "de": "Konzeption, Gestaltung & Umsetzung",
       "en": "Concept, design & implementation"
     },
-    "tech": ["Webentwicklung", "UI/UX"],
+    "tech": [
+      "Webentwicklung",
+      "UI/UX"
+    ],
     "sections": [
       {
         "title": {
@@ -497,7 +529,11 @@
       "de": "Eigene Gestaltung & Oberflächenkonzeption",
       "en": "Own design & interface concept"
     },
-    "tech": ["UI/UX", "Webdesign", "Informationsarchitektur"],
+    "tech": [
+      "UI/UX",
+      "Webdesign",
+      "Informationsarchitektur"
+    ],
     "sections": [
       {
         "title": {
@@ -549,7 +585,11 @@
       "de": "Eigene Gestaltung & Oberflächenkonzeption",
       "en": "Own design & interface concept"
     },
-    "tech": ["UI/UX", "Webdesign", "Informationsarchitektur"],
+    "tech": [
+      "UI/UX",
+      "Webdesign",
+      "Informationsarchitektur"
+    ],
     "sections": [
       {
         "title": {
@@ -601,7 +641,11 @@
       "de": "Eigene Gestaltung & Oberflächenkonzeption",
       "en": "Own design & interface concept"
     },
-    "tech": ["UI/UX", "Webdesign", "Informationsarchitektur"],
+    "tech": [
+      "UI/UX",
+      "Webdesign",
+      "Informationsarchitektur"
+    ],
     "sections": [
       {
         "title": {
@@ -653,7 +697,11 @@
       "de": "Eigene Gestaltung & Oberflächenkonzeption",
       "en": "Own design & interface concept"
     },
-    "tech": ["UI/UX", "Webdesign", "Informationsarchitektur"],
+    "tech": [
+      "UI/UX",
+      "Webdesign",
+      "Informationsarchitektur"
+    ],
     "sections": [
       {
         "title": {
@@ -705,7 +753,11 @@
       "de": "Eigene Gestaltung & Oberflächenkonzeption",
       "en": "Own design & interface concept"
     },
-    "tech": ["UI/UX", "Webdesign", "Informationsarchitektur"],
+    "tech": [
+      "UI/UX",
+      "Webdesign",
+      "Informationsarchitektur"
+    ],
     "sections": [
       {
         "title": {
@@ -757,7 +809,11 @@
       "de": "Eigene Gestaltung & Oberflächenkonzeption",
       "en": "Own design & interface concept"
     },
-    "tech": ["UI/UX", "Webdesign", "Informationsarchitektur"],
+    "tech": [
+      "UI/UX",
+      "Webdesign",
+      "Informationsarchitektur"
+    ],
     "sections": [
       {
         "title": {
@@ -809,7 +865,11 @@
       "de": "Eigene Gestaltung & Oberflächenkonzeption",
       "en": "Own design & interface concept"
     },
-    "tech": ["UI/UX", "Webdesign", "Informationsarchitektur"],
+    "tech": [
+      "UI/UX",
+      "Webdesign",
+      "Informationsarchitektur"
+    ],
     "sections": [
       {
         "title": {
@@ -861,7 +921,10 @@
       "de": "Konzeption & Webentwicklung",
       "en": "Concept & web development"
     },
-    "tech": ["Webentwicklung", "Digitale Visitenkarte"],
+    "tech": [
+      "Webentwicklung",
+      "Digitale Visitenkarte"
+    ],
     "sections": [
       {
         "title": {
@@ -889,5 +952,63 @@
     "careerId": "tracht-digital-solutions",
     "imageWidth": 1440,
     "imageHeight": 900
+  },
+  {
+    "id": "wparted",
+    "approved": true,
+    "kind": "own",
+    "title": {
+      "de": "WParted",
+      "en": "WParted"
+    },
+    "summary": {
+      "de": "Mein freier Open-Source-Partitionsmanager für Windows 11, eine GParted-Alternative mit ähnlicher Bedienung.",
+      "en": "My free, open-source partition manager for Windows 11, a GParted alternative with a similar workflow."
+    },
+    "category": {
+      "de": "Open Source · Systemsoftware",
+      "en": "Open source · System software"
+    },
+    "stage": {
+      "de": "Beta, echte Datenträger noch gesperrt",
+      "en": "Beta, real disks still locked"
+    },
+    "role": {
+      "de": "Entwicklung · Privates Open-Source-Projekt",
+      "en": "Development · Private open-source project"
+    },
+    "tech": [
+      "C++",
+      "Windows",
+      "CMake",
+      "GPT/MBR"
+    ],
+    "sections": [
+      {
+        "title": {
+          "de": "Projekt",
+          "en": "Project"
+        },
+        "text": {
+          "de": "WParted zeigt Datenträger, Partitionstabellen und Dateisysteme, plant Änderungen und führt sie auf Image-Dateien und angehängten virtuellen Datenträgern aus. Es läuft direkt unter Windows 11, ohne Linux-Live-System. WParted ist unabhängig und nicht mit GParted oder GNOME verbunden.",
+          "en": "WParted shows disks, partition tables and file systems, plans changes and applies them to image files and attached virtual disks. It runs directly on Windows 11, without a Linux live system. WParted is independent and not affiliated with GParted or GNOME."
+        }
+      },
+      {
+        "title": {
+          "de": "Sicherheit",
+          "en": "Safety"
+        },
+        "text": {
+          "de": "Das Schreiben auf echte Datenträger bleibt bis zu einem menschlichen Sicherheitsreview gesperrt. Jeder ausgeführte Schritt wird zurückgelesen und geprüft.",
+          "en": "Writing to real disks stays locked until a human security review is done. Every executed step is read back and verified."
+        }
+      }
+    ],
+    "image": "/images/projects/wparted.webp",
+    "imageWidth": 1164,
+    "imageHeight": 751,
+    "github": "https://github.com/jtracht/WParted",
+    "website": "https://wparted.tracht-digital.de/"
   }
 ]
