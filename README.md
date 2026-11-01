@@ -49,3 +49,15 @@ The source implementation is separate from the production site. Production
 needs explicit approval, hosting configuration, a protected environment and
 credentials described in DEPLOYMENT.md. A successful local build is not proof
 of deployment. Further project references require individual publication approval.
+
+## Versions
+
+| Tool | Version | Set in |
+|---|---|---|
+| Node.js | 24 in CI | `.github/workflows/quality.yml` |
+| astro | 7.3.8 | `package.json` |
+| @tracht-digital-solutions/tds-shared | 0.62.0 | `package.json` |
+| zod | 4.6.7 | `package.json` |
+| typescript | 6.0.3 | `package.json` |
+| @playwright/test | 1.62.1 | `package.json` |
+| sharp | 0.35.5 | `package.json` |
