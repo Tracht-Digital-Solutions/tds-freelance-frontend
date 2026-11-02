@@ -21,7 +21,7 @@ CI builds on main and pull requests; production is **manual only**.
 - Local fonts, responsive portrait, search/category/context/evidence filters,
   credential gallery, native accessible dialogs and progressive enhancement.
 - Canonicals, language pairs, sitemap, social previews, semantic HTML and JSON-LD.
-- Manual release pipeline with approved commit validation, release branch,
+- Manual release pipeline with quality gates, release branch,
   secret webhook and live commit/route checks.
 
 ## Documentation
@@ -46,7 +46,7 @@ Private package source, CV PDFs and certificate PDFs must never be committed.
 ## Release status
 
 The source implementation is separate from the production site. Production
-needs explicit approval, hosting configuration, a protected environment and
+goes out on the manual Release button and needs the hosting configuration and
 credentials described in DEPLOYMENT.md. A successful local build is not proof
 of deployment. Further project references require individual publication approval.
 

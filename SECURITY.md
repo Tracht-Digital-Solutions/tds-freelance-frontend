@@ -23,9 +23,8 @@ Private package source is not vendored; compiled design CSS and the small browse
 helpers are bundled for use under their existing package authorization. Fonts and
 dependencies retain licenses. No source maps are published by default.
 
-Release requires a manually selected main commit and all quality gates. Set
-production environment protection with required reviewers and restrict trusted
-workflow changes. Store a narrowly authorized Packages token and deployment URL
+Release runs on the manual button from main and requires all quality gates.
+Restrict trusted workflow changes. Store a narrowly authorized Packages token and deployment URL
 in Secrets. The webhook should be the hosting provider's secret hook, not an
 arbitrary unauthenticated shell endpoint. A failed webhook/live verification fails
 the run even if the release branch already exists; follow the rollback runbook.

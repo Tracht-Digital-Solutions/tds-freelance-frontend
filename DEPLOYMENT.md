@@ -31,9 +31,8 @@ Only manual `release.yml` publishes `release` and calls a hosting webhook.
 - Allow this repository to read the private `tds-shared` package with GITHUB_TOKEN,
   or set `NPM_TOKEN` with authorized `read:packages`. Cross-repository private
   Packages access does not follow from source repository visibility alone.
-- The `production` environment is configured with required review by `jtracht`
-  and deployment restricted to main. Protect main with the `check` quality gate.
-- Set secret `DEPLOY_WEBHOOK_URL` in production. Do not log it or commit it.
+- Protect main with the `check` quality gate.
+- Set the repository secret `DEPLOY_WEBHOOK_URL`. Do not log it or commit it.
 - Production build needs no public environment variables. Workflow permissions
   are read-only for verification and contents:write only for release publication.
 
@@ -43,19 +42,15 @@ Only manual `release.yml` publishes `release` and calls a hosting webhook.
    the main-domain privacy notice covers the portfolio's subdomain, static hosting
    logs and preference storage. The live notice was reachable but did not explicitly
    mention `freelance.tracht-digital.de` on 13 October 2026; coverage needs review.
-2. Obtain explicit production release approval. Copy the full approved main SHA.
-3. Run the manual Production release workflow from main with that SHA. It refuses
-   a malformed SHA or a source not contained in main, reruns the complete checks,
-   and uploads the exact checked build. A failed gate cannot deploy.
-4. Approve the protected production environment. The job checks that the HTTPS
-   webhook secret exists before it updates the release branch.
-5. After notification it polls build-info.json for up to four minutes, matching
-   the approved SHA, then smoke-tests all sitemap routes for substantive HTML.
-6. Inspect mobile/desktop and contact/legal destinations on the live domain.
+2. Press the manual Release button on main, like on the other TDS sites: no
+   commit input and no approval step. It reruns the complete checks and uploads
+   the exact checked build. A failed gate cannot deploy.
+3. The job checks that the HTTPS webhook secret exists before it updates the
+   release branch.
+4. After notification it polls build-info.json for up to four minutes, matching
+   the released SHA, then smoke-tests all sitemap routes for substantive HTML.
+5. Inspect mobile/desktop and contact/legal destinations on the live domain.
    A published release branch alone is **not** a successful deployment.
-
-The site has not been released as part of the implementation. No host credentials,
-DNS configuration, webhook or production environment approval were supplied.
 
 ## Failure and rollback
 
@@ -63,9 +58,8 @@ A webhook failure or a stale/missing live stamp fails the workflow after the bra
 may already have changed. Check the host's Git deployment log, target directory,
 TLS and cache settings. Do not assume that failure means the old site is still live.
 
-To roll back, select a previously approved known-good main SHA and run the same
-manual workflow, with renewed release authorization. It rebuilds and verifies that
-source before publishing. Alternatively restore the saved static artifact through
+To roll back, revert the commit on main and press the same button. It rebuilds
+and verifies that source before publishing. Alternatively restore the saved static artifact through
 the host's deployment facility and compare its stamp. Verify all routes again.
 
 Existing TDS SSR release workflows are references only; no Node restart, server
