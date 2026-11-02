@@ -11,23 +11,28 @@ Verified light tokens: navy `#050F68`, bordeaux `#820933`, coral `#FF7A9C`, pape
 fixed navy surfaces use `--color-surface-navy` so they retain contrast in both modes.
 The portfolio rose panels are a local personal composition with fixed dark text.
 
-Fonts use the actual TDS mapping: Lato (`--font-display`), Plus Jakarta Sans
-(`--font-body`) and JetBrains Mono (`--font-mono`). Fontsource faces are imported
+The portfolio has its own typeface pair on purpose, so the person reads apart from
+the company site: Bricolage Grotesque (`--font-display`, overridden in `global.css`)
+and Instrument Sans (`--font-body`). JetBrains Mono (`--font-mono`) stays from TDS and,
+with the colours, cards and hard shadows, ties the site to the brand. Fontsource faces are imported
 in Astro frontmatter, preserving font URL rebasing and emitting local assets.
 No Google Fonts calls or other third-party font requests are made.
 
-The portfolio adds numbered side navigation, a personal portrait stage, editorial
+A fixed navy spine carries identity, numbered side navigation and values and meets the
+footer. The site adds a personal portrait stage with a constructed bordeaux quarter
+circle, the shared brand bar under each page heading, a bordeaux closing band, editorial
 headings, a career rail, skill disclosures and a credential gallery. Components
 use shared card/button/input geometry. Main content stays visible before scripting.
 CSS transforms support deliberate hover effects; Astro handles view transitions.
 Reduced motion disables decorative transitions and hover movement.
 
-Responsive breakpoints: 1150, 800 and 590px. Below 800px a native disclosure
+No gradients. Text stays at 0.68rem or larger. Dark fills take a coral hard shadow,
+never a navy one. Responsive breakpoints: 1150, 1000, 800 and 590px. Below 800px a native disclosure
 navigation replaces the sidebar. Actions and controls are at least 44px high.
 Dialogs use `margin:auto`, native focus trapping, Escape, a labeled close button
 and native focus return. Filtering uses accessible controls and live result counts.
 
-The portrait is right-aligned inside an asymmetric frame: its existing cut edge
+The portrait is right-aligned inside its frame: its existing cut edge
 coincides with the frame edge. The original photo is unchanged. The caption is
 a separate solid band. Navigation and the values block share one sticky container
 with bounded height so they cannot scroll over one another; short desktop

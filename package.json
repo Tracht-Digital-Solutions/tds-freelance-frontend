@@ -17,9 +17,9 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "5.2.10",
+    "@fontsource-variable/instrument-sans": "5.2.8",
     "@fontsource-variable/jetbrains-mono": "5.2.8",
-    "@fontsource-variable/plus-jakarta-sans": "5.2.8",
-    "@fontsource/lato": "5.2.7",
     "@tailwindcss/postcss": "4.3.3",
     "@tracht-digital-solutions/tds-shared": "0.62.0",
     "astro": "7.3.8",

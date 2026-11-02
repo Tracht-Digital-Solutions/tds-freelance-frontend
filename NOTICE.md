@@ -3,7 +3,7 @@
 - Astro, TypeScript, Zod, Tailwind CSS, Fontsource packaging, Cheerio and tsx:
   see their package LICENSE files (principally MIT/Apache-2.0 as applicable).
 - Playwright: Apache-2.0. axe-core/Playwright integration: MPL-2.0.
-- Lato, Plus Jakarta Sans and JetBrains Mono font files: SIL Open Font License.
+- Bricolage Grotesque, Instrument Sans and JetBrains Mono font files: SIL Open Font License.
   Installed Fontsource packages include the original OFL license text.
 - Sharp and its native components: see installed package notices/licenses.
 - `@tracht-digital-solutions/tds-shared`: proprietary/private package; access to
