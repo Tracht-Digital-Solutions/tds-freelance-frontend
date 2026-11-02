@@ -66,7 +66,7 @@ test('filters, details and certificate dialog work in both languages', async ({
     await page.locator('.reset-filter').click();
     await expect(page.locator('[data-filter-item]:visible')).toHaveCount(39);
     await page.locator('select[data-category]').selectOption('frontend');
-    await expect(page.locator('[data-filter-item]:visible')).toHaveCount(7);
+    await expect(page.locator('[data-filter-item]:visible')).toHaveCount(6);
     await page.locator('[data-search]').fill('nonexistent');
     await expect(page.locator('[data-no-results]')).toBeVisible();
     await page.goto(lang === 'de' ? '/zertifikate/' : '/en/certifications/');
@@ -87,7 +87,7 @@ test('filters, details and certificate dialog work in both languages', async ({
     await expect(page.locator('[data-filter-item]:visible')).toHaveCount(1);
     await page.locator('.reset-filter').click();
     await page.locator('select[data-kind]').selectOption('study');
-    await expect(page.locator('[data-filter-item]:visible')).toHaveCount(7);
+    await expect(page.locator('[data-filter-item]:visible')).toHaveCount(6);
     await page.locator('select[data-kind]').selectOption('development');
     await expect(page.locator('[data-filter-item]:visible')).toHaveCount(1);
   }
