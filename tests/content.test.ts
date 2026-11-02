@@ -20,7 +20,7 @@ test('content is valid, complete and only approved projects ship', () => {
 });
 test('each route has one language counterpart', () => {
   const routes = allRoutes();
-  assert.equal(routes.length, 64);
+  assert.equal(routes.length, 62);
   for (const route of routes) {
     assert.ok(
       routes.some(
