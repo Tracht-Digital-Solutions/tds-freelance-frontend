@@ -1,11 +1,9 @@
-name: Production release (manual)
+name: Release → release branch (manual)
+
+# Production, ONLY on the manual Actions button, like the other TDS sites: the
+# button builds main and goes live, with no commit input and no approval step.
 on:
   workflow_dispatch:
-    inputs:
-      source_commit:
-        description: Approved full 40-character commit SHA on main
-        required: true
-        type: string
 permissions:
   contents: read
   packages: read
@@ -16,11 +14,10 @@ jobs:
   quality:
     uses: ./.github/workflows/quality.yml
     with:
-      source_commit: ${{ inputs.source_commit }}
+      source_commit: ${{ github.sha }}
     secrets: inherit
   deploy:
     needs: quality
-    environment: production
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -69,11 +66,11 @@ jobs:
             } catch {}
             await new Promise(r=>setTimeout(r,10000));
           }
-          if(!matched)throw new Error('The approved commit is not serving on the host');
+          if(!matched)throw new Error('The released commit is not serving on the host');
           const sitemap=fs.readFileSync('dist/sitemap.xml','utf8');
           for(const [,url] of sitemap.matchAll(/<loc>(.*?)<\/loc>/g)) {
             const r=await fetch(url,{signal:AbortSignal.timeout(15000)});const html=await r.text();
             if(!r.ok||!html.includes('<h1')||!html.includes('rel="canonical"'))throw new Error(`Smoke failed: ${url}`);
           }
-          console.log('Approved commit and all sitemap routes verified live.');
+          console.log('Released commit and all sitemap routes verified live.');
           JS

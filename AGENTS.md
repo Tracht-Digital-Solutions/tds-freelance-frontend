@@ -12,7 +12,7 @@ Chrome; Linux needs `npx playwright install --with-deps chromium`.
 - No original PDFs, exact home address, availability, rates or unapproved references.
 - Keep all confidential research outside tracked files. Never publish projects automatically.
 - Use only confirmed proficiency levels. No invented metrics, quotes or customer screenshots.
-- Production is manual and needs explicit approval; never run release from a normal push.
+- Production goes out only on the manual Release button; never run release from a normal push.
 - Native interactions must remain usable without JS; respect reduced motion and focus.
 - Any `dialog` must declare `margin:auto`.
 
