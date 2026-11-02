@@ -995,6 +995,16 @@
       },
       {
         "title": {
+          "de": "Das Besondere",
+          "en": "What is special"
+        },
+        "text": {
+          "de": "WParted ist ein natives Windows-Programm in C++ mit Win32-Oberfläche, portabel und ohne Installation, ohne Telemetrie und ohne Netzwerkzugriff. Die Dateisysteme NTFS, exFAT und ext2/3/4 setzt es selbst um und verschiebt beim Verkleinern die Daten aus dem wegfallenden Bereich. Ein NTFS-Verkleinern wird vorher vollständig simuliert, und die Ergebnisse prüft die CI mit unabhängigen Werkzeugen wie e2fsck und ntfsresize.",
+          "en": "WParted is a native Windows program in C++ with a Win32 interface, portable with no installation, no telemetry and no network access. It implements the NTFS, exFAT and ext2/3/4 file systems itself and moves the data out of the area that goes away when shrinking. An NTFS shrink is simulated completely first, and CI checks the results with independent tools such as e2fsck and ntfsresize."
+        }
+      },
+      {
+        "title": {
           "de": "Sicherheit",
           "en": "Safety"
         },
