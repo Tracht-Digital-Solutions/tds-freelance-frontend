@@ -963,5 +963,73 @@
     "imageHeight": 751,
     "github": "https://github.com/jtracht/WParted",
     "website": "https://wparted.tracht-digital.de/"
+  },
+  {
+    "id": "pi-imager-android",
+    "approved": true,
+    "kind": "own",
+    "title": {
+      "de": "Pi Imager für Android",
+      "en": "Pi Imager for Android"
+    },
+    "summary": {
+      "de": "Meine freie Android-App, die Raspberry-Pi-Images ohne PC und ohne Root über USB-OTG schreibt.",
+      "en": "My free Android app that writes Raspberry Pi images over USB OTG, with no PC and no root."
+    },
+    "category": {
+      "de": "Open Source · Android-App",
+      "en": "Open source · Android app"
+    },
+    "stage": {
+      "de": "Version 0.5.0, auf Emulatoren geprüft, USB-Hardware noch offen",
+      "en": "Version 0.5.0, tested on emulators, USB hardware still open"
+    },
+    "role": {
+      "de": "Entwicklung · Privates Open-Source-Projekt",
+      "en": "Development · Private open-source project"
+    },
+    "tech": [
+      "Kotlin",
+      "Jetpack Compose",
+      "Android USB Host",
+      "libaums",
+      "GitHub Actions"
+    ],
+    "sections": [
+      {
+        "title": {
+          "de": "Projekt",
+          "en": "Project"
+        },
+        "text": {
+          "de": "Die App bringt den Ablauf des Raspberry Pi Imager aufs Handy: Betriebssystem aus dem offiziellen Katalog oder lokale Datei wählen, ersten Start einstellen, auf SD-Karte im USB-Kartenleser oder USB-Stick schreiben. Sie ist unabhängig und kein offizielles Produkt der Raspberry Pi Ltd.",
+          "en": "The app brings the Raspberry Pi Imager workflow to the phone: choose an operating system from the official catalog or a local file, set up the first boot, and write to an SD card in a USB reader or to a USB stick. It is independent and not an official product of Raspberry Pi Ltd."
+        }
+      },
+      {
+        "title": {
+          "de": "Das Besondere",
+          "en": "What is special"
+        },
+        "text": {
+          "de": "Eine native Oberfläche mit Kotlin und Jetpack Compose ersetzt die Qt-Oberfläche, Androids USB Host mit libaums den Laufwerkszugriff. Die Einrichtung für den ersten Start schreibt die App ohne Root direkt in die FAT32-Bootpartition der Image-Datei, für cloud-init, systemd und rpi-preseed. Vorbereitung und Schreiben laufen als Vordergrunddienste weiter. Neue stabile Upstream-Releases übernimmt eine Pipeline automatisch und baut daraus eine signierte APK.",
+          "en": "A native interface in Kotlin and Jetpack Compose replaces the Qt interface, and Android's USB host with libaums replaces drive access. The app writes first-boot setup directly into the image file's FAT32 boot partition with no root, for cloud-init, systemd and rpi-preseed. Preparation and writing continue as foreground services. A pipeline picks up new stable upstream releases automatically and builds a signed APK."
+        }
+      },
+      {
+        "title": {
+          "de": "Sicherheit und Prüfung",
+          "en": "Safety and testing"
+        },
+        "text": {
+          "de": "Katalog-Images werden per SHA-256 geprüft, und nach dem Schreiben liest die App jeden Sektor zurück. Getestet ist die App auf Android-Emulatoren, auch mit einem vollständigen offiziellen Image. Physische USB-Kartenleser und der erste Start auf einem Pi stehen noch aus.",
+          "en": "Catalog images are checked by SHA-256, and after writing the app reads every sector back. The app is tested on Android emulators, including with a complete official image. Physical USB card readers and the first boot on a Pi are still outstanding."
+        }
+      }
+    ],
+    "image": "/images/projects/pi-imager-android.webp",
+    "imageWidth": 1440,
+    "imageHeight": 900,
+    "github": "https://github.com/jtracht/rpi-imager-android"
   }
 ]
