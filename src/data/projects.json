@@ -674,62 +674,6 @@
     "imageHeight": 1440
   },
   {
-    "id": "nordholz-tischlerei",
-    "approved": true,
-    "kind": "study",
-    "title": {
-      "de": "Nordholz Tischlerei",
-      "en": "Nordholz Tischlerei"
-    },
-    "summary": {
-      "de": "Eine Handwerksseite mit Werkstattfotos, Leistungen, Teamvorstellung und Anfrage-Einstieg.",
-      "en": "A craft business website with workshop photography, services, team introduction and an enquiry entry point."
-    },
-    "category": {
-      "de": "UI/UX & Design",
-      "en": "UI/UX & design"
-    },
-    "stage": {
-      "de": "Designstudie",
-      "en": "Design study"
-    },
-    "role": {
-      "de": "Eigene Gestaltung & Oberflächenkonzeption",
-      "en": "Own design & interface concept"
-    },
-    "tech": [
-      "UI/UX",
-      "Webdesign",
-      "Informationsarchitektur"
-    ],
-    "sections": [
-      {
-        "title": {
-          "de": "Gestaltungsaufgabe",
-          "en": "Design brief"
-        },
-        "text": {
-          "de": "Eine Handwerksseite mit Werkstattfotos, Leistungen, Teamvorstellung und Anfrage-Einstieg.",
-          "en": "A craft business website with workshop photography, services, team introduction and an enquiry entry point."
-        }
-      },
-      {
-        "title": {
-          "de": "Einordnung",
-          "en": "Context"
-        },
-        "text": {
-          "de": "Diese Arbeit ist eine Designstudie. Die Abbildung zeigt meinen Entwurf und ist kein Beleg für einen Kundenauftrag oder eine veröffentlichte Software.",
-          "en": "This work is a design study. The image shows my design, not evidence of a client commission or released software."
-        }
-      }
-    ],
-    "image": "/images/projects/nordholz-tischlerei.webp",
-    "careerId": "tracht-digital-solutions",
-    "imageWidth": 949,
-    "imageHeight": 1658
-  },
-  {
     "id": "mira-markt",
     "approved": true,
     "kind": "study",
