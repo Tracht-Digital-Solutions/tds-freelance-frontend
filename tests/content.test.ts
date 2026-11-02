@@ -14,7 +14,7 @@ test('content is valid, complete and only approved projects ship', () => {
   validateContent();
   assert.equal(certificates.length, 13);
   assert.equal(career.length, 4);
-  assert.equal(projects.length, 20);
+  assert.equal(projects.length, 19);
   for (const p of projects) assert.equal(projectSchema.parse(p).approved, true);
   assert.throws(() => projectSchema.parse({ ...projects[0], approved: false }));
 });
