@@ -66,6 +66,7 @@ const intro = {
             Tracht<span class="pink-dot">.</span>
           </span>
         </h1>
+        <span class="tds-brandbar page-rule" aria-hidden="true"></span>
         <h2>{profile.role[lang]}</h2>
         <p>
           {copy(
@@ -176,6 +177,7 @@ const intro = {
       <h1 transition:name={project ? `project-${project.id}` : 'page-heading'}>
         {detail ? (entry?.company ?? project?.title[lang]) : intro[view]}
       </h1>
+      <span class="tds-brandbar page-rule" aria-hidden="true"></span>
       {detail ? (
         <p>{entry?.summary[lang] ?? project?.summary[lang]}</p>
       ) : (
