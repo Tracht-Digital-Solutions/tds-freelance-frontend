@@ -99,7 +99,7 @@
         }
       }
     ],
-    "image": "/images/projects/hof-meerheck-2611.webp",
+    "image": "/images/projects/hof-meerheck-2611b.webp",
     "website": "https://hof-meerheck.de/",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
@@ -207,12 +207,12 @@
     "approved": true,
     "kind": "own",
     "title": {
-      "de": "TDShop",
-      "en": "TDShop"
+      "de": "Shop von Tracht Digital Solutions",
+      "en": "Shop by Tracht Digital Solutions"
     },
     "summary": {
-      "de": "Mein Shop für digitale Leistungen mit klarem Ab-Preis, dazu Technik mit eigener Einschätzung.",
-      "en": "My shop for digital services with a clear starting price, plus hardware with my own assessment."
+      "de": "Mein Shop für digitale Leistungen: klarer Ab-Preis und Angebot per Anfrage, dazu Technik mit eigener Einschätzung.",
+      "en": "My shop for digital services: a clear starting price and a quote on request, plus hardware with my own assessment."
     },
     "category": {
       "de": "E-Commerce",
@@ -234,8 +234,8 @@
           "en": "Concept"
         },
         "text": {
-          "de": "TDShop präsentiert Hardware, Netzwerk und Software für die Digitalisierung im Betrieb. Die Produktdarstellung ergänzt Herstellerinformationen um eine eigene Einordnung.",
-          "en": "TDShop presents hardware, networking and software for business digitalisation. Product presentation complements manufacturer information with my own assessment."
+          "de": "Der Shop präsentiert Hardware, Netzwerk und Software für die Digitalisierung im Betrieb. Die Produktdarstellung ergänzt Herstellerinformationen um eine eigene Einordnung.",
+          "en": "The shop presents hardware, networking and software for business digitalisation. Product presentation complements manufacturer information with my own assessment."
         }
       },
       {
@@ -249,7 +249,7 @@
         }
       }
     ],
-    "image": "/images/projects/tdshop-2611.webp",
+    "image": "/images/projects/tdshop-2611b.webp",
     "website": "https://shop.tracht-digital.de/",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
@@ -302,7 +302,7 @@
         }
       }
     ],
-    "image": "/images/projects/demo1-2611.webp",
+    "image": "/images/projects/demo1-2611b.webp",
     "website": "https://demo1.tracht-digital.de/",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
@@ -355,7 +355,7 @@
         }
       }
     ],
-    "image": "/images/projects/demo2-2611.webp",
+    "image": "/images/projects/demo2-2611b.webp",
     "website": "https://demo2.tracht-digital.de/de/",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
@@ -408,7 +408,7 @@
         }
       }
     ],
-    "image": "/images/projects/demo3-2611.webp",
+    "image": "/images/projects/demo3-2611b.webp",
     "website": "https://demo3.tracht-digital.de/",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
@@ -451,7 +451,7 @@
         }
       }
     ],
-    "image": "/images/projects/demo4-2611.webp",
+    "image": "/images/projects/demo4-2611b.webp",
     "imageWidth": 960,
     "imageHeight": 600,
     "website": "https://demo4.tracht-digital.de/"
@@ -777,8 +777,8 @@
       "en": "Digital business card"
     },
     "summary": {
-      "de": "Meine eigene digitale Visitenkarte: Kontaktdaten zum Scannen statt Abtippen.",
-      "en": "My own digital business card: contact details that can be scanned rather than typed."
+      "de": "Meine eigene digitale Visitenkarte: Kontaktdaten zum Scannen statt Abtippen, mit vCard und QR-Code.",
+      "en": "My own digital business card: contact details to scan rather than type, with a vCard and a QR code."
     },
     "category": {
       "de": "Webentwicklung",
@@ -792,7 +792,7 @@
       "de": "Konzeption & Webentwicklung",
       "en": "Concept & web development"
     },
-    "tech": ["Webentwicklung", "Digitale Visitenkarte"],
+    "tech": ["Astro", "vCard", "QR-Code", "Webentwicklung"],
     "sections": [
       {
         "title": {
@@ -800,8 +800,8 @@
           "en": "Idea"
         },
         "text": {
-          "de": "Die digitale Visitenkarte bündelt meine geschäftlichen Kontaktdaten in einer direkt aufrufbaren Webansicht.",
-          "en": "The digital business card brings my business contact details together in a directly accessible web view."
+          "de": "Die Karte steht oben wie eine gedruckte Visitenkarte im Format 85 × 55 mm. Darunter liegen Anrufen, WhatsApp und E-Mail, dann Leistungen, Projekte, Shop, Ratgeber und dieses Profil.",
+          "en": "The card sits at the top like a printed business card in the 85 × 55 mm format. Below it are call, WhatsApp and email, then services, projects, shop, guides and this profile."
         }
       },
       {
@@ -810,12 +810,12 @@
           "en": "Personal use"
         },
         "text": {
-          "de": "Ich nutze sie als eigene Karte und als konkrete Arbeitsprobe für diesen Kontaktweg.",
-          "en": "I use it as my own card and as a practical example of this contact format."
+          "de": "„Kontakt speichern“ lädt eine vCard mit Telefon, Mobil, E-Mail, Profilen und Foto. Der QR-Code entsteht beim Build und führt auf die Seite. Ich nutze die Karte selbst und zeige sie als Arbeitsprobe.",
+          "en": "“Save contact” loads a vCard with phone, mobile, email, profiles and photo. The QR code is generated at build time and leads to the page. I use the card myself and show it as a work sample."
         }
       }
     ],
-    "image": "/images/projects/digitale-visitenkarte-2611.webp",
+    "image": "/images/projects/digitale-visitenkarte-2611b.webp",
     "website": "https://tracht-digital.de/visitenkarte",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 1440,

@@ -18,7 +18,7 @@
 - CVs in DE/EN agree on four roles and education. Original certificate documents
   supply exact learning-path titles, issuers and dates. No proficiency levels
   beyond documented knowledge are inferred. Two projects were individually approved
-  in the task: the TDS company site and TD Tools. Other research is excluded from Git.
+  in the task: the TDS company site and Online-Tools. Other research is excluded from Git.
 
 ## Implementation
 
