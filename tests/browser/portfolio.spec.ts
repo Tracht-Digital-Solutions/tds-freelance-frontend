@@ -41,6 +41,14 @@ test('navigation is client-side, history works, language and theme persist', asy
   await expect(page).toHaveURL(/\/karriere\/$/);
   await page.goForward();
   await expect(page).toHaveURL(/\/karriere\/amotiq\/$/);
+  // Hovering the language slider must not move it; only the press does.
+  const thumb = page.locator('.lang-thumb');
+  const before = await thumb.evaluate((el) => getComputedStyle(el).translate);
+  await page.locator('[data-locale="en"]').hover();
+  await page.waitForTimeout(300);
+  expect(await thumb.evaluate((el) => getComputedStyle(el).translate)).toBe(
+    before,
+  );
   await page.locator('[data-locale="en"]').click();
   await expect(page).toHaveURL(/\/en\/career\/amotiq\/$/);
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
@@ -58,11 +66,8 @@ test('filters, details and certificate dialog work in both languages', async ({
     await page.goto(lang === 'de' ? '/faehigkeiten/' : '/en/skills/');
     await page.locator('[data-search]').fill('ASP.NET');
     await expect(page.locator('[data-filter-item]:visible')).toHaveCount(1);
-    await page.locator('.skill-card:visible summary').click();
-    await expect(page.locator('.skill-card:visible')).toHaveAttribute(
-      'open',
-      '',
-    );
+    await expect(page.locator('.skill-card:visible summary')).toHaveCount(0);
+    await expect(page.locator('select[data-level]')).toHaveCount(0);
     await page.locator('.reset-filter').click();
     await expect(page.locator('[data-filter-item]:visible')).toHaveCount(39);
     await page.locator('select[data-category]').selectOption('frontend');

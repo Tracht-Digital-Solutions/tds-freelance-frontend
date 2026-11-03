@@ -185,8 +185,9 @@ main:focus {
   font-size: 0.75rem;
   font-weight: 600;
 }
-/* A two-position slider: the thumb sits on the current language and slides
-   to the other one on hover or focus, which is where the link leads. */
+/* A two-position slider: the thumb sits on the current language and only
+   slides to the other one once the link is pressed (client.ts flips
+   data-current on click); hover and focus leave it where it is. */
 .lang-switch {
   --jt-lang-track: var(--color-soft);
   --jt-lang-line: var(--color-line);
@@ -225,21 +226,6 @@ main:focus {
 .lang-switch[data-current='de'] [data-option='de'],
 .lang-switch[data-current='en'] [data-option='en'] {
   color: var(--jt-lang-on-thumb);
-}
-@media (hover: hover) {
-  .language:hover .lang-switch[data-current='de'] .lang-thumb {
-    translate: 100% 0;
-  }
-  .language:hover .lang-switch[data-current='en'] .lang-thumb {
-    translate: 0 0;
-  }
-  .language:hover .lang-switch [data-option] {
-    color: var(--jt-lang-on-thumb);
-  }
-  .language:hover .lang-switch[data-current='de'] [data-option='de'],
-  .language:hover .lang-switch[data-current='en'] [data-option='en'] {
-    color: var(--jt-lang-off);
-  }
 }
 .theme-toggle {
   font-size: 1.4rem;
@@ -1099,20 +1085,13 @@ p + p {
   gap: 18px;
 }
 .skill-card {
-  align-self: start;
-  border-radius: var(--tds-radius-card);
-  background: var(--color-soft);
-}
-.skill-card summary {
   display: flex;
   align-items: center;
   gap: 14px;
   min-height: 80px;
   padding: 16px;
-  list-style: none;
-}
-.skill-card summary::-webkit-details-marker {
-  display: none;
+  border-radius: var(--tds-radius-card);
+  background: var(--color-soft);
 }
 .skill-symbol {
   display: flex;
@@ -1147,25 +1126,6 @@ p + p {
   display: block;
   margin-top: 3px;
   font-size: 0.8rem;
-  color: var(--color-muted);
-}
-.expand-icon {
-  margin-left: auto;
-  font-size: 1.2rem;
-  color: var(--color-accent);
-}
-.skill-card[open] .expand-icon {
-  transform: rotate(45deg);
-}
-.skill-detail {
-  padding: 0 18px 16px;
-}
-.skill-detail .tiny-label {
-  color: var(--color-accent);
-}
-.skill-detail p {
-  margin: 8px 0 0;
-  font-size: 0.92rem;
   color: var(--color-muted);
 }
 
@@ -1562,22 +1522,13 @@ dialog img {
 .contact-card.navy {
   box-shadow: var(--jt-shadow-coral);
 }
-:where(
-  .feature-card,
-  .project-card,
-  .skill-card,
-  .certificate-card,
-  .contact-card
-) {
+:where(.feature-card, .project-card, .certificate-card, .contact-card) {
   transition: translate 160ms ease;
 }
-:where(
-    .feature-card,
-    .project-card,
-    .skill-card,
-    .certificate-card,
-    .contact-card
-  ):where(:hover, :focus-within):not(:active) {
+:where(.feature-card, .project-card, .certificate-card, .contact-card):where(
+    :hover,
+    :focus-within
+  ):not(:active) {
   translate: -2px -2px;
   box-shadow: var(--tds-shadow-hard-hover);
 }
