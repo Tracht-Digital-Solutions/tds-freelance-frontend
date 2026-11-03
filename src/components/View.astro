@@ -430,12 +430,6 @@ const intro = {
           aria-live="polite"
           data-filter-count
         ></p>
-        <p class="subtle-note">
-          {copy(
-            'view-skills-documented-in-my-cv-without-unconfirmed-proficiency-ratings-or-percentage-bars',
-            lang,
-          )}
-        </p>
         <div class="skill-grid">
           {skills.map((s) => (
             <details
@@ -449,7 +443,7 @@ const intro = {
               <summary>
                 {skillIcon(s.name) ? (
                   <span
-                    class="skill-symbol"
+                    class="skill-symbol skill-symbol--logo"
                     aria-hidden="true"
                     set:html={skillIcon(s.name)}
                   />
@@ -699,12 +693,6 @@ const intro = {
           <span class="credential-number">
             13<span> / {copy('view-learning-certificates', lang)}</span>
           </span>
-          <p>
-            {copy(
-              'view-these-certificates-document-completed-learning-paths-on-linkedin-learning-they-comple',
-              lang,
-            )}
-          </p>
         </div>
         <section
           data-filter-scope
@@ -941,7 +929,12 @@ const intro = {
           </div>
           <div>
             <a href={`mailto:${profile.email}`}>{profile.email} ↗</a>
-            <a href="tel:+491788224022">{profile.phone} ↗</a>
+            <a href="tel:+4941518788264">
+              {copy('view-phone', lang)}: {profile.phone} ↗
+            </a>
+            <a href="tel:+491788224022">
+              {copy('view-mobile', lang)}: {profile.mobile} ↗
+            </a>
             <div class="social-links">
               <a href={profile.linkedin}>LinkedIn ↗</a>
               <a href={profile.github}>GitHub ↗</a>

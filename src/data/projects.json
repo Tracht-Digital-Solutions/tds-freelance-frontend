@@ -48,7 +48,7 @@
     ],
     "website": "https://toner-tintenoffice.de/",
     "careerId": "tracht-digital-solutions",
-    "image": "/images/projects/toner-tintenoffice.webp",
+    "image": "/images/projects/toner-tintenoffice-2611.webp",
     "imageWidth": 1000,
     "imageHeight": 563
   },
@@ -99,7 +99,7 @@
         }
       }
     ],
-    "image": "/images/projects/hof-meerheck.webp",
+    "image": "/images/projects/hof-meerheck-2611.webp",
     "website": "https://hof-meerheck.de/",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
@@ -249,7 +249,7 @@
         }
       }
     ],
-    "image": "/images/projects/tdshop.webp",
+    "image": "/images/projects/tdshop-2611.webp",
     "website": "https://shop.tracht-digital.de/",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
@@ -302,7 +302,7 @@
         }
       }
     ],
-    "image": "/images/projects/demo1.webp",
+    "image": "/images/projects/demo1-2611.webp",
     "website": "https://demo1.tracht-digital.de/",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
@@ -355,7 +355,7 @@
         }
       }
     ],
-    "image": "/images/projects/demo2.webp",
+    "image": "/images/projects/demo2-2611.webp",
     "website": "https://demo2.tracht-digital.de/de/",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
@@ -408,11 +408,53 @@
         }
       }
     ],
-    "image": "/images/projects/demo3.webp",
+    "image": "/images/projects/demo3-2611.webp",
     "website": "https://demo3.tracht-digital.de/",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
     "imageHeight": 600
+  },
+  {
+    "id": "schreinerei-lindgrund",
+    "approved": true,
+    "kind": "demo",
+    "title": {
+      "de": "Schreinerei Lindgrund",
+      "en": "Lindgrund joinery"
+    },
+    "summary": {
+      "de": "Demo-Webseite einer fiktiven Schreinerei: so kann die Seite eines Handwerksbetriebs aussehen.",
+      "en": "Demo website for a fictional joinery: what a craft business website can look like."
+    },
+    "category": {
+      "de": "Interaktive Demos",
+      "en": "Interactive demos"
+    },
+    "stage": {
+      "de": "Demonstration",
+      "en": "Demonstration"
+    },
+    "role": {
+      "de": "Konzeption, Gestaltung & Umsetzung",
+      "en": "Concept, design & implementation"
+    },
+    "tech": ["Webdesign", "Responsive", "SEO"],
+    "sections": [
+      {
+        "title": {
+          "de": "Projekt",
+          "en": "Project"
+        },
+        "text": {
+          "de": "Arbeiten, Leistungen, Werkstatt, Jobs und Kontakt auf einer Unternehmensseite. Betrieb und Inhalte sind frei erfunden.",
+          "en": "Work, services, workshop, jobs and contact on one company site. The business and its content are fictional."
+        }
+      }
+    ],
+    "image": "/images/projects/demo4-2611.webp",
+    "imageWidth": 960,
+    "imageHeight": 600,
+    "website": "https://demo4.tracht-digital.de/"
   },
   {
     "id": "kinderarztpraxis-sonnengarten",
@@ -461,7 +503,7 @@
         }
       }
     ],
-    "image": "/images/projects/kinderarztpraxis-sonnengarten.webp",
+    "image": "/images/projects/kinderarztpraxis-sonnengarten-2611.webp",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
     "imageHeight": 1440
@@ -513,7 +555,7 @@
         }
       }
     ],
-    "image": "/images/projects/jurisblick.webp",
+    "image": "/images/projects/jurisblick-2611.webp",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
     "imageHeight": 1440
@@ -565,7 +607,7 @@
         }
       }
     ],
-    "image": "/images/projects/serverspace24.webp",
+    "image": "/images/projects/serverspace24-2611.webp",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
     "imageHeight": 1440
@@ -617,7 +659,7 @@
         }
       }
     ],
-    "image": "/images/projects/mira-markt.webp",
+    "image": "/images/projects/mira-markt-2611.webp",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
     "imageHeight": 540
@@ -669,7 +711,7 @@
         }
       }
     ],
-    "image": "/images/projects/mkb-beratung.webp",
+    "image": "/images/projects/mkb-beratung-2611.webp",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 724,
     "imageHeight": 2172
@@ -721,7 +763,7 @@
         }
       }
     ],
-    "image": "/images/projects/prisma-coat.webp",
+    "image": "/images/projects/prisma-coat-2611.webp",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
     "imageHeight": 960
@@ -773,7 +815,7 @@
         }
       }
     ],
-    "image": "/images/projects/digitale-visitenkarte.webp",
+    "image": "/images/projects/digitale-visitenkarte-2611.webp",
     "website": "https://tracht-digital.de/visitenkarte",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 1440,
@@ -836,10 +878,53 @@
         }
       }
     ],
-    "image": "/images/projects/wparted.webp",
+    "image": "/images/projects/wparted-2611.webp",
     "imageWidth": 1164,
     "imageHeight": 751,
     "github": "https://github.com/jtracht/WParted",
+    "website": "https://wparted.tracht-digital.de/"
+  },
+  {
+    "id": "wparted-website",
+    "approved": true,
+    "kind": "own",
+    "careerId": "tracht-digital-solutions",
+    "title": {
+      "de": "WParted-Webseite",
+      "en": "WParted website"
+    },
+    "summary": {
+      "de": "Die zweisprachige Projektseite zu WParted, ausgerichtet auf Suchmaschinen und KI-Antworten.",
+      "en": "The bilingual project page for WParted, set up for search engines and AI answers."
+    },
+    "category": {
+      "de": "Webentwicklung",
+      "en": "Web development"
+    },
+    "stage": {
+      "de": "Live-Website",
+      "en": "Live website"
+    },
+    "role": {
+      "de": "Konzeption & Entwicklung",
+      "en": "Concept & development"
+    },
+    "tech": ["Astro", "TypeScript", "TDS Designsystem", "Stripe"],
+    "sections": [
+      {
+        "title": {
+          "de": "Projekt",
+          "en": "Project"
+        },
+        "text": {
+          "de": "Die Seite erklärt WParted, zeigt Bilder und Versionen und bietet den Download an. Version und Release-Notes kommen aus der eigenen Plattform, Spenden laufen über Stripe.",
+          "en": "The site explains WParted, shows screenshots and versions and offers the download. Version and release notes come from my own platform; donations run through Stripe."
+        }
+      }
+    ],
+    "image": "/images/projects/wparted-website-2611.webp",
+    "imageWidth": 960,
+    "imageHeight": 600,
     "website": "https://wparted.tracht-digital.de/"
   },
   {
@@ -905,7 +990,7 @@
         }
       }
     ],
-    "image": "/images/projects/pi-imager-android.webp",
+    "image": "/images/projects/pi-imager-android-2611.webp",
     "imageWidth": 1440,
     "imageHeight": 900,
     "github": "https://github.com/jtracht/rpi-imager-android"
@@ -967,7 +1052,7 @@
         }
       }
     ],
-    "image": "/images/projects/rampi-os.webp",
+    "image": "/images/projects/rampi-os-2611.webp",
     "imageWidth": 1200,
     "imageHeight": 644,
     "github": "https://github.com/jtracht/rampi-os"
@@ -1020,7 +1105,7 @@
         }
       }
     ],
-    "image": "/images/projects/gitea-claude-plugin.webp",
+    "image": "/images/projects/gitea-claude-plugin-2611.webp",
     "imageWidth": 1200,
     "imageHeight": 750,
     "github": "https://github.com/Tracht-Digital-Solutions/gitea-claude-plugin"
