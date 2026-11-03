@@ -59,18 +59,6 @@ it visually. Image previews remain technically saveable; make no contrary claim.
 The gallery describes learning-path certificates, not university degrees or exams.
 When changing the catalogue size, update the Zod count, overview count and tests.
 
-## Benefits, savings calculator and FAQ
-
-`src/data/benefits.ts` holds the home page's service benefits, calculator copy
-and FAQ. Situations and outcomes mirror the main site's service catalogue
-(`tds-landingpage-frontend/src/lib/services.ts`); keep them in step and link
-services to the main domain. The calculator only multiplies visitor input
-(`src/data/savings.ts`, 46 working weeks, 8-hour day); its defaults are labelled
-example values. Never present a saved-hours figure as a measured or promised
-result. Every FAQ answer is rendered visibly and as `FAQPage` JSON-LD;
-`verify-build.ts` checks both. `public/llms.txt` summarises the site for AI
-search; update it when pages or services change.
-
 ## Validation
 
 Run `npm run quality` before merging. It covers Zod/TypeScript, static HTML,

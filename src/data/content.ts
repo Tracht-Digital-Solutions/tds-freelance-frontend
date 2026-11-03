@@ -26,8 +26,8 @@ export const views = [
     paths: { de: '/', en: '/en/' },
     title: l('Start', 'Home'),
     description: l(
-      'Julian Tracht, Freelance Fullstack-Entwickler aus Schwarzenbek: Abläufe digitalisieren, automatisieren und Shops anbinden. Mit Rechner für die Zeitersparnis.',
-      'Julian Tracht, freelance full-stack developer in Germany: digitalizing workflows, automation and shop integrations. With a time-savings calculator.',
+      'Julian Tracht: Fullstack-Entwicklung, Projektmanagement und digitale Lösungen. Persönlichkeit, Berufserfahrung und Kompetenzen im Überblick.',
+      'Meet Julian Tracht: full-stack development, project management and digital solutions. Explore his background, skills and approach.',
     ),
   },
   {

@@ -64,28 +64,6 @@ assert.ok(
   (await files('dist')).some((f) => f.endsWith('.woff2')),
   'Local fonts missing',
 );
-for (const home of ['dist/index.html', 'dist/en/index.html']) {
-  const $ = load(await readFile(home, 'utf8'));
-  const graph = $('script[type="application/ld+json"]')
-    .toArray()
-    .flatMap((n) => JSON.parse($(n).text())['@graph'] ?? []);
-  const faq = graph.find((n: { '@type': string }) => n['@type'] === 'FAQPage');
-  assert.ok(faq, `FAQPage missing: ${home}`);
-  // Every structured answer must also be visible on the page.
-  const text = $('main').text().replace(/\s+/g, ' ');
-  for (const q of faq.mainEntity)
-    assert.ok(
-      text.includes(q.acceptedAnswer.text),
-      `FAQ not visible: ${q.name}`,
-    );
-  assert.equal($('[data-calculator] input').length, 3, home);
-  assert.ok($('[data-result="year"]').text().trim(), 'Static savings result');
-}
-assert.ok(
-  (await readFile('dist/sitemap.xml', 'utf8')).includes('hreflang="en"'),
-  'Sitemap language alternates missing',
-);
-assert.ok(await stat('dist/llms.txt'));
 assert.ok(await stat('dist/images/og-de.png'));
 assert.ok(await stat('dist/images/og-en.png'));
 console.log(
