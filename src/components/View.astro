@@ -17,6 +17,15 @@ import {
   type Locale,
   type ViewId,
 } from '../data/content';
+import {
+  serviceBenefits,
+  serviceUrl,
+  benefitsCopy,
+  calculatorCopy,
+  faqCopy,
+  faqFor,
+} from '../data/benefits';
+import { savings, savingsDefaults, formatHours } from '../data/savings';
 interface Props {
   lang: Locale;
   view: ViewId;
@@ -34,6 +43,7 @@ const date = (value: string) =>
     year: 'numeric',
     timeZone: 'UTC',
   }).format(new Date(value));
+const example = savings(savingsDefaults);
 const intro = {
   about: copy(
     'view-curiosity-is-where-i-start-good-software-is-where-i-m-headed',
@@ -159,6 +169,111 @@ const intro = {
         </p>
         <span class="card-link">{copy('view-my-approach', lang)} ↗</span>
       </a>
+    </section>
+    <section class="benefits" aria-labelledby="benefits-title">
+      <div class="section-head">
+        <span class="tiny-label">{benefitsCopy.label[lang]}</span>
+        <h2 id="benefits-title">{benefitsCopy.title[lang]}</h2>
+        <p>{benefitsCopy.intro[lang]}</p>
+      </div>
+      <div class="benefit-grid">
+        {serviceBenefits.map((s, i) => (
+          <article class="benefit-card">
+            <span class="benefit-index" aria-hidden="true">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <h3>{s.title[lang]}</h3>
+            <p class="benefit-before">
+              <span class="tiny-label">{benefitsCopy.before[lang]}</span>
+              {s.before[lang]}
+            </p>
+            <span class="tiny-label">{benefitsCopy.after[lang]}</span>
+            <ul class="benefit-list">
+              {s.outcomes.map((o) => (
+                <li>{o[lang]}</li>
+              ))}
+            </ul>
+            <a class="card-link" href={serviceUrl(s.path[lang])}>
+              {benefitsCopy.more[lang]}
+              <span class="sr-only">: {s.title[lang]}</span> ↗
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+    <section
+      class="calculator navy"
+      id={lang === 'de' ? 'zeitersparnis' : 'time-savings'}
+      aria-labelledby="calculator-title"
+    >
+      <div class="calculator-copy">
+        <span class="tiny-label">{calculatorCopy.label[lang]}</span>
+        <h2 id="calculator-title">{calculatorCopy.title[lang]}</h2>
+        <p>{calculatorCopy.intro[lang]}</p>
+        <form class="calculator-form" data-calculator data-lang={lang}>
+          {(
+            [
+              ['minutes', 1, 600, 1],
+              ['perWeek', 1, 5000, 1],
+              ['share', 0, 100, 5],
+            ] as const
+          ).map(([key, min, max, step]) => (
+            <label>
+              <span>{calculatorCopy[key][lang]}</span>
+              <input
+                type="number"
+                name={key}
+                inputmode="numeric"
+                min={min}
+                max={max}
+                step={step}
+                value={savingsDefaults[key]}
+                required
+              />
+            </label>
+          ))}
+        </form>
+      </div>
+      <div class="calculator-result">
+        <p>
+          <output data-result="month">
+            {formatHours(example.month, lang)}
+          </output>
+          <span>{calculatorCopy.month[lang]}</span>
+        </p>
+        <p class="calculator-year">
+          <output data-result="year">{formatHours(example.year, lang)}</output>
+          <span>{calculatorCopy.year[lang]}</span>
+        </p>
+        <p>
+          <output data-result="days">{formatHours(example.days, lang)}</output>
+          <span>{calculatorCopy.days[lang]}</span>
+        </p>
+        <small>{calculatorCopy.formula[lang]}</small>
+        <small>{calculatorCopy.note[lang]}</small>
+        <a class="calculator-cta" href={contactUrl(lang)}>
+          {calculatorCopy.cta[lang]} ↗
+        </a>
+      </div>
+    </section>
+    <section class="faq" aria-labelledby="faq-title">
+      <div class="section-head">
+        <span class="tiny-label">{faqCopy.label[lang]}</span>
+        <h2 id="faq-title">{faqCopy.title[lang]}</h2>
+      </div>
+      <div class="faq-list">
+        {faqFor(lang).map((item, i) => (
+          <details open={i === 0}>
+            <summary>
+              <span>{item.q}</span>
+              <span class="faq-icon" aria-hidden="true">
+                ＋
+              </span>
+            </summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
     </section>
     <section class="closing-line">
       <h2>{copy('view-something-good-starts-with-a-clear-idea', lang)}</h2>

@@ -8,6 +8,32 @@ import {
   readPrefs,
 } from '@tracht-digital-solutions/tds-shared/prefs';
 import { navigate } from 'astro:transitions/client';
+import { savings, formatHours } from '../data/savings';
+function initCalculator(form: HTMLFormElement) {
+  const section = form.closest('section');
+  const value = (name: string) =>
+    Number((form.elements.namedItem(name) as HTMLInputElement).value);
+  const update = () => {
+    const result = savings({
+      minutes: value('minutes'),
+      perWeek: value('perWeek'),
+      share: value('share'),
+    });
+    for (const key of ['month', 'year', 'days'] as const) {
+      const output = section?.querySelector<HTMLOutputElement>(
+        `[data-result="${key}"]`,
+      );
+      if (output)
+        output.textContent = formatHours(
+          result[key],
+          form.dataset.lang ?? 'de',
+        );
+    }
+  };
+  form.oninput = update;
+  form.onsubmit = (event) => event.preventDefault();
+  update();
+}
 function initialize() {
   const connection = (
     navigator as Navigator & { connection?: { saveData?: boolean } }
@@ -85,6 +111,9 @@ function initialize() {
         };
       update();
     });
+  document
+    .querySelectorAll<HTMLFormElement>('[data-calculator]')
+    .forEach(initCalculator);
   document
     .querySelectorAll<HTMLButtonElement>('[data-dialog-target]')
     .forEach((button) => {

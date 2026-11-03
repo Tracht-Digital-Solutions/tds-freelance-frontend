@@ -16,6 +16,7 @@ import {
   type Locale,
   type ViewId,
 } from '../data/content';
+import { serviceBenefits, serviceUrl, faqFor } from '../data/benefits';
 interface Props {
   lang: Locale;
   view: ViewId;
@@ -38,7 +39,12 @@ const path = page.paths[lang] + (detail ? `${detail}/` : '');
 const alternate = page.paths[other] + (detail ? `${detail}/` : '');
 const canonical = new URL(path, Astro.site).href;
 const pageTitle =
-  title ?? (view === 'home' ? profile.role[lang] : page.title[lang]);
+  title ??
+  (view === 'home'
+    ? lang === 'de'
+      ? 'Freelance Fullstack-Entwickler & Projektmanagement'
+      : 'Freelance Full-Stack Developer & Project Management'
+    : page.title[lang]);
 const desc = description ?? page.description[lang];
 const currentProject =
   view === 'projects' ? projects.find((p) => p.id === detail) : undefined;
@@ -51,9 +57,39 @@ const schema = {
       '@id': `${Astro.site}#julian`,
       name: profile.name,
       jobTitle: profile.role[lang],
+      description: views[0].description[lang],
       url: Astro.site?.href,
+      email: `mailto:${profile.email}`,
       image: new URL('/images/julian-840.webp', Astro.site).href,
       sameAs: [profile.github, profile.linkedin],
+      knowsLanguage: ['de', 'en'],
+      knowsAbout: [
+        'C#',
+        '.NET',
+        'TypeScript',
+        'Vue',
+        'React',
+        'REST APIs',
+        'Shopware 6',
+        'WooCommerce',
+        'Magento 2',
+        lang === 'de' ? 'Projektmanagement' : 'Project management',
+        lang === 'de' ? 'Prozessautomatisierung' : 'Process automation',
+      ],
+      makesOffer: serviceBenefits.map((s) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: s.title[lang],
+          description: s.outcomes.map((o) => o[lang]).join('. ') + '.',
+          url: serviceUrl(s.path[lang]),
+          provider: {
+            '@type': 'Organization',
+            name: profile.company,
+            url: 'https://tracht-digital.de',
+          },
+        },
+      })),
       worksFor: {
         '@type': 'Organization',
         name: profile.company,
@@ -99,6 +135,20 @@ const schema = {
             ...(currentProject.image
               ? { image: new URL(currentProject.image, Astro.site).href }
               : {}),
+          },
+        ]
+      : []),
+    ...(view === 'home' && !notFound
+      ? [
+          {
+            '@type': 'FAQPage',
+            '@id': `${canonical}#faq`,
+            inLanguage: lang,
+            mainEntity: faqFor(lang).map((item) => ({
+              '@type': 'Question',
+              name: item.q,
+              acceptedAnswer: { '@type': 'Answer', text: item.a },
+            })),
           },
         ]
       : []),
@@ -171,7 +221,9 @@ const schema = {
         />
       </>
     )}
+    <meta name="author" content={profile.name} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={profile.name} />
     <meta property="og:title" content={`${pageTitle} · Julian Tracht`} />
     <meta property="og:description" content={desc} />
     <meta property="og:url" content={canonical} />
@@ -194,7 +246,12 @@ const schema = {
       type="font/woff2"
       crossorigin
     />
-    <link rel="icon" type="image/png" href="/favicon-tds-2026.png" sizes="64x64" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon-tds-2026.png"
+      sizes="64x64"
+    />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="color-scheme" content="light dark" />
     <script is:inline set:html={themeBootstrapScript} />
