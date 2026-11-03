@@ -17,6 +17,7 @@ import {
   type Locale,
   type ViewId,
 } from '../data/content';
+import { skillIcon } from '../data/skillIcons';
 interface Props {
   lang: Locale;
   view: ViewId;
@@ -386,32 +387,38 @@ const intro = {
           </label>
           <label>
             {copy('view-category', lang)}
-            <select data-category>
-              <option value="all">{copy('view-all-categories', lang)}</option>
-              {Object.entries(categories).map(([id, t]) => (
-                <option value={id}>{t[lang]}</option>
-              ))}
-            </select>
+            <span class="select-field">
+              <select data-category>
+                <option value="all">{copy('view-all-categories', lang)}</option>
+                {Object.entries(categories).map(([id, t]) => (
+                  <option value={id}>{t[lang]}</option>
+                ))}
+              </select>
+            </span>
           </label>
           <label>
             {copy('view-context', lang)}
-            <select data-context>
-              <option value="all">{copy('view-all-contexts', lang)}</option>
-              {[...new Set(skills.map((s) => s.context[lang]))].map((c) => (
-                <option value={c}>{c}</option>
-              ))}
-            </select>
+            <span class="select-field">
+              <select data-context>
+                <option value="all">{copy('view-all-contexts', lang)}</option>
+                {[...new Set(skills.map((s) => s.context[lang]))].map((c) => (
+                  <option value={c}>{c}</option>
+                ))}
+              </select>
+            </span>
           </label>
           <label>
             {copy('view-experience-evidence', lang)}
-            <select data-level>
-              <option value="all">{copy('view-all-evidence', lang)}</option>
-              {Object.entries(levels)
-                .filter(([id]) => skills.some((s) => s.level === id))
-                .map(([id, t]) => (
-                  <option value={id}>{t[lang]}</option>
-                ))}
-            </select>
+            <span class="select-field">
+              <select data-level>
+                <option value="all">{copy('view-all-evidence', lang)}</option>
+                {Object.entries(levels)
+                  .filter(([id]) => skills.some((s) => s.level === id))
+                  .map(([id, t]) => (
+                    <option value={id}>{t[lang]}</option>
+                  ))}
+              </select>
+            </span>
           </label>
           <button type="button" class="reset-filter">
             {copy('view-reset', lang)}
@@ -440,9 +447,17 @@ const intro = {
               data-search-text={`${s.name} ${categories[s.category][lang]} ${s.context[lang]}`}
             >
               <summary>
-                <span class="skill-symbol" aria-hidden="true">
-                  {s.name.slice(0, 2)}
-                </span>
+                {skillIcon(s.name) ? (
+                  <span
+                    class="skill-symbol"
+                    aria-hidden="true"
+                    set:html={skillIcon(s.name)}
+                  />
+                ) : (
+                  <span class="skill-symbol" aria-hidden="true">
+                    {s.name.slice(0, 2)}
+                  </span>
+                )}
                 <span>
                   <strong>{s.name}</strong>
                   <small>{categories[s.category][lang]}</small>
@@ -520,14 +535,16 @@ const intro = {
               <div class="filter-panel" data-filter-panel hidden>
                 <label>
                   {copy('view-project-type', lang)}
-                  <select data-kind>
-                    <option value="all">
-                      {copy('view-all-project-types', lang)}
-                    </option>
-                    {Object.entries(projectKinds).map(([id, label]) => (
-                      <option value={id}>{label[lang]}</option>
-                    ))}
-                  </select>
+                  <span class="select-field">
+                    <select data-kind>
+                      <option value="all">
+                        {copy('view-all-project-types', lang)}
+                      </option>
+                      {Object.entries(projectKinds).map(([id, label]) => (
+                        <option value={id}>{label[lang]}</option>
+                      ))}
+                    </select>
+                  </span>
                 </label>
                 <label>
                   {copy('view-search-projects', lang)}
@@ -535,16 +552,18 @@ const intro = {
                 </label>
                 <label>
                   {copy('view-category', lang)}
-                  <select data-category>
-                    <option value="all">
-                      {copy('view-all-categories', lang)}
-                    </option>
-                    {[...new Set(projects.map((p) => p.category[lang]))].map(
-                      (c) => (
-                        <option>{c}</option>
-                      ),
-                    )}
-                  </select>
+                  <span class="select-field">
+                    <select data-category>
+                      <option value="all">
+                        {copy('view-all-categories', lang)}
+                      </option>
+                      {[...new Set(projects.map((p) => p.category[lang]))].map(
+                        (c) => (
+                          <option>{c}</option>
+                        ),
+                      )}
+                    </select>
+                  </span>
                 </label>
                 <button type="button" class="reset-filter">
                   {copy('view-reset', lang)}
@@ -580,11 +599,9 @@ const intro = {
                       >
                         <span>{p.tech[0]}</span>
                         <strong>
-                          {p.id === 'idlearcade'
-                            ? 'IDLE / ARCADE'
-                            : p.kind === 'development'
-                              ? 'LIGHT / SHADOW'
-                              : 'DATA / FLOW'}
+                          {p.kind === 'development'
+                            ? 'LIGHT / SHADOW'
+                            : 'DATA / FLOW'}
                         </strong>
                         <span>Julian Tracht</span>
                       </div>
@@ -704,12 +721,14 @@ const intro = {
             </label>
             <label>
               {copy('view-subject', lang)}
-              <select data-category>
-                <option value="all">{copy('view-all-subjects', lang)}</option>
-                {Object.entries(certCategories).map(([id, t]) => (
-                  <option value={id}>{t[lang]}</option>
-                ))}
-              </select>
+              <span class="select-field">
+                <select data-category>
+                  <option value="all">{copy('view-all-subjects', lang)}</option>
+                  {Object.entries(certCategories).map(([id, t]) => (
+                    <option value={id}>{t[lang]}</option>
+                  ))}
+                </select>
+              </span>
             </label>
             <button type="button" class="reset-filter">
               {copy('view-reset', lang)}

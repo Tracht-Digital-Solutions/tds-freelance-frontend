@@ -388,52 +388,32 @@ export const projects: Project[] = [
     image: '/images/tds-hauptwebsite.webp',
     title: l('Tracht Digital Solutions', 'Tracht Digital Solutions'),
     summary: l(
-      'Die eigene Unternehmenswebsite: zweisprachige Astro-Anwendung mit gemeinsamem Designsystem, selektiven React-Komponenten und redaktioneller Inhaltsverwaltung.',
-      'My company website: a bilingual Astro application with a shared design system, selective React components and editorial content management.',
+      'Meine Unternehmenswebsite: Leistungen, Projekte und Kontakt auf Deutsch und Englisch, gebaut mit Astro.',
+      'My company website: services, projects and contact in German and English, built with Astro.',
     ),
     category: l('Webentwicklung', 'Web development'),
-    stage: l('Implementierte Webanwendung', 'Implemented web application'),
+    stage: l('Live-Website', 'Live website'),
     role: l(
       'Eigenes Unternehmen · Konzeption & Entwicklung',
       'My company · Concept & development',
     ),
-    tech: [
-      'Astro',
-      'TypeScript',
-      'React',
-      'TDS Designsystem',
-      'GitHub Actions',
-    ],
+    tech: ['Astro', 'TypeScript', 'TDS Designsystem', 'GitHub Actions'],
     website: 'https://tracht-digital.de',
     github:
       'https://github.com/Tracht-Digital-Solutions/tds-landingpage-frontend',
     sections: [
       {
-        title: l('Ausgangspunkt', 'Starting point'),
+        title: l('Projekt', 'Project'),
         text: l(
-          'Die Website stellt die Leistungen und Arbeitsweise meines Unternehmens vor. Deutsche und englische Inhalte, Kontaktwege und eine konsistente Gestaltung sollen zusammen ein verständliches Bild ergeben.',
-          'The website presents my company’s services and working process. German and English content, contact options and a consistent visual language come together to make the offering understandable.',
+          'Die Website zeigt Leistungen, Projekte und den Ablauf einer Zusammenarbeit. Ein Leistungsfinder und ein kurzer Fragebogen helfen beim Einstieg.',
+          'The website shows services, projects and how a collaboration works. A service finder and a short questionnaire help people get started.',
         ),
       },
       {
-        title: l('Technische Architektur', 'Technical architecture'),
+        title: l('Technik', 'Technology'),
         text: l(
-          'Die aktuelle Codebasis nutzt Astro mit Node-Adapter und selektiven React-Komponenten. Ein dateibasierter Seiten-Cache ergänzt das Server-Rendering. Das private TDS-Designpaket liefert gemeinsame Tokens, UI-Primitives und Präferenzmechanismen. Diese Architektur ist vom statischen Aufbau dieses Portfolios zu unterscheiden.',
-          'The current codebase uses Astro with the Node adapter and selective React components. A file-based page cache complements server rendering. The private TDS design package provides shared tokens, UI primitives and preference handling. This architecture differs from the static structure of this portfolio.',
-        ),
-      },
-      {
-        title: l('Mein Beitrag', 'My contribution'),
-        text: l(
-          'Konzeption und Entwicklung der eigenen Unternehmenswebsite sowie Einbindung in das TDS-Ökosystem. Die technische Grundlage umfasst Sprachrouten, Theme-Präferenzen, strukturierte Metadaten und getrennte Entwicklungs- und Release-Workflows.',
-          'Concept and development of my company website and its integration into the TDS ecosystem. The technical foundation includes language routes, theme preferences, structured metadata and separate development and release workflows.',
-        ),
-      },
-      {
-        title: l('Stand & Einordnung', 'Status & context'),
-        text: l(
-          'Die beschriebene Umsetzung ist in der aktuellen Codebasis belegt. CI-Prüfungen und ein manueller Release-Workflow sind vorhanden. Daraus werden keine unbelegten Aussagen über Besucherzahlen, Conversion-Raten oder Leistungskennzahlen abgeleitet.',
-          'The implementation described here is supported by the current codebase. CI checks and a manual release workflow are present. No unverified claims about visitor numbers, conversion rates or performance metrics are inferred from that.',
+          'Astro rendert die Seiten auf dem Server, ein Seiten-Cache liefert sie schnell aus. Das gemeinsame TDS-Designsystem bringt Farben, Bausteine und Übersetzungen mit.',
+          'Astro renders the pages on the server and a page cache serves them quickly. The shared TDS design system provides colours, components and translations.',
         ),
       },
     ],
@@ -448,45 +428,31 @@ export const projects: Project[] = [
     image: '/images/td-tools.webp',
     title: l('TD Tools', 'TD Tools'),
     summary: l(
-      'Eine modulare Plattform für digitale Werkzeuge. Eigenständige Tool-Pakete werden in einer gemeinsamen Astro-Anwendung zusammengeführt.',
-      'A modular platform for digital tools. Independent tool packages are composed into one shared Astro application.',
+      'Kostenlose Online-Tools für kleine Betriebe, etwa Bildkompressor, QR-Code- und Impressum-Generator.',
+      'Free online tools for small businesses, such as an image compressor and QR code and legal notice generators.',
     ),
     category: l('Plattform & Werkzeuge', 'Platform & tools'),
-    stage: l('Implementierte Tool-Plattform', 'Implemented tool platform'),
+    stage: l('Live-Plattform', 'Live platform'),
     role: l(
       'Eigenes Unternehmen · Plattformkonzeption & Entwicklung',
       'My company · Platform design & development',
     ),
-    tech: ['Astro', 'TypeScript', 'React', 'Tool-Pakete', 'Browser APIs'],
+    tech: ['Astro', 'TypeScript', 'Tool-Pakete', 'Browser APIs'],
     website: 'https://tools.tracht-digital.de',
     github: 'https://github.com/Tracht-Digital-Solutions/tds-tools-frontend',
     sections: [
       {
-        title: l('Idee & Aufbau', 'Idea & structure'),
+        title: l('Projekt', 'Project'),
         text: l(
-          'Digitale Alltagsaufgaben lassen sich mit kleinen, spezialisierten Werkzeugen vereinfachen. TD Tools bündelt diese Werkzeuge, während ihre Umsetzung in eigenen Paketen bleibt. Ein gemeinsamer Vertrag definiert, wie sie sich in den Host integrieren.',
-          'Small, focused tools can simplify everyday digital tasks. TD Tools brings these tools together while keeping their implementations in independent packages. A shared contract defines how they integrate with the host.',
+          'Jedes Werkzeug ist ein eigenes Paket. Ein gemeinsamer Vertrag regelt, wie es in die Plattform kommt. So lassen sich Tools einzeln weiterentwickeln.',
+          'Every tool is its own package. A shared contract defines how it joins the platform, so tools can evolve one by one.',
         ),
       },
       {
-        title: l('Technische Umsetzung', 'Technical implementation'),
+        title: l('Technik', 'Technology'),
         text: l(
-          'Die Host-Anwendung nutzt Astro, TypeScript und selektive React-Komponenten. Die Codebasis enthält unter anderem Pakete für JSON-Formatierung, Kontrastprüfung, QR-Codes, Bildverarbeitung und PDF-Werkzeuge. Viele Verarbeitungsaufgaben laufen im Browser; das ist keine pauschale Aussage, dass jede Plattformfunktion ausschließlich lokal arbeitet.',
-          'The host application uses Astro, TypeScript and selective React components. The codebase includes packages for JSON formatting, contrast checks, QR codes, image processing and PDF tools. Many processing tasks run in the browser; this does not mean every platform feature operates entirely locally.',
-        ),
-      },
-      {
-        title: l('Mein Beitrag', 'My contribution'),
-        text: l(
-          'Konzeption und Entwicklung der eigenen Tool-Plattform mit einer modularen Paketstruktur, gemeinsamer Gestaltung und zweisprachigem Katalog. Die Trennung von Host und Werkzeugen unterstützt gezielte Weiterentwicklung einzelner Funktionen.',
-          'Concept and development of my own tool platform, with a modular package structure, shared styling and a bilingual catalogue. Separating the host from its tools supports focused development of individual features.',
-        ),
-      },
-      {
-        title: l('Stand & Einordnung', 'Status & context'),
-        text: l(
-          'Die modulare Plattform und Werkzeugimplementierungen sind im Quellcode vorhanden. Die Funktionsprüfung jedes einzelnen kostenlosen oder Premium-Werkzeugs ist nicht Gegenstand dieses Portfolio-Projekts. Die Referenz beschreibt den belegten Aufbau und beansprucht keine ungeprüften Betriebsergebnisse.',
-          'The modular platform and tool implementations exist in the source code. Testing every individual free or premium tool is outside the scope of this portfolio project. This reference describes the documented structure without claiming unverified operational results.',
+          'Die meisten Tools arbeiten direkt im Browser, Dateien verlassen dabei das Gerät nicht. Erweiterte Funktionen gibt es im Premium-Abo.',
+          'Most tools run directly in the browser, so files stay on the device. Extended features come with a premium subscription.',
         ),
       },
     ],

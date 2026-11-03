@@ -83,7 +83,11 @@ test('filters, details and certificate dialog work in both languages', async ({
     await page.goto(lang === 'de' ? '/projekte/' : '/en/projects/');
     await page
       .locator('select[data-category]')
-      .selectOption(lang === 'de' ? 'Spiele & Mobile' : 'Games & mobile');
+      .selectOption(
+        lang === 'de'
+          ? 'Open Source · KI-Werkzeug'
+          : 'Open source · AI tooling',
+      );
     await expect(page.locator('[data-filter-item]:visible')).toHaveCount(1);
     await page.locator('.reset-filter').click();
     await page.locator('select[data-kind]').selectOption('study');
