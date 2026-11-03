@@ -194,7 +194,12 @@ const schema = {
       type="font/woff2"
       crossorigin
     />
-    <link rel="icon" type="image/png" href="/favicon-tds-2026.png" sizes="64x64" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicon-tds-2026.png"
+      sizes="64x64"
+    />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="color-scheme" content="light dark" />
     <script is:inline set:html={themeBootstrapScript} />
@@ -230,8 +235,15 @@ const schema = {
           lang={other}
           aria-label={copy('shell-auf-deutsch-wechseln', lang)}
         >
-          DE <span aria-hidden="true">/</span> EN
-          <span class="lang-marker">{lang.toUpperCase()}</span>
+          <span class="lang-switch" data-current={lang} aria-hidden="true">
+            <span class="lang-thumb"></span>
+            <span class="lang-option" data-option="de">
+              DE
+            </span>
+            <span class="lang-option" data-option="en">
+              EN
+            </span>
+          </span>
         </a>
         <button
           class="theme-toggle"
@@ -282,7 +294,6 @@ const schema = {
               >
                 <span>{String(i + 1).padStart(2, '0')}</span>
                 <span class="nav-title">{v.title[lang]}</span>
-                <b aria-hidden="true">↗</b>
               </a>
             ))}
           </nav>

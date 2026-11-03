@@ -166,70 +166,6 @@
     ]
   },
   {
-    "id": "idlearcade",
-    "approved": true,
-    "kind": "own",
-    "title": {
-      "de": "IdleArcade",
-      "en": "IdleArcade"
-    },
-    "summary": {
-      "de": "Mein Idle-/Clicker-Spiel mit Android- und Web-Export, Ressourcenökonomie und speicherbarem Spielfortschritt.",
-      "en": "My idle/clicker game with Android and web exports, a resource economy and persistent progress."
-    },
-    "category": {
-      "de": "Spiele & Mobile",
-      "en": "Games & mobile"
-    },
-    "stage": {
-      "de": "GitHub-Release v1.0.1",
-      "en": "GitHub release v1.0.1"
-    },
-    "role": {
-      "de": "Eigenes Spieleprojekt",
-      "en": "Own game project"
-    },
-    "tech": [
-      "Godot 4.3",
-      "GDScript",
-      "Android",
-      "Nakama"
-    ],
-    "sections": [
-      {
-        "title": {
-          "de": "Spielmechanik",
-          "en": "Game mechanics"
-        },
-        "text": {
-          "de": "Aktive Eingaben und passive Produktion erzeugen Ressourcen. Upgrades, Bonus-Funken und Combo-Multiplikatoren bilden die Spielmechanik; der Fortschritt wird lokal als JSON gespeichert und beim Laden um Offline-Fortschritt ergänzt.",
-          "en": "Active input and passive production generate resources. Upgrades, bonus sparks and combo multipliers form the gameplay; progress is stored locally as JSON and includes offline catch-up when loaded."
-        }
-      },
-      {
-        "title": {
-          "de": "Technischer Aufbau",
-          "en": "Technical structure"
-        },
-        "text": {
-          "de": "Die Codebasis nutzt Godot 4.3 und GDScript. Sie enthält einen zentralen GameState, HUD- und Dialog-Szenen sowie eine Nakama-Anbindung für Online-Funktionen. Die Exportkonfiguration sieht Android und Web vor.",
-          "en": "The codebase uses Godot 4.3 and GDScript. It includes a central GameState, HUD and dialog scenes, and a Nakama integration for online features. Export presets cover Android and web."
-        }
-      },
-      {
-        "title": {
-          "de": "Veröffentlichung",
-          "en": "Release"
-        },
-        "text": {
-          "de": "Im öffentlichen GitHub-Repository steht Release v1.0.1 mit einer Android-APK und einem Web-Build bereit. Der Quellcode und die Release-Artefakte sind dort einsehbar.",
-          "en": "The public GitHub repository offers release v1.0.1 with an Android APK and a web build. The source code and release artifacts are available there."
-        }
-      }
-    ],
-    "github": "https://github.com/jtracht/IdleArcade"
-  },
-  {
     "id": "licht-schatten-framework",
     "approved": true,
     "kind": "development",
@@ -288,8 +224,8 @@
       "en": "TDShop"
     },
     "summary": {
-      "de": "Eigener Technik-Shop mit einem kuratierten Katalog für Digitalisierung im Betrieb.",
-      "en": "My own technology shop with a curated catalogue for business digitalisation."
+      "de": "Mein Shop für digitale Leistungen mit klarem Ab-Preis, dazu Technik mit eigener Einschätzung.",
+      "en": "My shop for digital services with a clear starting price, plus hardware with my own assessment."
     },
     "category": {
       "de": "E-Commerce",
@@ -913,8 +849,8 @@
       "en": "Open source · System software"
     },
     "stage": {
-      "de": "Beta, echte Datenträger noch gesperrt",
-      "en": "Beta, real disks still locked"
+      "de": "Beta 0.8.0, echte Datenträger noch gesperrt",
+      "en": "Beta 0.8.0, real disks still locked"
     },
     "role": {
       "de": "Entwicklung · Privates Open-Source-Projekt",
@@ -981,8 +917,8 @@
       "en": "Open source · Android app"
     },
     "stage": {
-      "de": "Version 0.5.0, auf Emulatoren geprüft, USB-Hardware noch offen",
-      "en": "Version 0.5.0, tested on emulators, USB hardware still open"
+      "de": "Version 0.5.1, auf Emulatoren geprüft, USB-Hardware noch offen",
+      "en": "Version 0.5.1, tested on emulators, USB hardware still open"
     },
     "role": {
       "de": "Entwicklung · Privates Open-Source-Projekt",
@@ -1031,5 +967,132 @@
     "imageWidth": 1440,
     "imageHeight": 900,
     "github": "https://github.com/jtracht/rpi-imager-android"
+  },
+  {
+    "id": "rampi-os",
+    "approved": true,
+    "kind": "own",
+    "title": {
+      "de": "Rampi OS",
+      "en": "Rampi OS"
+    },
+    "summary": {
+      "de": "Meine Arbeitsumgebung für den Raspberry Pi 3 B+: Kanban, Remote Desktop zu Windows 11 und Browser in einer Oberfläche.",
+      "en": "My workstation environment for the Raspberry Pi 3 B+: Kanban, remote desktop to Windows 11 and a browser in one interface."
+    },
+    "category": {
+      "de": "Open Source · Systemsoftware",
+      "en": "Open source · System software"
+    },
+    "stage": {
+      "de": "Vorabversion 0.6.0-dev.6, Hardwaretest noch offen",
+      "en": "Pre-release 0.6.0-dev.6, hardware test still open"
+    },
+    "role": {
+      "de": "Entwicklung · Privates Open-Source-Projekt",
+      "en": "Development · Private open-source project"
+    },
+    "tech": [
+      "Rust",
+      "GTK 4",
+      "Wayland",
+      "Raspberry Pi OS",
+      "RDP"
+    ],
+    "sections": [
+      {
+        "title": {
+          "de": "Projekt",
+          "en": "Project"
+        },
+        "text": {
+          "de": "Rampi macht einen Raspberry Pi 3 B+ zum Arbeitsplatz für einen Windows-11-Rechner. Drei Module stehen im Mittelpunkt: Kanban-Board, Remote Desktop und Browser. Dazu kommen Terminals für Codex, Claude Code und Gemini.",
+          "en": "Rampi turns a Raspberry Pi 3 B+ into a workstation for a Windows 11 PC. Three modules are at its core: a Kanban board, remote desktop and a browser. Terminals for Codex, Claude Code and Gemini come on top."
+        }
+      },
+      {
+        "title": {
+          "de": "Das Besondere",
+          "en": "What is special"
+        },
+        "text": {
+          "de": "Die Oberfläche ist nativ in Rust mit GTK 4 auf Wayland gebaut und startet als eigene Sitzung mit labwc. Beim ersten Start legt man ein eigenes Konto an, ein Standardpasswort gibt es nicht.",
+          "en": "The interface is native Rust with GTK 4 on Wayland and starts as its own labwc session. On first start you create your own account; there is no default password."
+        }
+      },
+      {
+        "title": {
+          "de": "Stand",
+          "en": "Status"
+        },
+        "text": {
+          "de": "Rampi ist eine Vorabversion. Geprüft wird mit Docker, nativer ARM64-CI und QEMU-Images. Tests auf echter Hardware stehen noch aus.",
+          "en": "Rampi is a pre-release. It is tested with Docker, native ARM64 CI and QEMU images. Tests on real hardware are still outstanding."
+        }
+      }
+    ],
+    "image": "/images/projects/rampi-os.webp",
+    "imageWidth": 1200,
+    "imageHeight": 644,
+    "github": "https://github.com/jtracht/rampi-os"
+  },
+  {
+    "id": "gitea-claude-plugin",
+    "approved": true,
+    "kind": "own",
+    "careerId": "tracht-digital-solutions",
+    "title": {
+      "de": "Gitea-Plugin für Claude Code",
+      "en": "Gitea plugin for Claude Code"
+    },
+    "summary": {
+      "de": "Ein Open-Source-Plugin, mit dem Claude Code jede Gitea-Instanz bedient: Repositories, Issues, Pull Requests, Actions und Releases.",
+      "en": "An open-source plugin that lets Claude Code work with any Gitea instance: repositories, issues, pull requests, Actions and releases."
+    },
+    "category": {
+      "de": "Open Source · KI-Werkzeug",
+      "en": "Open source · AI tooling"
+    },
+    "stage": {
+      "de": "Version 0.6.2, veröffentlicht",
+      "en": "Version 0.6.2, released"
+    },
+    "role": {
+      "de": "Entwicklung · Open Source von Tracht Digital Solutions",
+      "en": "Development · Open source by Tracht Digital Solutions"
+    },
+    "tech": [
+      "TypeScript",
+      "Node.js",
+      "MCP",
+      "Gitea API",
+      "Claude Code"
+    ],
+    "sections": [
+      {
+        "title": {
+          "de": "Projekt",
+          "en": "Project"
+        },
+        "text": {
+          "de": "Das Plugin bringt einen MCP-Server mit 154 Werkzeugen und sieben Arbeitsabläufen mit, etwa für Code-Reviews, Release-Notes und fehlgeschlagene CI-Läufe. Es funktioniert mit gitea.com und eigenen Servern.",
+          "en": "The plugin ships an MCP server with 154 tools and seven workflow skills, for example for code reviews, release notes and failed CI runs. It works with gitea.com and self-hosted servers."
+        }
+      },
+      {
+        "title": {
+          "de": "Das Besondere",
+          "en": "What is special"
+        },
+        "text": {
+          "de": "Der Server ist eine einzelne gebündelte Datei, ohne npm install und ohne Build. Löschen, Mergen und Rechteänderungen verlangen eine ausdrückliche Bestätigung.",
+          "en": "The server is a single bundled file, with no npm install and no build step. Deleting, merging and permission changes require explicit confirmation."
+        }
+      }
+    ],
+    "image": "/images/projects/gitea-claude-plugin.webp",
+    "imageWidth": 1200,
+    "imageHeight": 750,
+    "github": "https://github.com/Tracht-Digital-Solutions/gitea-claude-plugin"
   }
 ]
