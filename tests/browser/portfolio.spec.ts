@@ -51,6 +51,16 @@ test('navigation is client-side, history works, language and theme persist', asy
   await page.goto('/');
   await expect(page).toHaveURL(/\/en\/$/);
 });
+test('savings calculator recalculates from visitor input', async ({ page }) => {
+  await page.goto('/en/');
+  const year = page.locator('[data-result="year"]');
+  await expect(year).toHaveText('134');
+  await page.locator('input[name="minutes"]').fill('20');
+  await expect(year).toHaveText('268');
+  await expect(page.locator('[data-result="month"]')).toHaveText('22.4');
+  await page.locator('input[name="share"]').fill('0');
+  await expect(year).toHaveText('0');
+});
 test('filters, details and certificate dialog work in both languages', async ({
   page,
 }) => {
