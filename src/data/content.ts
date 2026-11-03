@@ -373,7 +373,7 @@ export const projects: Project[] = [
     imageHeight: 625,
     careerId: 'tracht-digital-solutions',
     approved: true,
-    image: '/images/tds-hauptwebsite-2611.webp',
+    image: '/images/tds-hauptwebsite-2611b.webp',
     title: l('Tracht Digital Solutions', 'Tracht Digital Solutions'),
     summary: l(
       'Meine Unternehmenswebsite: Leistungen, Projekte und Kontakt auf Deutsch und Englisch, gebaut mit Astro.',
@@ -393,8 +393,8 @@ export const projects: Project[] = [
       {
         title: l('Projekt', 'Project'),
         text: l(
-          'Die Website zeigt Leistungen, Projekte und den Ablauf einer Zusammenarbeit. Ein Leistungsfinder und ein kurzer Fragebogen helfen beim Einstieg.',
-          'The website shows services, projects and how a collaboration works. A service finder and a short questionnaire help people get started.',
+          'Die Website zeigt Leistungen, Projekte und den Ablauf einer Zusammenarbeit. Ein Leistungsassistent und ein Fragebogen, der die Zeitersparnis ausrechnet, helfen beim Einstieg. Im Hero dreht sich ein Karussell mit Demos und Designstudien.',
+          'The website shows services, projects and how a collaboration works. A service assistant and a questionnaire that works out the time saved help people get started. A carousel of demos and design studies turns in the hero.',
         ),
       },
       {
@@ -414,7 +414,7 @@ export const projects: Project[] = [
     careerId: 'tracht-digital-solutions',
     approved: true,
     image: '/images/td-tools-2611.webp',
-    title: l('TD Tools', 'TD Tools'),
+    title: l('Online-Tools', 'Online-Tools'),
     summary: l(
       'Kostenlose Online-Tools für kleine Betriebe, etwa Bildkompressor, QR-Code- und Impressum-Generator.',
       'Free online tools for small businesses, such as an image compressor and QR code and legal notice generators.',
