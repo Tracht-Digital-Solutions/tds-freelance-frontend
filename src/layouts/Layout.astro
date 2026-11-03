@@ -12,6 +12,7 @@ import {
   projects,
   views,
   pathFor,
+  contactUrl,
   type Locale,
   type ViewId,
 } from '../data/content';
@@ -243,7 +244,7 @@ const schema = {
         </button>
         <a
           class="contact-top"
-          href={pathFor('contact', lang)}
+          href={contactUrl(lang)}
           aria-label={copy('shell-get-in-touch', lang)}
         >
           <span class="contact-label">{copy('shell-get-in-touch', lang)}</span>{' '}
