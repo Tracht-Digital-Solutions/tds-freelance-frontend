@@ -26,6 +26,11 @@ function initialize() {
   }
   document.querySelectorAll<HTMLAnchorElement>('[data-locale]').forEach((a) => {
     a.onclick = () => {
+      // The slider moves on the press itself, never on hover.
+      a.querySelector<HTMLElement>('.lang-switch')?.setAttribute(
+        'data-current',
+        a.dataset.locale!,
+      );
       rememberLocale(a.dataset.locale as 'de' | 'en');
       try {
         localStorage.setItem('jt-locale', a.dataset.locale!);
@@ -60,7 +65,7 @@ function initialize() {
               (s) =>
                 s.value === 'all' ||
                 item.dataset[
-                  ['category', 'context', 'level', 'kind'].find((key) =>
+                  ['category', 'context', 'kind'].find((key) =>
                     s.hasAttribute(`data-${key}`),
                   )!
                 ] === s.value,

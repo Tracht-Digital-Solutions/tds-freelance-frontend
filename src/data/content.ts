@@ -258,9 +258,7 @@ const skillSchema = z.object({
     'quality',
     'ai',
   ]),
-  level: z.enum(['documented', 'foundation', 'advanced', 'expert']),
   context: localized,
-  description: localized,
 });
 const skillGroups: [keyof typeof categories, string[], ReturnType<typeof l>][] =
   [
@@ -313,21 +311,10 @@ export const skills = z.array(skillSchema).parse(
       id: `${category}-${i}`,
       name,
       category,
-      level: 'documented',
       context,
-      description: l(
-        `${name} gehört zu meinem dokumentierten technischen Profil. Einsatzgebiet: ${context.de}. Die Übersicht beschreibt Kenntnisse aus meinem Lebenslauf; sie verwendet keine unbestätigten Beherrschungsgrade.`,
-        `${name} is part of my documented technical profile. Context: ${context.en}. This overview reflects my CV without assigning unconfirmed proficiency levels.`,
-      ),
     })),
   ),
 );
-export const levels = {
-  documented: l('Im Lebenslauf belegt', 'Documented in CV'),
-  foundation: l('Grundlagen', 'Foundation'),
-  advanced: l('Fortgeschritten', 'Advanced'),
-  expert: l('Vertieft', 'In-depth'),
-};
 const certificateSchema = z.object({
   id: z.string(),
   title: z.string().min(1),

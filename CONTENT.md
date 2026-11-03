@@ -24,10 +24,9 @@ source documents; do not infer dates or outcomes. Employer logos need usage perm
 ## Skills
 
 Add a name to the appropriate skill group or create a validated explicit record.
-Allowed levels: documented, foundation, advanced, expert. Default **documented**
-means the skill appears in the CV, not a proficiency claim. Change the level only
-after confirmation. Categories, contexts, level choices and searches are generated
-from the records. No percentage bars. Keep German/English context references valid.
+Skill cards are static (icon, name, category): not expandable, no proficiency
+level or evidence filter. Categories, contexts and searches are generated from
+the records. No percentage bars. Keep German/English context references valid.
 
 ## Projects: approval before any commit
 
