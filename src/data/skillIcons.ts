@@ -23,8 +23,9 @@ import {
 } from 'simple-icons';
 
 // Brand marks come from Simple Icons (CC0) and are inlined at build time.
-// Skills without a published mark get a neutral line glyph instead.
-const brands: Record<string, { path: string }> = {
+// Marks are drawn in their brand colour on a white chip (`.skill-symbol--logo`);
+// skills without a published mark get a navy line glyph instead.
+const brands: Record<string, { path: string; hex: string }> = {
   'Vue.js': siVuedotjs,
   React: siReact,
   Angular: siAngular,
@@ -81,9 +82,9 @@ const lines: Record<string, string> = {
 export function skillIcon(name: string): string | undefined {
   const brand = brands[name];
   if (brand)
-    return `<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" focusable="false"><path d="${brand.path}"/></svg>`;
+    return `<svg viewBox="0 0 24 24" width="22" height="22" fill="#${brand.hex}" focusable="false"><path d="${brand.path}"/></svg>`;
   const glyph = lines[name];
   if (glyph)
-    return `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">${glyph}</svg>`;
+    return `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#050f68" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">${glyph}</svg>`;
   return undefined;
 }

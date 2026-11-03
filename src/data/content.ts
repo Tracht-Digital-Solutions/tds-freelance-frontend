@@ -12,7 +12,8 @@ export const profile = {
   company: 'Tracht Digital Solutions',
   city: 'Schwarzenbek',
   email: 'kontakt@tracht-digital.de',
-  phone: '+49 178 822 4022',
+  phone: '+49 4151 8788264',
+  mobile: '+49 178 822 4022',
   github: 'https://github.com/jtracht',
   linkedin: 'https://www.linkedin.com/in/julian-tracht/',
   role: l(
@@ -385,7 +386,7 @@ export const projects: Project[] = [
     imageHeight: 625,
     careerId: 'tracht-digital-solutions',
     approved: true,
-    image: '/images/tds-hauptwebsite.webp',
+    image: '/images/tds-hauptwebsite-2611.webp',
     title: l('Tracht Digital Solutions', 'Tracht Digital Solutions'),
     summary: l(
       'Meine Unternehmenswebsite: Leistungen, Projekte und Kontakt auf Deutsch und Englisch, gebaut mit Astro.',
@@ -425,7 +426,7 @@ export const projects: Project[] = [
     imageHeight: 625,
     careerId: 'tracht-digital-solutions',
     approved: true,
-    image: '/images/td-tools.webp',
+    image: '/images/td-tools-2611.webp',
     title: l('TD Tools', 'TD Tools'),
     summary: l(
       'Kostenlose Online-Tools für kleine Betriebe, etwa Bildkompressor, QR-Code- und Impressum-Generator.',

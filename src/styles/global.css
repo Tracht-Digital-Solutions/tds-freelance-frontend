@@ -1127,6 +1127,11 @@ p + p {
   font-family: var(--font-mono);
   font-size: 0.8rem;
 }
+/* Logos keep their brand colour, so their chip is white in both themes. */
+.skill-symbol--logo {
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgb(5 15 104 / 0.14);
+}
 .skill-symbol svg {
   display: block;
   width: 22px;

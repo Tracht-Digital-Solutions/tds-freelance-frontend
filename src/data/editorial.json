@@ -255,10 +255,6 @@
     "de": "Zurücksetzen",
     "en": "Reset"
   },
-  "view-skills-documented-in-my-cv-without-unconfirmed-proficiency-ratings-or-percentage-bars": {
-    "de": "Kenntnisse aus meinem Lebenslauf. Ohne unbestätigte Einstufungen oder Prozentbalken.",
-    "en": "Skills documented in my CV, without unconfirmed proficiency ratings or percentage bars."
-  },
   "view-no-matching-skills-found-try-adjusting-the-filters": {
     "de": "Keine passenden Kenntnisse gefunden. Bitte die Filter anpassen.",
     "en": "No matching skills found. Try adjusting the filters."
@@ -326,10 +322,6 @@
   "view-learning-certificates": {
     "de": "WEITERBILDUNGEN",
     "en": "LEARNING CERTIFICATES"
-  },
-  "view-these-certificates-document-completed-learning-paths-on-linkedin-learning-they-comple": {
-    "de": "Die folgenden Zertifikate dokumentieren abgeschlossene Lernpfade auf LinkedIn Learning. Sie ergänzen meine berufliche Erfahrung und sind keine Aussage über ein akademisches Abschlussniveau.",
-    "en": "These certificates document completed learning paths on LinkedIn Learning. They complement my professional experience and do not imply an academic qualification."
   },
   "view-search-certificates": {
     "de": "Zertifikate suchen",
@@ -412,8 +404,8 @@
     "en": "Developers remain responsible for correctness, maintainability and the overall system. Unreviewed code can multiply mistakes and uncertainty. For me, AI belongs in a controlled development process, with traceable decisions and deliberate approval."
   },
   "view-this-page-describes-my-personal-approach-to-software-development": {
-    "de": "Diese Seite beschreibt meine persönliche Haltung zur Softwareentwicklung.",
-    "en": "This page describes my personal approach to software development."
+    "de": "Diese Seite beschreibt meine persönliche Haltung zur Nutzung von KI in der Softwareentwicklung.",
+    "en": "This page describes my personal approach to using AI in software development."
   },
   "view-for-businesses-clients": {
     "de": "FÜR UNTERNEHMEN & AUFTRAGGEBER",
@@ -522,5 +514,13 @@
   "view-all-project-types": {
     "de": "Alle Projektarten",
     "en": "All project types"
+  },
+  "view-phone": {
+    "de": "Telefon",
+    "en": "Phone"
+  },
+  "view-mobile": {
+    "de": "Mobil",
+    "en": "Mobile"
   }
 }
