@@ -1013,8 +1013,8 @@
       "en": "Open source · Android app"
     },
     "stage": {
-      "de": "Version 0.5.1, auf Emulatoren geprüft, USB-Hardware noch offen",
-      "en": "Version 0.5.1, tested on emulators, USB hardware still open"
+      "de": "Version 0.6.3, auf Emulatoren geprüft, USB-Hardware noch offen",
+      "en": "Version 0.6.3, tested on emulators, USB hardware still open"
     },
     "role": {
       "de": "Entwicklung · Privates Open-Source-Projekt",
@@ -1059,7 +1059,7 @@
         }
       }
     ],
-    "image": "/images/projects/pi-imager-android-2611.webp",
+    "image": "/images/projects/pi-imager-android-2611c.webp",
     "imageWidth": 1440,
     "imageHeight": 900,
     "github": "https://github.com/jtracht/rpi-imager-android"
@@ -1196,7 +1196,7 @@
         }
       }
     ],
-    "image": "/images/projects/rampi-os-2611.webp",
+    "image": "/images/projects/rampi-os-2611c.webp",
     "imageWidth": 1200,
     "imageHeight": 644,
     "github": "https://github.com/jtracht/rampi-os"
