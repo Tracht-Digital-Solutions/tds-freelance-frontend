@@ -41,8 +41,18 @@ test('navigation is client-side, history works, language and theme persist', asy
   await expect(page).toHaveURL(/\/karriere\/$/);
   await page.goForward();
   await expect(page).toHaveURL(/\/karriere\/amotiq\/$/);
+  // Measure only after the route swap and any slider transition have settled;
+  // the URL changes before the new document is in place.
+  await expect(page.locator('h1')).toContainText('amotIQ');
   // Hovering the language slider must not move it; only the press does.
   const thumb = page.locator('.lang-thumb');
+  await expect(page.locator('.lang-switch')).toHaveAttribute(
+    'data-current',
+    'de',
+  );
+  await thumb.evaluate((el) =>
+    Promise.all(el.getAnimations().map((a) => a.finished)),
+  );
   const before = await thumb.evaluate((el) => getComputedStyle(el).translate);
   await page.locator('[data-locale="en"]').hover();
   await page.waitForTimeout(300);
