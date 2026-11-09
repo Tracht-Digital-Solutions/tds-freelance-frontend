@@ -52,7 +52,7 @@
     ],
     "website": "https://toner-tintenoffice.de/",
     "careerId": "tracht-digital-solutions",
-    "image": "/images/projects/toner-tintenoffice-2611.webp",
+    "image": "/images/projects/toner-tintenoffice-2611c.webp",
     "imageWidth": 1000,
     "imageHeight": 563
   },
@@ -107,7 +107,7 @@
         }
       }
     ],
-    "image": "/images/projects/hof-meerheck-2611b.webp",
+    "image": "/images/projects/hof-meerheck-2611c.webp",
     "website": "https://hof-meerheck.de/",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
@@ -266,7 +266,7 @@
         }
       }
     ],
-    "image": "/images/projects/tdshop-2611b.webp",
+    "image": "/images/projects/tdshop-2611c.webp",
     "website": "https://shop.tracht-digital.de/",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
@@ -322,7 +322,7 @@
         }
       }
     ],
-    "image": "/images/projects/demo1-2611b.webp",
+    "image": "/images/projects/demo1-2611c.webp",
     "website": "https://demo1.tracht-digital.de/",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
@@ -378,7 +378,7 @@
         }
       }
     ],
-    "image": "/images/projects/demo2-2611b.webp",
+    "image": "/images/projects/demo2-2611c.webp",
     "website": "https://demo2.tracht-digital.de/de/",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
@@ -434,7 +434,7 @@
         }
       }
     ],
-    "image": "/images/projects/demo3-2611b.webp",
+    "image": "/images/projects/demo3-2611c.webp",
     "website": "https://demo3.tracht-digital.de/",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 960,
@@ -481,7 +481,7 @@
         }
       }
     ],
-    "image": "/images/projects/demo4-2611b.webp",
+    "image": "/images/projects/demo4-2611c.webp",
     "imageWidth": 960,
     "imageHeight": 600,
     "website": "https://demo4.tracht-digital.de/"
@@ -874,7 +874,7 @@
         }
       }
     ],
-    "image": "/images/projects/digitale-visitenkarte-2611b.webp",
+    "image": "/images/projects/digitale-visitenkarte-2611c.webp",
     "website": "https://tracht-digital.de/visitenkarte",
     "careerId": "tracht-digital-solutions",
     "imageWidth": 1440,
@@ -991,7 +991,7 @@
         }
       }
     ],
-    "image": "/images/projects/wparted-website-2611.webp",
+    "image": "/images/projects/wparted-website-2611c.webp",
     "imageWidth": 960,
     "imageHeight": 600,
     "website": "https://wparted.tracht-digital.de/"
@@ -1063,6 +1063,75 @@
     "imageWidth": 1440,
     "imageHeight": 900,
     "github": "https://github.com/jtracht/rpi-imager-android"
+  },
+  {
+    "id": "kanlo",
+    "approved": true,
+    "kind": "own",
+    "title": {
+      "de": "Kanlo",
+      "en": "Kanlo"
+    },
+    "summary": {
+      "de": "Mein lokales Kanban-Board für Raspberry Pi und Debian, mit Weboberfläche für Handy und PC.",
+      "en": "My local Kanban board for Raspberry Pi and Debian, with a web interface for phone and PC."
+    },
+    "category": {
+      "de": "Eigene Software · Kanban",
+      "en": "Own software · Kanban"
+    },
+    "stage": {
+      "de": "Entwicklungsversion 0.1.0-dev.1, privat, noch kein stabiles Release",
+      "en": "Development version 0.1.0-dev.1, private, no stable release yet"
+    },
+    "role": {
+      "de": "Entwicklung · Privates Projekt",
+      "en": "Development · Private project"
+    },
+    "tech": [
+      "Rust",
+      "Axum",
+      "SQLite",
+      "Preact",
+      "TypeScript",
+      "PWA",
+      "Debian"
+    ],
+    "sections": [
+      {
+        "title": {
+          "de": "Projekt",
+          "en": "Project"
+        },
+        "text": {
+          "de": "Kanlo läuft als kleiner Server auf einem Raspberry Pi oder Debian-Rechner im eigenen Netz, ohne Bildschirm und ohne Internet. Boards, Spalten, Tickets mit festen Kennungen, Labels, Untertickets, Abhängigkeiten und WIP-Limits werden im Browser von Handy oder PC bedient, auf Deutsch oder Englisch.",
+          "en": "Kanlo runs as a small server on a Raspberry Pi or Debian machine in the local network, with no screen and no internet. Boards, columns, tickets with stable IDs, labels, subtickets, dependencies and WIP limits are used in the browser on phone or PC, in German or English."
+        }
+      },
+      {
+        "title": {
+          "de": "Das Besondere",
+          "en": "What is special"
+        },
+        "text": {
+          "de": "Alle Schreibwege laufen durch denselben transaktionalen Kern in Rust mit SQLite. Undo, Archiv, Papierkorb, JSON/CSV-Import und konsistente Datensicherungen gehören dazu. Als PWA merkt sich die Oberfläche besuchte Boards und sammelt Änderungen offline in einer Warteschlange; Konflikte werden ausdrücklich entschieden, nie still überschrieben.",
+          "en": "Every write path goes through the same transactional core in Rust with SQLite. Undo, archive, trash, JSON/CSV import and consistent backups are part of it. As a PWA the interface keeps visited boards and queues changes offline; conflicts are decided explicitly, never overwritten silently."
+        }
+      },
+      {
+        "title": {
+          "de": "Stand und Grenzen",
+          "en": "Status and limits"
+        },
+        "text": {
+          "de": "Es gibt private Debian-13-Pakete für AMD64, ARM64 und armhf. Offen sind die native TV-Anzeige, Kiosk-Einrichtung, Installer und Messungen auf echter Pi-Hardware. Das Repository ist privat, eine öffentliche Lizenz ist noch nicht freigegeben.",
+          "en": "There are private Debian 13 packages for AMD64, ARM64 and armhf. Still open are the native TV display, kiosk setup, an installer and measurements on real Pi hardware. The repository is private, and no public licence has been released yet."
+        }
+      }
+    ],
+    "image": "/images/projects/kanlo-2611.webp",
+    "imageWidth": 1440,
+    "imageHeight": 900
   },
   {
     "id": "rampi-os",
