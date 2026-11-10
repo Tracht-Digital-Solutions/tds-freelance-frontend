@@ -10,6 +10,7 @@ import {
   pathFor,
   contactUrl,
 } from '../src/data/content';
+import { NEUTRAL_TECH, TECH_EN, techLabel } from '../src/data/techLabels';
 test('content is valid, complete and only approved projects ship', () => {
   validateContent();
   assert.equal(certificates.length, 13);
@@ -51,4 +52,15 @@ test('credential dates come from supplied documents', () => {
     certificates.find((c) => c.id === 'data-analysis')?.date,
     '2026-09-28',
   );
+});
+test('every technology tag is translated or a language-neutral name', () => {
+  const tags = new Set([...projects, ...career].flatMap((e) => e.tech));
+  for (const tag of tags) {
+    assert.ok(
+      tag in TECH_EN || NEUTRAL_TECH.has(tag),
+      `"${tag}" needs an English label in TECH_EN or an entry in NEUTRAL_TECH`,
+    );
+  }
+  assert.equal(techLabel('Webentwicklung', 'en'), 'Web development');
+  assert.equal(techLabel('Webentwicklung', 'de'), 'Webentwicklung');
 });

@@ -17,6 +17,7 @@ import {
   type ViewId,
 } from '../data/content';
 import { skillIcon } from '../data/skillIcons';
+import { techLabel } from '../data/techLabels';
 interface Props {
   lang: Locale;
   view: ViewId;
@@ -294,7 +295,7 @@ const intro = {
               </span>
               <div class="tags">
                 {entry.tech.map((t) => (
-                  <span>{t}</span>
+                  <span>{techLabel(t, lang)}</span>
                 ))}
               </div>
               <p>
@@ -335,7 +336,7 @@ const intro = {
                   <p>{c.summary[lang]}</p>
                   <div class="tags">
                     {c.tech.map((t) => (
-                      <span>{t}</span>
+                      <span>{techLabel(t, lang)}</span>
                     ))}
                   </div>
                   <a
@@ -480,7 +481,7 @@ const intro = {
               <p>{project.role[lang]}</p>
               <div class="tags">
                 {project.tech.map((t) => (
-                  <span>{t}</span>
+                  <span>{techLabel(t, lang)}</span>
                 ))}
               </div>
               {project.github && <a href={project.github}>GitHub ↗</a>}
@@ -547,7 +548,7 @@ const intro = {
                     data-filter-item
                     data-kind={p.kind}
                     data-category={p.category[lang]}
-                    data-search-text={`${p.title[lang]} ${p.tech.join(' ')}`}
+                    data-search-text={`${p.title[lang]} ${p.tech.map((t) => techLabel(t, lang)).join(' ')}`}
                     href={`${pathFor('projects', lang)}${p.id}/`}
                   >
                     {p.image && (
@@ -567,7 +568,7 @@ const intro = {
                         ]}
                         aria-hidden="true"
                       >
-                        <span>{p.tech[0]}</span>
+                        <span>{techLabel(p.tech[0], lang)}</span>
                         <strong>
                           {p.kind === 'development'
                             ? 'LIGHT / SHADOW'
@@ -588,7 +589,7 @@ const intro = {
                     <p class="project-role">{p.role[lang]}</p>
                     <div class="tags">
                       {p.tech.map((t) => (
-                        <span>{t}</span>
+                        <span>{techLabel(t, lang)}</span>
                       ))}
                     </div>
                   </a>

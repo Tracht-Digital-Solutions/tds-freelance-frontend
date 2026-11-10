@@ -217,7 +217,7 @@ const schema = {
       <a
         href={pathFor('home', lang)}
         class="identity"
-        aria-label="Julian Tracht — Home"
+        aria-label={`Julian Tracht — ${lang === 'de' ? 'Startseite' : 'Home'}`}
       >
         <span class="monogram" aria-hidden="true">
           jt<span>.</span>

@@ -373,7 +373,7 @@ export const projects: Project[] = [
     imageHeight: 625,
     careerId: 'tracht-digital-solutions',
     approved: true,
-    image: '/images/tds-hauptwebsite-2611c.webp',
+    image: '/images/tds-hauptwebsite-2611d.webp',
     title: l('Tracht Digital Solutions', 'Tracht Digital Solutions'),
     summary: l(
       'Meine Unternehmenswebsite: Leistungen, Projekte und Kontakt auf Deutsch und Englisch, gebaut mit Astro.',
@@ -413,7 +413,7 @@ export const projects: Project[] = [
     imageHeight: 625,
     careerId: 'tracht-digital-solutions',
     approved: true,
-    image: '/images/td-tools-2611c.webp',
+    image: '/images/td-tools-2611d.webp',
     title: l('Online-Tools', 'Online-Tools'),
     summary: l(
       'Kostenlose Online-Tools für kleine Betriebe, etwa Bildkompressor, QR-Code- und Impressum-Generator.',
