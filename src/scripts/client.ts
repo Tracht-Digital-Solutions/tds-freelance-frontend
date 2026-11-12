@@ -35,7 +35,43 @@ function matchesToken(text: string, token: string) {
   const stem = token.replace(/(en|n|e|s)$/, '');
   return stem !== token && text.includes(stem);
 }
+/** Marks the section currently in view in each `.section-nav`. */
+let sectionObserver: IntersectionObserver | undefined;
+function trackSections() {
+  sectionObserver?.disconnect();
+  const links = Array.from(
+    document.querySelectorAll<HTMLAnchorElement>('.section-nav a[href^="#"]'),
+  );
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  const visible = new Set<string>();
+  const mark = () => {
+    const current = links.find(
+      (link) => !link.hidden && visible.has(link.hash.slice(1)),
+    );
+    links.forEach((link) =>
+      link === current
+        ? link.setAttribute('aria-current', 'location')
+        : link.removeAttribute('aria-current'),
+    );
+  };
+  sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) =>
+        entry.isIntersecting
+          ? visible.add(entry.target.id)
+          : visible.delete(entry.target.id),
+      );
+      mark();
+    },
+    { rootMargin: '-20% 0px -60% 0px' },
+  );
+  links.forEach((link) => {
+    const target = document.getElementById(link.hash.slice(1));
+    if (target) sectionObserver!.observe(target);
+  });
+}
 function initialize() {
+  trackSections();
   const connection = (
     navigator as Navigator & { connection?: { saveData?: boolean } }
   ).connection;
@@ -113,7 +149,7 @@ function initialize() {
           });
         // The area index only offers jumps to areas that still have hits.
         scope
-          .querySelectorAll<HTMLAnchorElement>('.skill-index a[href^="#"]')
+          .querySelectorAll<HTMLAnchorElement>('.section-nav a[href^="#"]')
           .forEach((link) => {
             link.hidden = !!scope.querySelector<HTMLElement>(link.hash)?.hidden;
           });

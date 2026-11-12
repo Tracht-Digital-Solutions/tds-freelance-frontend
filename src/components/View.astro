@@ -449,64 +449,69 @@ const intro = {
           aria-live="polite"
           data-filter-count
         ></p>
-        <nav class="skill-index" aria-label={copy('view-skill-areas', lang)}>
-          {skillAreas.map(([category, groups], i) => (
-            <a href={`#skills-${category}`}>
-              <span>{String(i + 1).padStart(2, '0')}</span>
-              {categories[category][lang]}
-              <small>
-                {groups.reduce((n, [, items]) => n + items.length, 0)}
-              </small>
-            </a>
-          ))}
-        </nav>
-        {skillAreas.map(([category, groups], i) => (
-          <section
-            class="skill-area"
-            id={`skills-${category}`}
-            data-filter-group
-          >
-            <header class="skill-area-head">
-              <span class="tiny-label">
-                {String(i + 1).padStart(2, '0')} /{' '}
-                {groups.reduce((n, [, items]) => n + items.length, 0)}{' '}
-                {copy('view-skills-count', lang)}
-              </span>
-              <h2>{categories[category][lang]}</h2>
-            </header>
-            {groups.map(([subgroup, items]) => (
-              <div class="skill-subgroup" data-filter-group>
-                <h3>{skillSubgroups[subgroup][lang]}</h3>
-                <div class="skill-grid">
-                  {items.map((s) => (
-                    <div
-                      class="skill-card"
-                      data-filter-item
-                      data-category={s.category}
-                      data-search-text={skillSearchText(s)}
-                    >
-                      {skillIcon(s.name.en) ? (
-                        <span
-                          class="skill-symbol skill-symbol--logo"
-                          aria-hidden="true"
-                          set:html={skillIcon(s.name.en)}
-                        />
-                      ) : (
-                        <span class="skill-symbol" aria-hidden="true">
-                          {s.name[lang].slice(0, 2)}
-                        </span>
-                      )}
-                      <span>
-                        <strong>{s.name[lang]}</strong>
-                        <small>{skillSubgroups[subgroup][lang]}</small>
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+        <div class="section-layout">
+          <nav class="section-nav" aria-label={copy('view-skill-areas', lang)}>
+            <span class="tiny-label">{copy('view-skill-areas', lang)}</span>
+            {skillAreas.map(([category, groups], i) => (
+              <a href={`#skills-${category}`}>
+                <span>{String(i + 1).padStart(2, '0')}</span>
+                <span class="nav-title">{categories[category][lang]}</span>
+                <small>
+                  {groups.reduce((n, [, items]) => n + items.length, 0)}
+                </small>
+              </a>
             ))}
-          </section>
-        ))}
+          </nav>
+          <div class="section-body">
+            {skillAreas.map(([category, groups], i) => (
+              <section
+                class="skill-area"
+                id={`skills-${category}`}
+                data-filter-group
+              >
+                <header class="skill-area-head">
+                  <span class="tiny-label">
+                    {String(i + 1).padStart(2, '0')} /{' '}
+                    {groups.reduce((n, [, items]) => n + items.length, 0)}{' '}
+                    {copy('view-skills-count', lang)}
+                  </span>
+                  <h2>{categories[category][lang]}</h2>
+                </header>
+                {groups.map(([subgroup, items]) => (
+                  <div class="skill-subgroup" data-filter-group>
+                    <h3>{skillSubgroups[subgroup][lang]}</h3>
+                    <div class="skill-grid">
+                      {items.map((s) => (
+                        <div
+                          class="skill-card"
+                          data-filter-item
+                          data-category={s.category}
+                          data-search-text={skillSearchText(s)}
+                        >
+                          {skillIcon(s.name.en) ? (
+                            <span
+                              class="skill-symbol skill-symbol--logo"
+                              aria-hidden="true"
+                              set:html={skillIcon(s.name.en)}
+                            />
+                          ) : (
+                            <span class="skill-symbol" aria-hidden="true">
+                              {s.name[lang].slice(0, 2)}
+                            </span>
+                          )}
+                          <span>
+                            <strong>{s.name[lang]}</strong>
+                            <small>{skillSubgroups[subgroup][lang]}</small>
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </section>
+            ))}
+          </div>
+        </div>
         <p class="no-results" data-no-results hidden>
           {copy(
             'view-no-matching-skills-found-try-adjusting-the-filters',
@@ -604,124 +609,138 @@ const intro = {
                 </button>
               </div>
               <p data-filter-count role="status" aria-live="polite"></p>
-              <nav
-                class="skill-index project-index"
-                aria-label={copy('view-project-groups', lang)}
-              >
-                {projectOrder
-                  .filter((kind) => projects.some((p) => p.kind === kind))
-                  .map((kind, i) => (
-                    <a href={`#projects-${kind}`}>
-                      <span>{String(i + 1).padStart(2, '0')}</span>
-                      {projectGroups[kind].title[lang]}
-                      <small>
-                        {projects.filter((p) => p.kind === kind).length}
-                      </small>
-                    </a>
-                  ))}
-              </nav>
-              {projectOrder
-                .filter((kind) => projects.some((p) => p.kind === kind))
-                .map((kind, i) => (
-                  <section
-                    class="project-group"
-                    id={`projects-${kind}`}
-                    data-filter-group
-                  >
-                    <header class="skill-area-head">
-                      <span class="tiny-label">
-                        {String(i + 1).padStart(2, '0')} /{' '}
-                        {projects.filter((p) => p.kind === kind).length}{' '}
-                        {copy('view-projects-count', lang)}
-                      </span>
-                      <h2>{projectGroups[kind].title[lang]}</h2>
-                      <p>{projectGroups[kind].intro[lang]}</p>
-                    </header>
-                    <div class="project-grid">
-                      {projects
-                        .filter((p) => p.kind === kind)
-                        .sort((a, b) => Number(b.featured) - Number(a.featured))
-                        .map((p) => (
-                          <a
-                            class:list={[
-                              'project-card',
-                              p.featured && 'project-card--featured',
-                            ]}
-                            data-filter-item
-                            data-kind={p.kind}
-                            data-category={p.category[lang]}
-                            data-search-text={[
-                              p.title.de,
-                              p.title.en,
-                              p.summary[lang],
-                              p.category.de,
-                              p.category.en,
-                              p.role[lang],
-                              ...p.tech.flatMap((t) => [t, techLabel(t, 'en')]),
-                              ...p.tech.flatMap((t) =>
-                                skills
-                                  .filter(
-                                    (s) =>
-                                      s.name.de === t ||
-                                      s.name.en === t ||
-                                      s.name.en === techLabel(t, 'en'),
-                                  )
-                                  .map((s) => s.keywords),
-                              ),
-                            ].join(' ')}
-                            href={`${pathFor('projects', lang)}${p.id}/`}
-                          >
-                            {p.image && (
-                              <img
-                                src={p.image}
-                                alt=""
-                                width={p.imageWidth}
-                                height={p.imageHeight}
-                                loading="lazy"
-                              />
-                            )}
-                            {!p.image && (
-                              <div
+              <div class="section-layout">
+                <nav
+                  class="section-nav"
+                  aria-label={copy('view-project-groups', lang)}
+                >
+                  <span class="tiny-label">
+                    {copy('view-project-groups', lang)}
+                  </span>
+                  {projectOrder
+                    .filter((kind) => projects.some((p) => p.kind === kind))
+                    .map((kind, i) => (
+                      <a href={`#projects-${kind}`}>
+                        <span>{String(i + 1).padStart(2, '0')}</span>
+                        <span class="nav-title">
+                          {projectGroups[kind].title[lang]}
+                        </span>
+                        <small>
+                          {projects.filter((p) => p.kind === kind).length}
+                        </small>
+                      </a>
+                    ))}
+                </nav>
+                <div class="section-body">
+                  {projectOrder
+                    .filter((kind) => projects.some((p) => p.kind === kind))
+                    .map((kind, i) => (
+                      <section
+                        class="project-group"
+                        id={`projects-${kind}`}
+                        data-filter-group
+                      >
+                        <header class="skill-area-head">
+                          <span class="tiny-label">
+                            {String(i + 1).padStart(2, '0')} /{' '}
+                            {projects.filter((p) => p.kind === kind).length}{' '}
+                            {copy('view-projects-count', lang)}
+                          </span>
+                          <h2>{projectGroups[kind].title[lang]}</h2>
+                          <p>{projectGroups[kind].intro[lang]}</p>
+                        </header>
+                        <div class="project-grid">
+                          {projects
+                            .filter((p) => p.kind === kind)
+                            .sort(
+                              (a, b) => Number(b.featured) - Number(a.featured),
+                            )
+                            .map((p) => (
+                              <a
                                 class:list={[
-                                  'project-cover',
-                                  `project-cover-${p.kind}`,
+                                  'project-card',
+                                  p.featured && 'project-card--featured',
                                 ]}
-                                aria-hidden="true"
+                                data-filter-item
+                                data-kind={p.kind}
+                                data-category={p.category[lang]}
+                                data-search-text={[
+                                  p.title.de,
+                                  p.title.en,
+                                  p.summary[lang],
+                                  p.category.de,
+                                  p.category.en,
+                                  p.role[lang],
+                                  ...p.tech.flatMap((t) => [
+                                    t,
+                                    techLabel(t, 'en'),
+                                  ]),
+                                  ...p.tech.flatMap((t) =>
+                                    skills
+                                      .filter(
+                                        (s) =>
+                                          s.name.de === t ||
+                                          s.name.en === t ||
+                                          s.name.en === techLabel(t, 'en'),
+                                      )
+                                      .map((s) => s.keywords),
+                                  ),
+                                ].join(' ')}
+                                href={`${pathFor('projects', lang)}${p.id}/`}
                               >
-                                <span>Julian Tracht</span>
-                                <strong>
-                                  {p.cover ?? techLabel(p.tech[0], lang)}
-                                </strong>
-                                <span class="project-cover-tech">
-                                  {p.tech
-                                    .slice(0, 3)
-                                    .map((t) => techLabel(t, lang))
-                                    .join(' · ')}
+                                {p.image && (
+                                  <img
+                                    src={p.image}
+                                    alt=""
+                                    width={p.imageWidth}
+                                    height={p.imageHeight}
+                                    loading="lazy"
+                                  />
+                                )}
+                                {!p.image && (
+                                  <div
+                                    class:list={[
+                                      'project-cover',
+                                      `project-cover-${p.kind}`,
+                                    ]}
+                                    aria-hidden="true"
+                                  >
+                                    <span>Julian Tracht</span>
+                                    <strong>
+                                      {p.cover ?? techLabel(p.tech[0], lang)}
+                                    </strong>
+                                    <span class="project-cover-tech">
+                                      {p.tech
+                                        .slice(0, 3)
+                                        .map((t) => techLabel(t, lang))
+                                        .join(' · ')}
+                                    </span>
+                                  </div>
+                                )}
+                                <span class="project-kind">
+                                  {projectKinds[p.kind][lang]}
                                 </span>
-                              </div>
-                            )}
-                            <span class="project-kind">
-                              {projectKinds[p.kind][lang]}
-                            </span>
-                            <span class="eyebrow">{p.stage[lang]}</span>
-                            <h3 transition:name={`project-${p.id}`}>
-                              {p.title[lang]} ↗
-                            </h3>
-                            <span class="project-category">
-                              {p.category[lang]}
-                            </span>
-                            <p>{p.summary[lang]}</p>
-                            <p class="project-role">{p.role[lang]}</p>
-                            <div class="tags">
-                              {p.tech.map((t) => (
-                                <span>{techLabel(t, lang)}</span>
-                              ))}
-                            </div>
-                          </a>
-                        ))}
-                    </div>
-                  </section>
-                ))}
+                                <span class="eyebrow">{p.stage[lang]}</span>
+                                <h3 transition:name={`project-${p.id}`}>
+                                  {p.title[lang]} ↗
+                                </h3>
+                                <span class="project-category">
+                                  {p.category[lang]}
+                                </span>
+                                <p>{p.summary[lang]}</p>
+                                <p class="project-role">{p.role[lang]}</p>
+                                <div class="tags">
+                                  {p.tech.map((t) => (
+                                    <span>{techLabel(t, lang)}</span>
+                                  ))}
+                                </div>
+                              </a>
+                            ))}
+                        </div>
+                      </section>
+                    ))}
+                </div>
+              </div>
               <p data-no-results hidden>
                 {copy('view-no-matching-projects', lang)}
               </p>

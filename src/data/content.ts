@@ -907,8 +907,8 @@ export const projectGroups: Record<
   client: {
     title: l('Kundenprojekte', 'Client projects'),
     intro: l(
-      'Aufträge als Selbstständiger. Kunden ohne Freigabe bleiben anonym.',
-      'Freelance engagements. Clients without consent stay anonymous.',
+      'Aufträge als Selbstständiger. Kunden ohne Freigabe bleiben anonym, ohne Zeitraum und ohne Zuordnung.',
+      'Freelance engagements. Clients without consent stay anonymous, without dates or attribution.',
     ),
   },
   employer: {

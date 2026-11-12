@@ -1990,8 +1990,8 @@
       "en": "Developed in a Scrum team, 2023–2024"
     },
     "role": {
-      "de": "Backend-Entwickler",
-      "en": "Backend developer"
+      "de": "Backend-Entwickler bei amotIQ automotive",
+      "en": "Backend developer at amotIQ automotive"
     },
     "tech": [
       "C#",
@@ -2048,8 +2048,8 @@
       "en": "Used in production across several projects at the time"
     },
     "role": {
-      "de": "Weiterentwicklung, Migration & Reviews",
-      "en": "Development, migration & reviews"
+      "de": "Weiterentwicklung, Migration & Reviews bei Maverick Media Consulting",
+      "en": "Development, migration & reviews at Maverick Media Consulting"
     },
     "tech": [
       "Vue.js",
@@ -2103,8 +2103,8 @@
       "en": "Pilot with the client, 2023"
     },
     "role": {
-      "de": "Frontend-Entwicklung & technischer Ansprechpartner",
-      "en": "Frontend development & technical contact"
+      "de": "Frontend-Entwicklung & technischer Ansprechpartner bei Maverick Media Consulting",
+      "en": "Frontend development & technical contact at Maverick Media Consulting"
     },
     "tech": [
       "Vue.js",
@@ -2161,8 +2161,8 @@
       "en": "Fully developed (final exam project)"
     },
     "role": {
-      "de": "Konzeption, UX, Datenmodell & Entwicklung",
-      "en": "Concept, UX, data model & development"
+      "de": "Konzeption, UX, Datenmodell & Entwicklung · Internes Werkzeug bei PAV Card",
+      "en": "Concept, UX, data model & development · In-house tool at PAV Card"
     },
     "tech": [
       "Angular",
@@ -2208,8 +2208,8 @@
       "en": "Used daily in-house at the time"
     },
     "role": {
-      "de": "Konzeption, Entwicklung & Betreuung",
-      "en": "Concept, development & support"
+      "de": "Konzeption, Entwicklung & Betreuung · Internes Werkzeug bei PAV Card",
+      "en": "Concept, development & support · In-house tool at PAV Card"
     },
     "tech": [
       "C#",
@@ -2255,8 +2255,8 @@
       "en": "Used in day-to-day operations, 2018–2021"
     },
     "role": {
-      "de": "Entwicklung & Optimierung",
-      "en": "Development & optimisation"
+      "de": "Entwicklung & Optimierung · Internes Werkzeug bei PAV Card",
+      "en": "Development & optimisation · In-house tool at PAV Card"
     },
     "tech": [
       "C#",
@@ -2297,12 +2297,12 @@
     "kind": "employer",
     "careerId": "pav-card",
     "title": {
-      "de": "Magento-2-Shops mit eigenen Rechnern",
-      "en": "Magento 2 shops with custom calculators"
+      "de": "Magento-2-Shops: Mailinglotsen.de und AllProMed",
+      "en": "Magento 2 shops: Mailinglotsen.de and AllProMed"
     },
     "summary": {
-      "de": "Ein B2C-Shop für Druckdienstleistungen im Zweierteam, dazu Anpassungen an einem bestehenden Kundenshop.",
-      "en": "A B2C shop for print services built in a team of two, plus adjustments to an existing client shop."
+      "de": "Bei PAV Card: der B2C-Shop Mailinglotsen.de für Druckdienstleistungen im Zweierteam und Anpassungen am bestehenden Shop von AllProMed.",
+      "en": "At PAV Card: the B2C shop Mailinglotsen.de for print services, built in a team of two, and adjustments to the existing AllProMed shop."
     },
     "category": {
       "de": "E-Commerce",
@@ -2313,8 +2313,8 @@
       "en": "Published and supported, 2018–2021"
     },
     "role": {
-      "de": "Frontend, Rechner-Logik & Styling",
-      "en": "Frontend, calculator logic & styling"
+      "de": "Frontend, Rechner-Logik & Styling bei PAV Card",
+      "en": "Frontend, calculator logic & styling at PAV Card"
     },
     "tech": [
       "Magento 2",
@@ -2330,18 +2330,18 @@
           "en": "My contribution"
         },
         "text": {
-          "de": "Nach einem verbindlichen Corporate-Design-Handbuch habe ich wesentliche Frontend-Teile umgesetzt und drei Rechner komplett selbst programmiert: Schriftgröße und Lesbarkeit nach Betrachtungsabstand, Papiergewicht pro Blatt und Auftrag sowie die Zuordnung von HKS-, Pantone- und RAL-Farben zu CMYK und RGB.",
-          "en": "Following a binding corporate design manual, I built major parts of the frontend and wrote three calculators entirely myself: font size and readability by viewing distance, paper weight per sheet and order, and mapping HKS, Pantone and RAL colours to CMYK and RGB."
+          "de": "Für Mailinglotsen.de habe ich nach einem verbindlichen Corporate-Design-Handbuch wesentliche Frontend-Teile umgesetzt und drei Rechner komplett selbst programmiert: Schriftgröße und Lesbarkeit nach Betrachtungsabstand, Papiergewicht pro Blatt und Auftrag sowie die Zuordnung von HKS-, Pantone- und RAL-Farben zu CMYK und RGB.",
+          "en": "For Mailinglotsen.de, following a binding corporate design manual, I built major parts of the frontend and wrote three calculators entirely myself: font size and readability by viewing distance, paper weight per sheet and order, and mapping HKS, Pantone and RAL colours to CMYK and RGB."
         }
       },
       {
         "title": {
-          "de": "Bestehender Shop",
-          "en": "Existing shop"
+          "de": "AllProMed",
+          "en": "AllProMed"
         },
         "text": {
-          "de": "Für einen weiteren Magento-2-Shop habe ich Funktionen ausgebaut, Darstellung, Inhalte und Fehler im PHP-, JavaScript- und CSS-Code korrigiert, darunter einzelne Sicherheitskorrekturen.",
-          "en": "For another Magento 2 shop I extended features and fixed presentation, content and bugs in PHP, JavaScript and CSS, including individual security fixes."
+          "de": "Für den bestehenden Magento-2-Shop von AllProMed habe ich Funktionen ausgebaut, Darstellung, Inhalte und Fehler im PHP-, JavaScript- und CSS-Code korrigiert, darunter einzelne Sicherheitskorrekturen.",
+          "en": "For the existing AllProMed Magento 2 shop I extended features and fixed presentation, content and bugs in PHP, JavaScript and CSS, including individual security fixes."
         }
       }
     ]
@@ -2352,12 +2352,12 @@
     "kind": "employer",
     "careerId": "pav-card",
     "title": {
-      "de": "Druckdaten-Workflows und Legacy-Modernisierung",
-      "en": "Print data workflows and legacy modernisation"
+      "de": "Visual Basic nach C# und Druckdaten-Workflows",
+      "en": "Visual Basic to C# and print data workflows"
     },
     "summary": {
-      "de": "Dynamische Drucklayouts für industrielle Druckprozesse und die Überführung alter Programme in strukturierte .NET-Anwendungen.",
-      "en": "Dynamic print layouts for industrial printing and moving legacy programs into structured .NET applications."
+      "de": "Bei PAV Card: alte Visual-Basic-, C- und C++-Programme in strukturierte C#/.NET-Anwendungen übersetzt und dynamische Drucklayouts für industrielle Druckprozesse gebaut.",
+      "en": "At PAV Card: translated old Visual Basic, C and C++ programs into structured C#/.NET applications and built dynamic print layouts for industrial printing."
     },
     "category": {
       "de": "Automatisierung · Produktion",
@@ -2368,8 +2368,8 @@
       "en": "Used in production, 2018–2021"
     },
     "role": {
-      "de": "Entwicklung, Modernisierung & Jobbetreuung",
-      "en": "Development, modernisation & job support"
+      "de": "Modernisierung, Entwicklung & Jobbetreuung bei PAV Card",
+      "en": "Modernisation, development & job support at PAV Card"
     },
     "tech": [
       "Quadient Inspire",
@@ -2382,22 +2382,22 @@
     "sections": [
       {
         "title": {
-          "de": "Druckdaten",
-          "en": "Print data"
-        },
-        "text": {
-          "de": "Mit Quadient Inspire Designer habe ich Daten aufbereitet und dynamische Layouts für PDF- und AFP-Ausgaben gebaut: Positionierung, Postsortierung, Barcodes und Kennzeichnung. Vorhandene Produktionsskripte habe ich genutzt und angepasst.",
-          "en": "With Quadient Inspire Designer I prepared data and built dynamic layouts for PDF and AFP output: positioning, postal sorting, barcodes and labelling. I used and adapted existing production scripts."
-        }
-      },
-      {
-        "title": {
           "de": "Modernisierung",
           "en": "Modernisation"
         },
         "text": {
           "de": "Ältere Anwendungen und Skripte aus Visual Basic, C und C++ habe ich in objektorientierte C#/.NET-Strukturen überführt und wiederkehrende Produktionsjobs mit VisualCron und Cron gepflegt.",
           "en": "I moved older applications and scripts from Visual Basic, C and C++ into object-oriented C#/.NET structures and maintained recurring production jobs with VisualCron and cron."
+        }
+      },
+      {
+        "title": {
+          "de": "Druckdaten",
+          "en": "Print data"
+        },
+        "text": {
+          "de": "Mit Quadient Inspire Designer habe ich Daten aufbereitet und dynamische Layouts für PDF- und AFP-Ausgaben gebaut: Positionierung, Postsortierung, Barcodes und Kennzeichnung. Vorhandene Produktionsskripte habe ich genutzt und angepasst.",
+          "en": "With Quadient Inspire Designer I prepared data and built dynamic layouts for PDF and AFP output: positioning, postal sorting, barcodes and labelling. I used and adapted existing production scripts."
         }
       }
     ]
