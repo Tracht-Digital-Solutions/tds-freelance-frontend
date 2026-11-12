@@ -8,6 +8,33 @@ import {
   readPrefs,
 } from '@tracht-digital-solutions/tds-shared/prefs';
 import { navigate } from 'astro:transitions/client';
+/**
+ * Lower-case, fold diacritics and turn separators into spaces, keeping the
+ * characters that carry meaning in technology names (C#, C++, .NET).
+ * "JS-Framework" and "js framework" therefore search identically.
+ */
+function normalize(value: string) {
+  return value
+    .toLocaleLowerCase(document.documentElement.lang)
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .replace(/ß/g, 'ss')
+    .replace(/[^\p{L}\p{N}#+.]+/gu, ' ')
+    .replace(/(^|\s)\.(?=\s|$)/g, ' ')
+    .trim();
+}
+/**
+ * Tokens of one or two characters ("KI", "AI", "JS", "C#") must start a word,
+ * so they do not hit inside unrelated words ("wiki", "daily"). Longer tokens
+ * match anywhere; German plural endings are tolerated.
+ */
+function matchesToken(text: string, token: string) {
+  if (token.length <= 2) return ` ${text}`.includes(` ${token}`);
+  if (text.includes(token)) return true;
+  if (token.length < 6) return false;
+  const stem = token.replace(/(en|n|e|s)$/, '');
+  return stem !== token && text.includes(stem);
+}
 function initialize() {
   const connection = (
     navigator as Navigator & { connection?: { saveData?: boolean } }
@@ -51,16 +78,19 @@ function initialize() {
       const selects = Array.from(
         scope.querySelectorAll<HTMLSelectElement>('select'),
       );
+      // Pre-normalise every item once; the query is matched token by token.
+      const haystacks = new Map(
+        items.map((item) => [item, normalize(item.dataset.searchText ?? '')]),
+      );
       const update = () => {
-        const query = (search?.value ?? '')
-          .trim()
-          .toLocaleLowerCase(document.documentElement.lang);
+        const tokens = normalize(search?.value ?? '')
+          .split(' ')
+          .filter(Boolean);
         let count = 0;
         items.forEach((item) => {
+          const text = haystacks.get(item)!;
           const matches =
-            (item.dataset.searchText ?? '')
-              .toLocaleLowerCase(document.documentElement.lang)
-              .includes(query) &&
+            tokens.every((token) => matchesToken(text, token)) &&
             selects.every(
               (s) =>
                 s.value === 'all' ||
@@ -73,6 +103,20 @@ function initialize() {
           item.hidden = !matches;
           if (matches) count++;
         });
+        // Headings of groups whose items are all filtered out disappear too.
+        scope
+          .querySelectorAll<HTMLElement>('[data-filter-group]')
+          .forEach((group) => {
+            group.hidden = !group.querySelector(
+              '[data-filter-item]:not([hidden])',
+            );
+          });
+        // The area index only offers jumps to areas that still have hits.
+        scope
+          .querySelectorAll<HTMLAnchorElement>('.skill-index a[href^="#"]')
+          .forEach((link) => {
+            link.hidden = !!scope.querySelector<HTMLElement>(link.hash)?.hidden;
+          });
         const result = scope.querySelector<HTMLElement>('[data-filter-count]');
         if (result)
           result.textContent = `${count} / ${items.length} ${scope.dataset.countLabel ?? 'entries'}`;
@@ -81,6 +125,16 @@ function initialize() {
       };
       if (search) search.oninput = update;
       selects.forEach((s) => (s.onchange = update));
+      scope
+        .querySelectorAll<HTMLButtonElement>('[data-search-suggestion]')
+        .forEach((chip) => {
+          chip.onclick = () => {
+            if (!search) return;
+            search.value = chip.dataset.searchSuggestion!;
+            update();
+            search.focus();
+          };
+        });
       const reset = scope.querySelector<HTMLButtonElement>('.reset-filter');
       if (reset)
         reset.onclick = () => {

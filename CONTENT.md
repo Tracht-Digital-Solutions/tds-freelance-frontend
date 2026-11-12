@@ -23,10 +23,22 @@ source documents; do not infer dates or outcomes. Employer logos need usage perm
 
 ## Skills
 
-Add a name to the appropriate skill group or create a validated explicit record.
-Skill cards are static (icon, name, category): not expandable, no proficiency
-level or evidence filter. Categories, contexts and searches are generated from
-the records. No percentage bars. Keep German/English context references valid.
+Skills live in `skillTree` (`content.ts`): area (`categories`) → sub-group
+(`skillSubgroups`) → `[name, keywords]`. Area and sub-group order is the display
+order; skills sort A–Z per language at render time. Use `l(de, en)` for names
+that differ by language; the English name is the stable ID and the icon key in
+`skillIcons.ts`. `keywords` are search-only synonyms in both languages: add the
+umbrella terms people search for (e.g. Vue → "js framework javascript-framework")
+so a search for a category finds its members. Area labels are deliberately not
+searchable, so "Datenbank" does not match every data format.
+Skill cards are static (icon, name, sub-group): not expandable, no proficiency
+level or evidence filter. No percentage bars. Only list technologies actually
+used in work or projects; planned tools (e.g. self-hosted monitoring) stay out.
+
+The shared search in `client.ts` splits the query into tokens (AND), folds
+case/diacritics, treats `-`/`_` as spaces, keeps `#`, `+`, `.` and tolerates
+German plural endings. Containers marked `data-filter-group` hide with their
+last visible item. Update the browser test when skill counts change.
 
 ## Projects: approval before any commit
 
@@ -39,7 +51,11 @@ An approval flag in code does **not** replace a human approval in the task.
 Use a stable ID; optional image must be an authorized local web asset. GitHub and
 website URLs are optional. Never fabricate screenshots, client quotes, metrics
 or a finished/live status. Named examples from an employer require usage clearance.
-Use `kind` to distinguish client, own, demo, study and development. Link a project
+Use `kind` to distinguish client, employer, own, demo, study and development;
+the overview renders one section per kind (`projectGroups`). Employment projects
+stay anonymised: no client, customer or internal product names. `featured`
+projects lead their section at full width. Without an image, `cover` sets the
+drawn cover headline. Link a project
 to a career station only with a supported `careerId`. Capture dimensions in
 `imageWidth` and `imageHeight` to reserve the correct space on detail pages.
 Project routes, sitemap and language links update automatically. Add regression

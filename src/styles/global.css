@@ -1078,7 +1078,107 @@ p + p {
   background: var(--color-soft);
 }
 
+/* Quick-search chips inside the filter panel */
+.search-suggestions {
+  display: flex;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.search-suggestions > span {
+  margin-right: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.search-suggestions button {
+  min-height: 44px;
+  padding: 6px 14px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--tds-radius-chip);
+  background: var(--color-card);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  transition: border-color 160ms ease;
+}
+.search-suggestions button:hover,
+.search-suggestions button:focus-visible {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* ---------- Area index (skills and project groups) ---------- */
+.skill-index {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr));
+  gap: 8px;
+  margin-bottom: 44px;
+}
+.skill-index a {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-soft);
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.3;
+}
+.skill-index a:hover {
+  color: var(--color-accent);
+}
+.skill-index span,
+.skill-index small {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--color-muted);
+}
+.skill-index small {
+  margin-left: auto;
+}
+
 /* ---------- Skills ---------- */
+.skill-area,
+.project-group {
+  margin-bottom: 56px;
+  scroll-margin-top: 24px;
+}
+.skill-area-head {
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--color-primary);
+}
+.skill-area-head .tiny-label {
+  color: var(--color-accent);
+}
+.skill-area-head h2 {
+  margin-top: 4px;
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+}
+.skill-area-head p {
+  margin-top: 6px;
+  max-width: 62ch;
+  color: var(--color-muted);
+}
+.skill-subgroup + .skill-subgroup {
+  margin-top: 28px;
+}
+.skill-subgroup h3 {
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
@@ -1144,6 +1244,14 @@ p + p {
   border-radius: var(--tds-radius-card);
   background: var(--color-soft);
 }
+.project-card--featured {
+  grid-column: 1 / -1;
+}
+@media (min-width: 1001px) {
+  .project-card--featured > .project-cover {
+    aspect-ratio: 3.2;
+  }
+}
 .project-card > :not(img, .project-cover) {
   margin-inline: 22px;
 }
@@ -1157,11 +1265,11 @@ p + p {
   object-position: top;
   background: var(--color-card);
 }
-.project-card h2 {
+.project-card h3 {
   margin-block: 10px 6px;
   font-size: clamp(1.375rem, 2vw, 1.75rem);
 }
-.project-card:hover h2 {
+.project-card:hover h3 {
   color: var(--color-accent);
 }
 .project-card p {
@@ -1226,8 +1334,24 @@ p + p {
   line-height: 1;
   letter-spacing: -0.035em;
 }
+.project-cover strong {
+  overflow-wrap: anywhere;
+}
+.project-cover .project-cover-tech {
+  color: var(--jt-on-navy-soft);
+}
 .project-cover-development {
   background: var(--jt-bordeaux);
+}
+/* Employment work: paper cover with a navy frame, so the groups read apart. */
+.project-cover-employer {
+  border: 2px solid var(--color-primary);
+  background: var(--color-card);
+  color: var(--color-primary);
+}
+.project-cover-employer > span,
+.project-cover-employer .project-cover-tech {
+  color: var(--color-accent);
 }
 .project-image {
   width: 100%;

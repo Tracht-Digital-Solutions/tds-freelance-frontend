@@ -79,9 +79,47 @@ test('filters, details and certificate dialog work in both languages', async ({
     await expect(page.locator('.skill-card:visible summary')).toHaveCount(0);
     await expect(page.locator('select[data-level]')).toHaveCount(0);
     await page.locator('.reset-filter').click();
-    await expect(page.locator('[data-filter-item]:visible')).toHaveCount(39);
+    await expect(page.locator('[data-filter-item]:visible')).toHaveCount(82);
+    // Umbrella terms find the concrete technologies, in any spelling.
+    for (const query of [
+      'js framework',
+      'JS-Framework',
+      'Javascript-Frameworks',
+    ]) {
+      await page.locator('[data-search]').fill(query);
+      await expect(page.locator('.skill-card:visible strong')).toHaveText([
+        'Angular',
+        'Astro',
+        'Preact',
+        'React',
+        'Vue.js',
+        'Node.js',
+      ]);
+    }
+    // Areas without a hit are hidden together with their headings.
+    await expect(page.locator('.skill-area:visible')).toHaveCount(2);
+    await page.locator('[data-search-suggestion]').nth(1).click();
+    await expect(page.locator('[data-search]')).toHaveValue(
+      lang === 'de' ? 'Datenbank' : 'Database',
+    );
+    await expect(page.locator('.skill-card:visible strong')).toHaveText([
+      'MariaDB',
+      'MySQL',
+      'PostgreSQL',
+      'SQL',
+      'SQLite',
+    ]);
+    // Short terms only match whole word starts ("KI" never hits "Wiki").
+    await page.locator('[data-search-suggestion]').nth(4).click();
+    await expect(page.locator('.skill-card:visible')).toHaveCount(8);
+    await expect(page.locator('.skill-area:visible')).toHaveCount(2);
+    await page.locator('[data-search]').fill('c#');
+    await expect(page.locator('.skill-card:visible strong')).toContainText([
+      'C#',
+    ]);
+    await page.locator('.reset-filter').click();
     await page.locator('select[data-category]').selectOption('frontend');
-    await expect(page.locator('[data-filter-item]:visible')).toHaveCount(7);
+    await expect(page.locator('[data-filter-item]:visible')).toHaveCount(13);
     await page.locator('[data-search]').fill('nonexistent');
     await expect(page.locator('[data-no-results]')).toBeVisible();
     await page.goto(lang === 'de' ? '/zertifikate/' : '/en/certifications/');
@@ -108,7 +146,11 @@ test('filters, details and certificate dialog work in both languages', async ({
     await page.locator('select[data-kind]').selectOption('study');
     await expect(page.locator('[data-filter-item]:visible')).toHaveCount(6);
     await page.locator('select[data-kind]').selectOption('development');
-    await expect(page.locator('[data-filter-item]:visible')).toHaveCount(1);
+    await expect(page.locator('[data-filter-item]:visible')).toHaveCount(2);
+    await expect(page.locator('.project-group:visible')).toHaveCount(1);
+    await page.locator('.reset-filter').click();
+    await page.locator('[data-search]').fill('vue');
+    await expect(page.locator('[data-filter-item]:visible')).toHaveCount(2);
   }
 });
 
@@ -148,7 +190,13 @@ test('sidebar navigation and values never overlap while scrolling', async ({
 test('responsive layouts stay within viewport', async ({ page }) => {
   for (const width of [360, 768, 900, 1024, 1280, 1920]) {
     await page.setViewportSize({ width, height: 900 });
-    for (const route of ['/', '/faehigkeiten/', '/zertifikate/', '/kontakt/']) {
+    for (const route of [
+      '/',
+      '/faehigkeiten/',
+      '/projekte/',
+      '/zertifikate/',
+      '/kontakt/',
+    ]) {
       await page.goto(route);
       expect(
         await page.evaluate(

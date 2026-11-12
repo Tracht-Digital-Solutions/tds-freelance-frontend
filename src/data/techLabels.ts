@@ -10,6 +10,9 @@ import type { Locale } from './content';
 export const TECH_EN: Record<string, string> = {
   Automatisierung: 'Automation',
   Datenmigration: 'Data migration',
+  'IT-Konzeption': 'IT concepts',
+  'Lokale LLMs': 'Local LLMs',
+  Risikoanalyse: 'Risk analysis',
   Informationsarchitektur: 'Information architecture',
   Produktkatalog: 'Product catalogue',
   Projektmanagement: 'Project management',
@@ -30,6 +33,14 @@ export const NEUTRAL_TECH = new Set([
   'SQL', 'SQLite', 'Stripe', 'Testing', 'TypeScript', 'UI/UX', 'UX', 'vCard',
   'Vue.js', 'Wayland', 'Webdesign', 'Windows', 'WooCommerce', 'WordPress',
   'XML',
+  // Added with the project archive of November 2026.
+  'Android', 'Angular', 'ARM64', 'Azure DevOps', 'Batch', 'C', 'Camunda',
+  'Canvas', 'CSV', 'Docker', 'Excel', 'Figma', 'Fluid', 'GitLab CI', 'Grafana',
+  'KNIME', 'Linux', 'MariaDB', 'MySQL', 'n8n', 'OAuth/OIDC', 'PHP',
+  'Playwright', 'PostgreSQL', 'Prompt Engineering', 'Python', 'QEMU',
+  'Quadient Inspire', 'Raspberry Pi', 'React', 'SSH', 'Storyblok', 'TYPO3',
+  'TypoScript', 'Visual Basic', 'Wear OS', 'Web Components', 'WinForms', 'WPF',
+  'xUnit', 'XSD', 'Swagger / OpenAPI',
 ]);
 
 export function techLabel(tag: string, lang: Locale): string {

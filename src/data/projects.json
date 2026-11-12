@@ -114,106 +114,59 @@
     "imageHeight": 600
   },
   {
-    "id": "produktdaten-automatisierung",
-    "approved": true,
-    "kind": "client",
-    "title": {
-      "de": "Automatisierte Produktdaten-Pipeline",
-      "en": "Automated product data pipeline"
-    },
-    "summary": {
-      "de": "Anonymisierte Kundenreferenz: eine modulare Datenpipeline für einen großen, wachsenden Artikelbestand.",
-      "en": "Anonymised client reference: a modular data pipeline for a large, growing catalogue."
-    },
-    "category": {
-      "de": "E-Commerce",
-      "en": "E-commerce"
-    },
-    "stage": {
-      "de": "Umgesetzte Kundenreferenz",
-      "en": "Implemented client reference"
-    },
-    "role": {
-      "de": "Shop-Aufbau, Datenmigration & laufende Pflege",
-      "en": "Shop development, data migration & ongoing maintenance"
-    },
-    "tech": [
-      "E-Commerce",
-      "Datenmigration",
-      "Automatisierung"
-    ],
-    "sections": [
-      {
-        "title": {
-          "de": "Anforderung",
-          "en": "Requirement"
-        },
-        "text": {
-          "de": "Ein Artikelbestand im fünfstelligen Bereich, Daten aus vielen unterschiedlichen Quellen und Formaten, Regeln, die sich häufig ändern, und mehrere Zielsysteme mit eigenen Anforderungen. Die Referenz ist anonymisiert; konkrete Geschäftsprozesse des Kunden bleiben vertraulich.",
-          "en": "A five-figure catalogue, data from many different sources and formats, rules that change often and several target systems with their own requirements. The reference is anonymised; the client’s specific business processes remain confidential."
-        }
-      },
-      {
-        "title": {
-          "de": "Umsetzung",
-          "en": "Implementation"
-        },
-        "text": {
-          "de": "Eine modulare Datenpipeline führt die Daten zusammen, prüft sie auf Plausibilität und Dubletten und versieht sie mit nachvollziehbaren Fehler- und Ausschlusslisten. Jedes Zielsystem erhält aus demselben Datenstand seine eigene, regelbasierte Ausgabe.",
-          "en": "A modular data pipeline merges the data, checks it for plausibility and duplicates and annotates it with traceable error and exclusion lists. Each target system receives its own rule-based output from the same data set."
-        }
-      }
-    ]
-  },
-  {
     "id": "licht-schatten-framework",
     "approved": true,
     "kind": "development",
     "title": {
-      "de": "Licht & Schatten in JavaScript",
-      "en": "Light & shadows in JavaScript"
+      "de": "glombra.js · Licht & Schatten",
+      "en": "glombra.js · Light & shadow"
     },
     "summary": {
-      "de": "Ein eigenes JavaScript-Framework für Licht und Schatten, an dem ich derzeit arbeite.",
-      "en": "My own JavaScript framework for light and shadows, currently in development."
+      "de": "Meine frameworkunabhängige TypeScript-Bibliothek für Licht- und Schatteneffekte auf Webseiten.",
+      "en": "My framework-agnostic TypeScript library for light and shadow effects on websites."
     },
     "category": {
       "de": "Grafik & Frameworks",
       "en": "Graphics & frameworks"
     },
     "stage": {
-      "de": "In Entwicklung",
-      "en": "In development"
+      "de": "Alpha 0.9.0-alpha.2, privat",
+      "en": "Alpha 0.9.0-alpha.2, private"
     },
     "role": {
       "de": "Eigenes Entwicklungsprojekt",
       "en": "Own development project"
     },
     "tech": [
-      "JavaScript"
+      "TypeScript",
+      "Canvas",
+      "CSS",
+      "Web Components",
+      "Playwright"
     ],
     "sections": [
       {
         "title": {
-          "de": "Idee",
-          "en": "Idea"
+          "de": "Projekt",
+          "en": "Project"
         },
         "text": {
-          "de": "Ich entwickle ein eigenes Licht- und Schattenframework in JavaScript. Das Projekt ist Teil meiner persönlichen Arbeit an Software und technischen Herausforderungen.",
-          "en": "I am developing my own light and shadow framework in JavaScript. The project is part of my personal work on software and technical challenges."
+          "de": "glombra.js erkennt Elemente im DOM, platziert Lichtquellen und projiziert daraus Schatten. Gerendert wird wahlweise mit CSS oder Canvas; eine Web Component bindet das Ganze ohne Framework ein. Ein Playground und Demo-Szenen zeigen die Effekte.",
+          "en": "glombra.js detects elements in the DOM, places light sources and projects shadows from them. Rendering uses either CSS or Canvas, and a web component embeds it without any framework. A playground and demo scenes show the effects."
         }
       },
       {
         "title": {
-          "de": "Aktueller Stand",
-          "en": "Current status"
+          "de": "Stand und Grenzen",
+          "en": "Status and limits"
         },
         "text": {
-          "de": "Das Framework ist noch in Arbeit.",
-          "en": "The framework is still in development."
+          "de": "Die Effekte sind bewusst angenähert, kein physikalisches 3D- oder GPU-Rendering. Bewegungs- und Performance-Regeln sowie Browsertests mit Playwright sind angelegt. Die Bibliothek ist noch nicht für den Produktiveinsatz freigegeben.",
+          "en": "The effects are deliberately approximated, not physical 3D or GPU rendering. Motion and performance rules and Playwright browser tests are in place. The library is not yet released for production use."
         }
       }
-    ]
+    ],
+    "cover": "LIGHT / SHADOW"
   },
   {
     "id": "tdshop",
@@ -1081,8 +1034,8 @@
       "en": "Own software · Kanban"
     },
     "stage": {
-      "de": "Entwicklungsversion 0.1.0-dev.1, privat, noch kein stabiles Release",
-      "en": "Development version 0.1.0-dev.1, private, no stable release yet"
+      "de": "Entwicklungsversion 0.2.0-dev.1, privat, noch kein stabiles Release",
+      "en": "Development version 0.2.0-dev.1, private, no stable release yet"
     },
     "role": {
       "de": "Entwicklung · Privates Projekt",
@@ -1259,5 +1212,1194 @@
     "imageWidth": 1200,
     "imageHeight": 750,
     "github": "https://github.com/Tracht-Digital-Solutions/gitea-claude-plugin"
+  },
+  {
+    "approved": true,
+    "id": "teapilot",
+    "kind": "own",
+    "featured": true,
+    "careerId": "tracht-digital-solutions",
+    "title": {
+      "de": "TeaPilot",
+      "en": "TeaPilot"
+    },
+    "summary": {
+      "de": "Ein nativer Gitea-Client für Android und Wear OS, damit sich Repositories, Issues und Pull Requests auch unterwegs verwalten lassen.",
+      "en": "A native Gitea client for Android and Wear OS, so repositories, issues and pull requests can be managed on the go."
+    },
+    "category": {
+      "de": "Open Source · Mobile App",
+      "en": "Open source · Mobile app"
+    },
+    "stage": {
+      "de": "In Entwicklung, Android 10+ und Wear OS",
+      "en": "In development, Android 10+ and Wear OS"
+    },
+    "role": {
+      "de": "Produktidee, UX, Architektur & Entwicklung",
+      "en": "Product idea, UX, architecture & development"
+    },
+    "tech": [
+      "Kotlin",
+      "Jetpack Compose",
+      "Android",
+      "Wear OS",
+      "Gitea API"
+    ],
+    "cover": "GITEA / MOBILE",
+    "github": "https://github.com/Tracht-Digital-Solutions/TeaPilot",
+    "sections": [
+      {
+        "title": {
+          "de": "Idee",
+          "en": "Idea"
+        },
+        "text": {
+          "de": "Für Gitea fehlte mir eine gute mobile App, vergleichbar mit dem, was es für GitHub gibt. Also habe ich Produktidee, Funktionsumfang, Benutzerführung und Architektur selbst entworfen und setze sie KI-gestützt um, mit eigener Code-Prüfung.",
+          "en": "Gitea lacked a good mobile app comparable to what exists for GitHub. So I designed the product idea, feature scope, user flow and architecture myself and build it with AI assistance, reviewing the code myself."
+        }
+      },
+      {
+        "title": {
+          "de": "Stand und Grenzen",
+          "en": "Status and limits"
+        },
+        "text": {
+          "de": "Die Android-App findet Server per HTTPS, meldet sich mit einem persönlichen Zugangstoken an und zeigt eine Repository-Liste mit Aktualisieren und Abmelden. Zugangsdaten bleiben nur für die Sitzung im Speicher. Issues, Pull Requests, Benachrichtigungen und Offline-Speicher folgen als nächste Ausbaustufen. Entwickelt wird in Gitea mit eigener CI, der Quellcode liegt öffentlich auf GitHub.",
+          "en": "The Android app discovers servers over HTTPS, signs in with a personal access token and shows a repository list with refresh and sign-out. Credentials stay in memory for the session only. Issues, pull requests, notifications and offline storage are the next stages. Development runs in Gitea with its own CI; the source code is public on GitHub."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "gitea-chatgpt-plugin",
+    "kind": "own",
+    "careerId": "tracht-digital-solutions",
+    "title": {
+      "de": "Gitea for ChatGPT",
+      "en": "Gitea for ChatGPT"
+    },
+    "summary": {
+      "de": "Ein selbst gehosteter MCP-Server mit Plugin, über den ChatGPT und Codex eigene Gitea-Instanzen verwalten.",
+      "en": "A self-hosted MCP server and plugin that lets ChatGPT and Codex manage your own Gitea instances."
+    },
+    "category": {
+      "de": "Open Source · KI-Integration",
+      "en": "Open source · AI integration"
+    },
+    "stage": {
+      "de": "Version 0.4.0, Quellcode auf GitHub",
+      "en": "Version 0.4.0, source code on GitHub"
+    },
+    "role": {
+      "de": "Konzeption, Infrastruktur & Entwicklung",
+      "en": "Concept, infrastructure & development"
+    },
+    "tech": [
+      "TypeScript",
+      "Node.js",
+      "MCP",
+      "Gitea API",
+      "OAuth/OIDC",
+      "Docker"
+    ],
+    "cover": "MCP / GITEA",
+    "github": "https://github.com/Tracht-Digital-Solutions/gitea-chatgpt-plugin",
+    "sections": [
+      {
+        "title": {
+          "de": "Projekt",
+          "en": "Project"
+        },
+        "text": {
+          "de": "160 typisierte Werkzeuge decken Repositories, Dateien, Issues, Pull Requests, Reviews, Actions, Kanban-Projekte, Zeiterfassung, Releases und Wiki ab. Ein Installationsskript baut Server, Container und ein Plugin mit dem eigenen Endpunkt.",
+          "en": "160 typed tools cover repositories, files, issues, pull requests, reviews, Actions, Kanban projects, time tracking, releases and the wiki. An install script builds the server, the container and a plugin pointing at your own endpoint."
+        }
+      },
+      {
+        "title": {
+          "de": "Das Besondere",
+          "en": "What is special"
+        },
+        "text": {
+          "de": "OAuth, verschlüsselte Mandantentrennung und Schutz gegen SSRF und DNS-Rebinding sind Pflicht. Schreibende Aktionen können zusätzlich eine menschliche Einzelfreigabe verlangen. CI prüft Typen, Tests, MCP-Schemas, Docker und Abhängigkeiten. Es gibt keinen Eintrag im offiziellen Plugin-Verzeichnis und keinen mitgelieferten Dienst: Wer es nutzt, betreibt es selbst. Die Abnahme meines eigenen Deployments steht noch aus.",
+          "en": "OAuth, encrypted tenant separation and protection against SSRF and DNS rebinding are mandatory. Write actions can additionally require an individual human approval. CI checks types, tests, MCP schemas, Docker and dependencies. It is not listed in the official plugin directory and ships no hosted service: users run it themselves. Acceptance of my own deployment is still pending."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "claude-plugin-marketplace",
+    "kind": "own",
+    "careerId": "tracht-digital-solutions",
+    "title": {
+      "de": "Plugin-Marktplatz für Claude Code",
+      "en": "Plugin marketplace for Claude Code"
+    },
+    "summary": {
+      "de": "Ein Marktplatz, dessen Katalog GitHub Actions automatisch aus meinen Plugin-Repositories zusammenstellt.",
+      "en": "A marketplace whose catalogue GitHub Actions assembles automatically from my plugin repositories."
+    },
+    "category": {
+      "de": "Open Source · Automatisierung",
+      "en": "Open source · Automation"
+    },
+    "stage": {
+      "de": "Öffentlich nutzbar",
+      "en": "Publicly usable"
+    },
+    "role": {
+      "de": "Konzeption & Pipeline",
+      "en": "Concept & pipeline"
+    },
+    "tech": [
+      "GitHub Actions",
+      "Node.js",
+      "Claude Code"
+    ],
+    "cover": "PLUGINS / CI",
+    "github": "https://github.com/Tracht-Digital-Solutions/claude-plugin-marketplace",
+    "sections": [
+      {
+        "title": {
+          "de": "Projekt",
+          "en": "Project"
+        },
+        "text": {
+          "de": "Mit zwei Befehlen lässt sich der Marktplatz in Claude Code einbinden und ein Plugin installieren, etwa das Gitea-Plugin. Neue Versionen erscheinen dort, sobald sie im jeweiligen Plugin-Repository freigegeben sind.",
+          "en": "Two commands add the marketplace to Claude Code and install a plugin, such as the Gitea plugin. New versions appear as soon as they are released in the respective plugin repository."
+        }
+      },
+      {
+        "title": {
+          "de": "Das Besondere",
+          "en": "What is special"
+        },
+        "text": {
+          "de": "Ein Workflow liest die Plugin-Repositories, baut den Katalog und aktualisiert die Übersicht. Versionen, Tags und Releases folgen damit einem gemeinsamen, automatisierten Weg statt Handarbeit.",
+          "en": "A workflow reads the plugin repositories, builds the catalogue and updates the overview. Versions, tags and releases thus follow one shared, automated path instead of manual work."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "community-platform",
+    "kind": "own",
+    "title": {
+      "de": "Community Platform",
+      "en": "Community Platform"
+    },
+    "summary": {
+      "de": "Eine Webplattform, auf der eine Community über Ideen und die nächsten Funktionen abstimmt, nachvollziehbar und moderiert.",
+      "en": "A web platform where a community votes on ideas and the next features, transparently and with moderation."
+    },
+    "category": {
+      "de": "Open Source · Webplattform",
+      "en": "Open source · Web platform"
+    },
+    "stage": {
+      "de": "Version 0.1.4, Startsystem ohne Produktionsfreigabe",
+      "en": "Version 0.1.4, starter system without production release"
+    },
+    "role": {
+      "de": "Konzeption & Entwicklung · Eigenes Projekt",
+      "en": "Concept & development · Own project"
+    },
+    "tech": [
+      "TypeScript",
+      "Node.js",
+      "MySQL",
+      "Stripe"
+    ],
+    "cover": "VOTE / DECIDE",
+    "github": "https://github.com/jtracht/community-platform",
+    "sections": [
+      {
+        "title": {
+          "de": "Projekt",
+          "en": "Project"
+        },
+        "text": {
+          "de": "Freitext-Ideen, Single- und Multiple-Choice-Umfragen und Prioritäten-Rankings mit Zeitplänen, Quoren und festen Ergebnisregeln. Der Product Owner behält Sicherheit, Umsetzung und Releases in der Hand.",
+          "en": "Free-text ideas, single- and multiple-choice polls and priority rankings with schedules, quorums and fixed result rules. The product owner keeps control of security, implementation and releases."
+        }
+      },
+      {
+        "title": {
+          "de": "Das Besondere",
+          "en": "What is special"
+        },
+        "text": {
+          "de": "Ein geschützter Adminbereich mit Passwort und TOTP, granularen Rechten, Moderation, Einsprüchen und Auditprotokoll. Freigegebene Ideen werden zu GitHub-Issues, Pull Requests über signierte Webhooks verknüpft. Datenschutzexport und -löschung sind eingebaut.",
+          "en": "A protected admin area with password and TOTP, granular permissions, moderation, appeals and an audit log. Approved ideas become GitHub issues, and pull requests are linked through signed webhooks. Privacy export and deletion are built in."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "pi3os-berris",
+    "kind": "development",
+    "title": {
+      "de": "pi3os & Berris",
+      "en": "pi3os & Berris"
+    },
+    "summary": {
+      "de": "Ein eigenes Betriebssystem für den Raspberry Pi 3 B+: ARM64-Kernel, Treiber, Speicher- und Prozessverwaltung.",
+      "en": "My own operating system for the Raspberry Pi 3 B+: an ARM64 kernel, drivers, memory and process management."
+    },
+    "category": {
+      "de": "Systemsoftware · Forschung",
+      "en": "System software · Research"
+    },
+    "stage": {
+      "de": "Frühe Entwicklung, in QEMU getestet, privat",
+      "en": "Early development, tested in QEMU, private"
+    },
+    "role": {
+      "de": "Konzeption & Entwicklungssteuerung",
+      "en": "Concept & development lead"
+    },
+    "tech": [
+      "ARM64",
+      "C",
+      "QEMU",
+      "Raspberry Pi"
+    ],
+    "cover": "KERNEL / ARM64",
+    "sections": [
+      {
+        "title": {
+          "de": "Projekt",
+          "en": "Project"
+        },
+        "text": {
+          "de": "pi3os ist ein bare-metal Kernel für den Raspberry Pi 3 B+. Berris teilt die Plattform in Bausteine: Core für Kernel, Treiber und SDK, Desk für einen Arbeitsplatz, Play für Spiele und Duo als Bootauswahl zwischen beiden.",
+          "en": "pi3os is a bare-metal kernel for the Raspberry Pi 3 B+. Berris splits the platform into building blocks: Core for kernel, drivers and SDK, Desk for a workstation, Play for gaming and Duo as a boot choice between the two."
+        }
+      },
+      {
+        "title": {
+          "de": "Stand und Grenzen",
+          "en": "Status and limits"
+        },
+        "text": {
+          "de": "Tests zu Boot, Speicher, Prozessen, Timer und einzelnen Treibern laufen in QEMU. Auf echter Hardware ist noch nichts freigegeben, viele Entscheidungen und Tests sind offen, und das Projekt hat gerade niedrige Priorität. Die Repositories sind privat.",
+          "en": "Tests for boot, memory, processes, timers and individual drivers run in QEMU. Nothing is released on real hardware yet, many decisions and tests are open, and the project currently has low priority. The repositories are private."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "ki-produkttexte",
+    "kind": "client",
+    "title": {
+      "de": "KI-Produkttexte mit n8n und lokalem LLM",
+      "en": "AI product copy with n8n and a local LLM"
+    },
+    "summary": {
+      "de": "Ein n8n-Workflow, der mit einem lokal betriebenen Sprachmodell Verkaufs- und SEO-Texte für einen fünfstelligen Artikelbestand erzeugt.",
+      "en": "An n8n workflow that uses a locally hosted language model to write sales and SEO copy for a five-figure product catalogue."
+    },
+    "category": {
+      "de": "E-Commerce · KI",
+      "en": "E-commerce · AI"
+    },
+    "stage": {
+      "de": "Für einen Kunden umgesetzt",
+      "en": "Implemented for a client"
+    },
+    "role": {
+      "de": "Konzeption & Umsetzung · Kundenprojekt",
+      "en": "Concept & implementation · Client project"
+    },
+    "tech": [
+      "n8n",
+      "Lokale LLMs",
+      "Prompt Engineering",
+      "SEO"
+    ],
+    "cover": "TEXT / FLOW",
+    "sections": [
+      {
+        "title": {
+          "de": "Ausgangslage",
+          "en": "Starting point"
+        },
+        "text": {
+          "de": "Ein großes, wachsendes Sortiment braucht einheitliche, aussagekräftige Titel und Beschreibungen, und zwar für jeden Artikel. Von Hand ist das nicht zu leisten.",
+          "en": "A large, growing catalogue needs consistent, meaningful titles and descriptions for every single item, which cannot be done by hand."
+        }
+      },
+      {
+        "title": {
+          "de": "Umsetzung",
+          "en": "Implementation"
+        },
+        "text": {
+          "de": "n8n steuert den Ablauf in mehreren Schritten: Produktdaten gehen an ein lokal betriebenes Sprachmodell, Prompts sorgen für einheitlichen Ton und Aufbau, die Ergebnisse fließen zurück in die automatisierte Datenverarbeitung. Die Wirkung auf Rankings oder Umsatz habe ich nicht beziffert.",
+          "en": "n8n orchestrates the flow in several steps: product data goes to a locally hosted language model, prompts keep tone and structure consistent, and the results flow back into automated data processing. I have not quantified the effect on rankings or revenue."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "fotografen-portfolio",
+    "kind": "client",
+    "title": {
+      "de": "Portfolio für einen Fotografen",
+      "en": "Portfolio for a photographer"
+    },
+    "summary": {
+      "de": "Eine neue Portfolio-Website mit Astro und dem Headless CMS Storyblok, die der Fotograf selbst pflegt.",
+      "en": "A new portfolio website built with Astro and the headless CMS Storyblok, which the photographer maintains independently."
+    },
+    "category": {
+      "de": "Webentwicklung · Headless CMS",
+      "en": "Web development · Headless CMS"
+    },
+    "stage": {
+      "de": "Abgeschlossen und übergeben",
+      "en": "Completed and handed over"
+    },
+    "role": {
+      "de": "Design-Abstimmung, Entwicklung & CMS-Einrichtung",
+      "en": "Design alignment, development & CMS setup"
+    },
+    "tech": [
+      "Astro",
+      "Storyblok",
+      "Webdesign"
+    ],
+    "cover": "PHOTO / CMS",
+    "sections": [
+      {
+        "title": {
+          "de": "Ausgangslage",
+          "en": "Starting point"
+        },
+        "text": {
+          "de": "Ein frisch selbstständiger Fotograf brauchte eine eigene Website, auf der er Galerien, Bilder und Texte ohne Hilfe aktualisieren kann.",
+          "en": "A newly self-employed photographer needed his own website where he can update galleries, images and copy without help."
+        }
+      },
+      {
+        "title": {
+          "de": "Umsetzung",
+          "en": "Implementation"
+        },
+        "text": {
+          "de": "Ich habe die Gestaltung direkt mit dem Kunden abgestimmt, das Frontend mit Astro neu entwickelt und Storyblok als Redaktionssystem eingerichtet. Nach rund einem Monat war das Projekt fertig und übergeben; Hosting und Betrieb liegen beim Kunden.",
+          "en": "I aligned the design directly with the client, built the frontend from scratch with Astro and set up Storyblok as the editing system. After about a month the project was finished and handed over; hosting and operation stay with the client."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "shopware-onlineshop",
+    "kind": "client",
+    "title": {
+      "de": "Shopware-6-Shop von Grund auf",
+      "en": "Shopware 6 shop from scratch"
+    },
+    "summary": {
+      "de": "Vollständige Einrichtung eines neuen Onlineshops: Design, Katalog, Zahlung, Versand, SEO und Dokumentation.",
+      "en": "Complete setup of a new online shop: design, catalogue, payment, shipping, SEO and documentation."
+    },
+    "category": {
+      "de": "E-Commerce",
+      "en": "E-commerce"
+    },
+    "stage": {
+      "de": "Entwickelt und übergeben",
+      "en": "Built and handed over"
+    },
+    "role": {
+      "de": "Einrichtung, Entwicklung & Texte",
+      "en": "Setup, development & copy"
+    },
+    "tech": [
+      "Shopware 6",
+      "JavaScript",
+      "SEO"
+    ],
+    "cover": "SHOP / 6",
+    "sections": [
+      {
+        "title": {
+          "de": "Umsetzung",
+          "en": "Implementation"
+        },
+        "text": {
+          "de": "Installation und Konfiguration, eigene JavaScript-Funktionen und Frontend-Anpassungen, Produktimport, Plugins sowie Zahlungs- und Versandeinstellungen. Dazu kamen Produkt-, Kategorie- und SEO-Texte.",
+          "en": "Installation and configuration, custom JavaScript features and frontend adjustments, product import, plugins and payment and shipping settings, plus product, category and SEO copy."
+        }
+      },
+      {
+        "title": {
+          "de": "Stand und Grenzen",
+          "en": "Status and limits"
+        },
+        "text": {
+          "de": "Der technische Aufbau dauerte rund zwei Wochen, das Projekt insgesamt etwa einen Monat. Bestellabläufe habe ich getestet und dokumentiert übergeben; das Livegehen hat der Kunde selbst übernommen.",
+          "en": "The technical build took about two weeks and the whole project about a month. I tested the order flows and handed them over with documentation; the client handled the go-live."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "typo3-websites",
+    "kind": "client",
+    "title": {
+      "de": "TYPO3-Websites: Neubau und Erweiterung",
+      "en": "TYPO3 websites: new builds and extensions"
+    },
+    "summary": {
+      "de": "Eine TYPO3-Website mit eigenem Designkonzept neu gebaut, dazu Wartung und Erweiterung bestehender TYPO3-Auftritte.",
+      "en": "A TYPO3 website built from scratch with my own design concept, plus maintenance and extension of existing TYPO3 sites."
+    },
+    "category": {
+      "de": "Webentwicklung · CMS",
+      "en": "Web development · CMS"
+    },
+    "stage": {
+      "de": "Mehrere Kundenaufträge umgesetzt",
+      "en": "Several client engagements delivered"
+    },
+    "role": {
+      "de": "Design, Entwicklung & Wartung",
+      "en": "Design, development & maintenance"
+    },
+    "tech": [
+      "TYPO3",
+      "PHP",
+      "Fluid",
+      "TypoScript"
+    ],
+    "cover": "TYPO3 / CMS",
+    "sections": [
+      {
+        "title": {
+          "de": "Neubau",
+          "en": "New build"
+        },
+        "text": {
+          "de": "Für einen Kunden habe ich die Gestaltung selbst konzipiert und die Website mit Sitepackage, Fluid-Templates und TypoScript bis zur fertigen Seite umgesetzt.",
+          "en": "For one client I designed the site myself and built it with a sitepackage, Fluid templates and TypoScript through to the finished website."
+        }
+      },
+      {
+        "title": {
+          "de": "Wartung und Erweiterung",
+          "en": "Maintenance and extension"
+        },
+        "text": {
+          "de": "Bei weiteren Kunden passe ich Sitepackages, Templates und Konfigurationen an und erweitere vorhandene Extensions um eigene PHP-Funktionen.",
+          "en": "For other clients I adapt sitepackages, templates and configuration and extend existing extensions with my own PHP features."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "react-erweiterungen",
+    "kind": "client",
+    "title": {
+      "de": "Erweiterungen für React-Anwendungen",
+      "en": "Extensions for React applications"
+    },
+    "summary": {
+      "de": "Neue Komponenten, Funktionen und Fehlerbehebungen in bestehenden React-Anwendungen von Kunden.",
+      "en": "New components, features and bug fixes in existing client React applications."
+    },
+    "category": {
+      "de": "Webentwicklung",
+      "en": "Web development"
+    },
+    "stage": {
+      "de": "Mehrere Kundenaufträge",
+      "en": "Several client engagements"
+    },
+    "role": {
+      "de": "Frontend-Entwicklung",
+      "en": "Frontend development"
+    },
+    "tech": [
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "CSS"
+    ],
+    "cover": "REACT / UI",
+    "sections": [
+      {
+        "title": {
+          "de": "Umsetzung",
+          "en": "Implementation"
+        },
+        "text": {
+          "de": "Ich setze Anforderungen eigenständig um, überwiegend in JavaScript, teils in TypeScript. Neue Oberflächen füge ich so ein, dass sie zum vorhandenen Corporate Design und den Mustern der Anwendung passen.",
+          "en": "I implement requirements independently, mostly in JavaScript and partly in TypeScript. New interfaces fit the existing corporate design and the patterns of the application."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "website-support",
+    "kind": "client",
+    "title": {
+      "de": "Website-Support, Notfälle & Hosting",
+      "en": "Website support, emergencies & hosting"
+    },
+    "summary": {
+      "de": "Kurzfristige Hilfe bei ausgefallenen Websites, fehlerhaften Updates, Plugins, Schnittstellen und Hosting-Problemen.",
+      "en": "Short-notice help with websites that are down, broken updates, plugins, APIs and hosting problems."
+    },
+    "category": {
+      "de": "Betrieb & Wartung",
+      "en": "Operations & maintenance"
+    },
+    "stage": {
+      "de": "Laufend, meist Tages- bis Wochenaufträge",
+      "en": "Ongoing, mostly day-to-week engagements"
+    },
+    "role": {
+      "de": "Analyse, Reparatur & Absicherung",
+      "en": "Analysis, repair & safeguarding"
+    },
+    "tech": [
+      "WordPress",
+      "PHP",
+      "Linux",
+      "Docker",
+      "SSH"
+    ],
+    "cover": "FIX / RUN",
+    "sections": [
+      {
+        "title": {
+          "de": "Umsetzung",
+          "en": "Implementation"
+        },
+        "text": {
+          "de": "HTTP-500- und 404-Fehler, kaputte Plugins nach Updates oder gestörte Schnittstellen: Ich analysiere die Ursache, behebe PHP-, JavaScript- und API-Fehler und arbeite dafür bei Bedarf direkt auf dem Server, mit SSH, SFTP, cPanel, Plesk oder phpMyAdmin. Mit Providern stimme ich mich direkt ab.",
+          "en": "HTTP 500 and 404 errors, plugins broken by updates or failing APIs: I find the cause, fix PHP, JavaScript and API errors and work directly on the server where needed, using SSH, SFTP, cPanel, Plesk or phpMyAdmin. I coordinate directly with hosting providers."
+        }
+      },
+      {
+        "title": {
+          "de": "Danach",
+          "en": "Afterwards"
+        },
+        "text": {
+          "de": "Oft richte ich anschließend Backups ein, damit der nächste Ausfall weniger Schaden anrichtet. Eine 24/7-Bereitschaft biete ich nicht an.",
+          "en": "Afterwards I often set up backups so the next outage does less damage. I do not offer 24/7 on-call support."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "datenbank-migrationen",
+    "kind": "client",
+    "title": {
+      "de": "Website- und Datenbankmigrationen",
+      "en": "Website and database migrations"
+    },
+    "summary": {
+      "de": "Geplante Umzüge von Websites und Datenbanken mit Backups, Testlauf in Staging und Prüfung danach.",
+      "en": "Planned moves of websites and databases with backups, a staging dry run and checks afterwards."
+    },
+    "category": {
+      "de": "Daten & Betrieb",
+      "en": "Data & operations"
+    },
+    "stage": {
+      "de": "Mehrere Kundenaufträge",
+      "en": "Several client engagements"
+    },
+    "role": {
+      "de": "Planung & Durchführung",
+      "en": "Planning & execution"
+    },
+    "tech": [
+      "MySQL",
+      "PostgreSQL",
+      "SQLite",
+      "SQL",
+      "Datenmigration"
+    ],
+    "cover": "MOVE / DATA",
+    "sections": [
+      {
+        "title": {
+          "de": "Vorgehen",
+          "en": "Approach"
+        },
+        "text": {
+          "de": "Vor kritischen Eingriffen sichere ich alles, probiere größere Änderungen in einer Staging-Umgebung aus und prüfe danach Daten und Funktionen. Den Umzug lege ich in besucherarme Zeiten, damit möglichst wenige Nutzer etwas merken.",
+          "en": "Before critical changes I back everything up, try larger changes in a staging environment and check data and functions afterwards. I schedule the move for low-traffic hours so as few users as possible notice."
+        }
+      },
+      {
+        "title": {
+          "de": "Datenbanken",
+          "en": "Databases"
+        },
+        "text": {
+          "de": "Gearbeitet habe ich mit MySQL, PostgreSQL und SQLite: Abfragen, Tabellenstrukturen, Reparaturen, Optimierung und Wiederherstellung.",
+          "en": "I have worked with MySQL, PostgreSQL and SQLite: queries, table structures, repairs, optimisation and recovery."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "digitalisierungsberatung",
+    "kind": "client",
+    "title": {
+      "de": "Digitalisierungs- und Technologieberatung",
+      "en": "Digitalisation and technology consulting"
+    },
+    "summary": {
+      "de": "Beratung, ob und wie sich ein Vorhaben technisch umsetzen lässt: Lösungswege, Risiken und passende Technologien.",
+      "en": "Advice on whether and how a plan can be built: possible approaches, risks and suitable technologies."
+    },
+    "category": {
+      "de": "Beratung",
+      "en": "Consulting"
+    },
+    "stage": {
+      "de": "Mehrere Beratungsaufträge",
+      "en": "Several consulting engagements"
+    },
+    "role": {
+      "de": "Recherche, Konzept & Bewertung",
+      "en": "Research, concept & assessment"
+    },
+    "tech": [
+      "IT-Konzeption",
+      "Risikoanalyse",
+      "Node.js"
+    ],
+    "cover": "PLAN / RISK",
+    "sections": [
+      {
+        "title": {
+          "de": "Umsetzung",
+          "en": "Implementation"
+        },
+        "text": {
+          "de": "Ich recherchiere, entwerfe Konzepte und bewerte Architekturen, etwa im Node.js-Umfeld mit NestJS, Next.js, Nuxt oder Astro. Dabei geht es um Wartbarkeit, Risiken und organisatorische Voraussetzungen. Einzelne Teile setze ich prototypisch selbst um; nicht jede Beratung führt zu einem fertigen System.",
+          "en": "I research, draft concepts and assess architectures, for example in the Node.js ecosystem with NestJS, Next.js, Nuxt or Astro, weighing maintainability, risks and organisational requirements. I build some parts as prototypes myself; not every consultation leads to a finished system."
+        }
+      }
+    ]
+  },
+  {
+    "id": "produktdaten-automatisierung",
+    "approved": true,
+    "kind": "client",
+    "title": {
+      "de": "Automatisierte Produktdaten-Pipeline",
+      "en": "Automated product data pipeline"
+    },
+    "summary": {
+      "de": "Anonymisierte Kundenreferenz: eine modulare Datenpipeline, die einen großen, wachsenden Artikelbestand aus vielen Quellen zusammenführt, prüft und für mehrere Vertriebskanäle aufbereitet.",
+      "en": "Anonymised client reference: a modular data pipeline that merges a large, growing catalogue from many sources, validates it and prepares it for several sales channels."
+    },
+    "category": {
+      "de": "E-Commerce · Datenautomatisierung",
+      "en": "E-commerce · Data automation"
+    },
+    "stage": {
+      "de": "Umgesetzt, über mehrere Jahre betreut",
+      "en": "Implemented, maintained over several years"
+    },
+    "role": {
+      "de": "Konzeption, Entwicklung & laufende Anpassung",
+      "en": "Concept, development & ongoing adaptation"
+    },
+    "tech": [
+      "KNIME",
+      "Python",
+      "SQL",
+      "Automatisierung"
+    ],
+    "cover": "DATA / FLOW",
+    "sections": [
+      {
+        "title": {
+          "de": "Aufgabe",
+          "en": "Challenge"
+        },
+        "text": {
+          "de": "Ein Artikelbestand im fünfstelligen Bereich, Daten aus vielen unterschiedlichen Quellen und Formaten, Regeln, die sich häufig ändern, und mehrere Zielsysteme mit eigenen Anforderungen: Von Hand ist das nicht mehr zuverlässig zu pflegen. Die Referenz ist anonymisiert; konkrete Geschäftsprozesse des Kunden bleiben vertraulich.",
+          "en": "A five-figure catalogue, data from many different sources and formats, rules that change often and several target systems with their own requirements: this can no longer be maintained reliably by hand. The reference is anonymised; the client’s specific business processes remain confidential."
+        }
+      },
+      {
+        "title": {
+          "de": "Technik",
+          "en": "Technology"
+        },
+        "text": {
+          "de": "Die Verarbeitung läuft in modularen KNIME-Workflows mit eingebetteten Python-Schritten. Anfangs waren es reine Python/Pandas-Skripte; für häufig wechselnde Regeln ist der modulare Aufbau deutlich flexibler. Daten aus Dateien, Austauschverzeichnissen und APIs werden zusammengeführt, auf Plausibilität und Dubletten geprüft und mit nachvollziehbaren Fehler- und Ausschlusslisten versehen.",
+          "en": "Processing runs in modular KNIME workflows with embedded Python steps. It started as plain Python/Pandas scripts; the modular design copes far better with frequently changing rules. Data from files, exchange directories and APIs is merged, checked for plausibility and duplicates, and annotated with traceable error and exclusion lists."
+        }
+      },
+      {
+        "title": {
+          "de": "Komplexität",
+          "en": "Complexity"
+        },
+        "text": {
+          "de": "Jedes Zielsystem bekommt seine eigenen, regelbasierten Ausgaben aus demselben Datenstand. Die Regeln sind konfigurierbar statt fest im Code. Während der mehrjährigen Betreuung ist der Bestand um ein Vielfaches gewachsen, ohne dass die Pipeline neu gebaut werden musste; ein kompletter Durchlauf dauert rund 10 bis 20 Minuten.",
+          "en": "Each target system receives its own rule-based output from the same data set, with rules configurable rather than hard-coded. Over several years the catalogue grew several times over without the pipeline having to be rebuilt; a full run takes around 10 to 20 minutes."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "automotive-microservices",
+    "kind": "employer",
+    "careerId": "amotiq",
+    "title": {
+      "de": "Microservices für eine Automotive-Supply-Chain-Software",
+      "en": "Microservices for automotive supply chain software"
+    },
+    "summary": {
+      "de": "Backend-Funktionen, APIs und Camunda-Workflows für eine bereits produktiv eingesetzte Software.",
+      "en": "Backend features, APIs and Camunda workflows for software already in production use."
+    },
+    "category": {
+      "de": "Backend · Prozess-Engine",
+      "en": "Backend · Process engine"
+    },
+    "stage": {
+      "de": "Weiterentwickelt im Scrum-Team, 2023–2024",
+      "en": "Developed in a Scrum team, 2023–2024"
+    },
+    "role": {
+      "de": "Backend-Entwickler",
+      "en": "Backend developer"
+    },
+    "tech": [
+      "C#",
+      "ASP.NET Core",
+      "Camunda",
+      "BPMN",
+      "SQL",
+      "xUnit",
+      "Azure DevOps"
+    ],
+    "cover": "BPMN / API",
+    "sections": [
+      {
+        "title": {
+          "de": "Mein Beitrag",
+          "en": "My contribution"
+        },
+        "text": {
+          "de": "Ich habe technische Lösungen konzipiert, Tickets angelegt und neue REST-Endpunkte, Datenbanktabellen und Geschäftslogik in der Microservice-Struktur umgesetzt. In Camunda kamen External Tasks, Freigabe- und Rollenabläufe sowie Eskalationen dazu.",
+          "en": "I designed technical solutions, created tickets and built new REST endpoints, database tables and business logic within the microservice structure. In Camunda I added external tasks, approval and role flows and escalations."
+        }
+      },
+      {
+        "title": {
+          "de": "Qualität und Team",
+          "en": "Quality and team"
+        },
+        "text": {
+          "de": "Unit- und Integrationstests mit xUnit, Reviews, technische Dokumentation und Fehleranalyse über Grafana und Logs. Gelegentlich habe ich API-Anbindungen in React- und Angular-Microfrontends korrigiert. Gearbeitet wurde in Wochen-Sprints; Releases und Kundenkontakt lagen bei anderen.",
+          "en": "Unit and integration tests with xUnit, reviews, technical documentation and error analysis via Grafana and logs. Occasionally I fixed API integrations in React and Angular micro frontends. We worked in weekly sprints; releases and client contact were handled by others."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "vue-komponentenbibliothek",
+    "kind": "employer",
+    "careerId": "maverick",
+    "title": {
+      "de": "Vue-Komponentenbibliothek und Migration auf Vue 3",
+      "en": "Vue component library and migration to Vue 3"
+    },
+    "summary": {
+      "de": "Eine unternehmensweite UI-Bibliothek erweitert und von Vue 2 auf Vue 3 mit TypeScript gebracht.",
+      "en": "Extended a company-wide UI library and moved it from Vue 2 to Vue 3 with TypeScript."
+    },
+    "category": {
+      "de": "Frontend · Komponentenbibliothek",
+      "en": "Frontend · Component library"
+    },
+    "stage": {
+      "de": "Damals in mehreren Projekten produktiv genutzt",
+      "en": "Used in production across several projects at the time"
+    },
+    "role": {
+      "de": "Weiterentwicklung, Migration & Reviews",
+      "en": "Development, migration & reviews"
+    },
+    "tech": [
+      "Vue.js",
+      "TypeScript",
+      "JavaScript",
+      "CSS"
+    ],
+    "cover": "VUE 2 → 3",
+    "sections": [
+      {
+        "title": {
+          "de": "Mein Beitrag",
+          "en": "My contribution"
+        },
+        "text": {
+          "de": "Ich habe die Bibliothek um viele interaktive Komponenten erweitert, etwa Stepper-Varianten, einen Rich-Text-Editor, eine Dokumentenansicht, Formularvalidierung und Animationen, responsiv und über Slots anpassbar.",
+          "en": "I extended the library with many interactive components, such as stepper variants, a rich-text editor, a document viewer, form validation and animations, all responsive and customisable through slots."
+        }
+      },
+      {
+        "title": {
+          "de": "Migration",
+          "en": "Migration"
+        },
+        "text": {
+          "de": "Als der Support für Vue 2 auslief, habe ich die Migration auf Vue 3 und TypeScript angestoßen: zuerst die Bibliothek, danach die abhängigen Projekte. Ein bis zwei weitere Entwickler habe ich dabei mit Reviews begleitet.",
+          "en": "When Vue 2 support ended, I initiated the migration to Vue 3 and TypeScript: first the library, then the projects depending on it. I supported one or two other developers with reviews along the way."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "verwaltungssoftware-finanz",
+    "kind": "employer",
+    "careerId": "maverick",
+    "title": {
+      "de": "Verwaltungssoftware für einen Finanzdienstleister",
+      "en": "Management software for a financial services firm"
+    },
+    "summary": {
+      "de": "Ein umfangreiches Vue-Frontend für Kunden-, Dokumenten- und Stammdaten, bis in den Pilotbetrieb beim Kunden.",
+      "en": "An extensive Vue frontend for customer, document and master data, taken into a pilot with the client."
+    },
+    "category": {
+      "de": "Frontend · Fachanwendung",
+      "en": "Frontend · Business application"
+    },
+    "stage": {
+      "de": "Pilotbetrieb beim Kunden, 2023",
+      "en": "Pilot with the client, 2023"
+    },
+    "role": {
+      "de": "Frontend-Entwicklung & technischer Ansprechpartner",
+      "en": "Frontend development & technical contact"
+    },
+    "tech": [
+      "Vue.js",
+      "JavaScript",
+      "TypeScript",
+      "Figma",
+      "REST",
+      "GitLab CI",
+      "Grafana"
+    ],
+    "cover": "DATA / VIEW",
+    "sections": [
+      {
+        "title": {
+          "de": "Mein Beitrag",
+          "en": "My contribution"
+        },
+        "text": {
+          "de": "Viele Frontend-Module habe ich eigenständig entwickelt und fehlende Entwürfe als Figma-Prototypen ergänzt. Ich habe die Anbindung an Backend-Dienste koordiniert, den Kunden zu Abläufen und UX beraten und war einer seiner wichtigsten technischen Ansprechpartner.",
+          "en": "I built many frontend modules independently and filled gaps in the designs with Figma prototypes. I coordinated the integration with backend services, advised the client on workflows and UX and was one of their main technical contacts."
+        }
+      },
+      {
+        "title": {
+          "de": "Stand und Grenzen",
+          "en": "Status and limits"
+        },
+        "text": {
+          "de": "Etwa drei Monate vor meinem Wechsel ging die Software beim Kunden in den Pilotbetrieb; Feedback und Fehler habe ich betreut. An der CI/CD-Konzeption in GitLab und an Fehleranalysen über Grafana habe ich mitgearbeitet.",
+          "en": "About three months before I moved on, the software went into a pilot with the client; I handled feedback and bugs. I contributed to the CI/CD design in GitLab and to error analysis via Grafana."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "digitaler-laufzettel",
+    "kind": "employer",
+    "careerId": "pav-card",
+    "title": {
+      "de": "Digitaler Laufzettel für interne Freigaben",
+      "en": "Digital routing slip for internal approvals"
+    },
+    "summary": {
+      "de": "Mein IHK-Abschlussprojekt: ein papierbasierter Freigabeprozess über mehrere Abteilungen als Webanwendung.",
+      "en": "My final apprenticeship project: a paper-based approval process across several departments as a web application."
+    },
+    "category": {
+      "de": "Webanwendung · Abschlussprojekt",
+      "en": "Web application · Final project"
+    },
+    "stage": {
+      "de": "Vollständig entwickelt (IHK-Abschluss)",
+      "en": "Fully developed (final exam project)"
+    },
+    "role": {
+      "de": "Konzeption, UX, Datenmodell & Entwicklung",
+      "en": "Concept, UX, data model & development"
+    },
+    "tech": [
+      "Angular",
+      "C#",
+      ".NET",
+      "REST",
+      "MariaDB",
+      "XML"
+    ],
+    "cover": "FLOW / SIGN",
+    "sections": [
+      {
+        "title": {
+          "de": "Umsetzung",
+          "en": "Implementation"
+        },
+        "text": {
+          "de": "Das Bedienkonzept habe ich in Adobe XD entworfen, das Datenmodell selbst erstellt und die Anwendung mit Angular-Frontend, C#/.NET-REST-API und MariaDB umgesetzt. Rollen und Abteilungen bestimmen, wer welchen Schritt bearbeitet; Ergebnisse lassen sich als XML exportieren.",
+          "en": "I designed the interaction concept in Adobe XD, created the data model and built the application with an Angular frontend, a C#/.NET REST API and MariaDB. Roles and departments determine who handles which step; results can be exported as XML."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "druckprotokoll-werkzeug",
+    "kind": "employer",
+    "careerId": "pav-card",
+    "title": {
+      "de": "Desktop-Werkzeug für Druckprotokolle",
+      "en": "Desktop tool for print logs"
+    },
+    "summary": {
+      "de": "Eine selbst entwickelte Windows-Anwendung, mit der die EDV Druck- und Produktionsdaten prüft und Protokolle erzeugt.",
+      "en": "A Windows application I built for the IT department to validate print and production data and generate logs."
+    },
+    "category": {
+      "de": "Desktop · Produktion",
+      "en": "Desktop · Production"
+    },
+    "stage": {
+      "de": "Damals intern täglich im Einsatz",
+      "en": "Used daily in-house at the time"
+    },
+    "role": {
+      "de": "Konzeption, Entwicklung & Betreuung",
+      "en": "Concept, development & support"
+    },
+    "tech": [
+      "C#",
+      ".NET",
+      "WPF",
+      "XML",
+      "XSD",
+      "CSV"
+    ],
+    "cover": "PRINT / LOG",
+    "sections": [
+      {
+        "title": {
+          "de": "Umsetzung",
+          "en": "Implementation"
+        },
+        "text": {
+          "de": "Das Werkzeug importiert CSV- und XML-Quellen, prüft sie gegen XSD-Schemas und bietet mehrere Eingabe- und Bearbeitungsmasken. Druckprotokolle entstehen als PDF und XML. Eine Konsolen-Skriptbibliothek daraus wurde auch in anderen Tools verwendet.",
+          "en": "The tool imports CSV and XML sources, validates them against XSD schemas and offers several input and editing screens. Print logs are produced as PDF and XML. A console script library from it was reused in other tools."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "massendaten-pruefung",
+    "kind": "employer",
+    "careerId": "pav-card",
+    "title": {
+      "de": "Prüfung und Bereinigung von Massendaten",
+      "en": "Validating and cleaning bulk data"
+    },
+    "summary": {
+      "de": "Werkzeuge für Datenlieferungen mit über acht Millionen Datensätzen: Mapping, Dubletten, Plausibilität und Statistiken.",
+      "en": "Tools for data deliveries of more than eight million records: mapping, duplicates, plausibility checks and statistics."
+    },
+    "category": {
+      "de": "Datenverarbeitung",
+      "en": "Data processing"
+    },
+    "stage": {
+      "de": "Im Arbeitsprozess eingesetzt, 2018–2021",
+      "en": "Used in day-to-day operations, 2018–2021"
+    },
+    "role": {
+      "de": "Entwicklung & Optimierung",
+      "en": "Development & optimisation"
+    },
+    "tech": [
+      "C#",
+      ".NET",
+      "WPF",
+      "WinForms",
+      "SQL",
+      "CSV",
+      "Excel"
+    ],
+    "cover": "8 MIO / ROWS",
+    "sections": [
+      {
+        "title": {
+          "de": "Umsetzung",
+          "en": "Implementation"
+        },
+        "text": {
+          "de": "Datenfilter, automatisches CSV- und Excel-Mapping, Import- und Merge-Funktionen, Dubletten- und Zeichenfehlererkennung sowie Fehler- und Ausschlusslisten. Oberflächen machen das auch für Kolleginnen und Kollegen ohne Programmierkenntnisse bedienbar. Wiederkehrende Jahresstatistiken entstehen automatisch als formatierte Excel-Dateien.",
+          "en": "Data filters, automatic CSV and Excel mapping, import and merge functions, duplicate and character error detection, and error and exclusion lists. User interfaces make this usable for colleagues without programming skills. Recurring annual statistics are produced automatically as formatted Excel files."
+        }
+      },
+      {
+        "title": {
+          "de": "Performance",
+          "en": "Performance"
+        },
+        "text": {
+          "de": "Batch-Verarbeitung, Datenbankindizes, Streaming, Parallelisierung und überarbeitete Algorithmen haben einzelne Durchläufe um bis zu etwa 20 Minuten verkürzt.",
+          "en": "Batch processing, database indexes, streaming, parallelisation and reworked algorithms cut individual runs by up to about 20 minutes."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "magento-shops",
+    "kind": "employer",
+    "careerId": "pav-card",
+    "title": {
+      "de": "Magento-2-Shops mit eigenen Rechnern",
+      "en": "Magento 2 shops with custom calculators"
+    },
+    "summary": {
+      "de": "Ein B2C-Shop für Druckdienstleistungen im Zweierteam, dazu Anpassungen an einem bestehenden Kundenshop.",
+      "en": "A B2C shop for print services built in a team of two, plus adjustments to an existing client shop."
+    },
+    "category": {
+      "de": "E-Commerce",
+      "en": "E-commerce"
+    },
+    "stage": {
+      "de": "Veröffentlicht und nachbetreut, 2018–2021",
+      "en": "Published and supported, 2018–2021"
+    },
+    "role": {
+      "de": "Frontend, Rechner-Logik & Styling",
+      "en": "Frontend, calculator logic & styling"
+    },
+    "tech": [
+      "Magento 2",
+      "PHP",
+      "JavaScript",
+      "CSS"
+    ],
+    "cover": "CALC / SHOP",
+    "sections": [
+      {
+        "title": {
+          "de": "Mein Beitrag",
+          "en": "My contribution"
+        },
+        "text": {
+          "de": "Nach einem verbindlichen Corporate-Design-Handbuch habe ich wesentliche Frontend-Teile umgesetzt und drei Rechner komplett selbst programmiert: Schriftgröße und Lesbarkeit nach Betrachtungsabstand, Papiergewicht pro Blatt und Auftrag sowie die Zuordnung von HKS-, Pantone- und RAL-Farben zu CMYK und RGB.",
+          "en": "Following a binding corporate design manual, I built major parts of the frontend and wrote three calculators entirely myself: font size and readability by viewing distance, paper weight per sheet and order, and mapping HKS, Pantone and RAL colours to CMYK and RGB."
+        }
+      },
+      {
+        "title": {
+          "de": "Bestehender Shop",
+          "en": "Existing shop"
+        },
+        "text": {
+          "de": "Für einen weiteren Magento-2-Shop habe ich Funktionen ausgebaut, Darstellung, Inhalte und Fehler im PHP-, JavaScript- und CSS-Code korrigiert, darunter einzelne Sicherheitskorrekturen.",
+          "en": "For another Magento 2 shop I extended features and fixed presentation, content and bugs in PHP, JavaScript and CSS, including individual security fixes."
+        }
+      }
+    ]
+  },
+  {
+    "approved": true,
+    "id": "druck-und-legacy-automation",
+    "kind": "employer",
+    "careerId": "pav-card",
+    "title": {
+      "de": "Druckdaten-Workflows und Legacy-Modernisierung",
+      "en": "Print data workflows and legacy modernisation"
+    },
+    "summary": {
+      "de": "Dynamische Drucklayouts für industrielle Druckprozesse und die Überführung alter Programme in strukturierte .NET-Anwendungen.",
+      "en": "Dynamic print layouts for industrial printing and moving legacy programs into structured .NET applications."
+    },
+    "category": {
+      "de": "Automatisierung · Produktion",
+      "en": "Automation · Production"
+    },
+    "stage": {
+      "de": "Beruflich eingesetzt, 2018–2021",
+      "en": "Used in production, 2018–2021"
+    },
+    "role": {
+      "de": "Entwicklung, Modernisierung & Jobbetreuung",
+      "en": "Development, modernisation & job support"
+    },
+    "tech": [
+      "Quadient Inspire",
+      "C#",
+      ".NET",
+      "Visual Basic",
+      "Batch"
+    ],
+    "cover": "AFP / PDF",
+    "sections": [
+      {
+        "title": {
+          "de": "Druckdaten",
+          "en": "Print data"
+        },
+        "text": {
+          "de": "Mit Quadient Inspire Designer habe ich Daten aufbereitet und dynamische Layouts für PDF- und AFP-Ausgaben gebaut: Positionierung, Postsortierung, Barcodes und Kennzeichnung. Vorhandene Produktionsskripte habe ich genutzt und angepasst.",
+          "en": "With Quadient Inspire Designer I prepared data and built dynamic layouts for PDF and AFP output: positioning, postal sorting, barcodes and labelling. I used and adapted existing production scripts."
+        }
+      },
+      {
+        "title": {
+          "de": "Modernisierung",
+          "en": "Modernisation"
+        },
+        "text": {
+          "de": "Ältere Anwendungen und Skripte aus Visual Basic, C und C++ habe ich in objektorientierte C#/.NET-Strukturen überführt und wiederkehrende Produktionsjobs mit VisualCron und Cron gepflegt.",
+          "en": "I moved older applications and scripts from Visual Basic, C and C++ into object-oriented C#/.NET structures and maintained recurring production jobs with VisualCron and cron."
+        }
+      }
+    ]
   }
 ]

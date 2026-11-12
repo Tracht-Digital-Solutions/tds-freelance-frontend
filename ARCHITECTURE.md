@@ -28,7 +28,13 @@ facts. `projects.json` contains additional approved work, including the main-sit
 references and design studies, IdleArcade and the in-development JavaScript light/
 shadow framework. Source evidence is the public reference catalogue and GitHub
 code; project status and ownership were confirmed by Julian in this task. Zod parses records and rejects duplicate IDs, duplicate routes and
-unapproved projects. `allRoutes()` is the common inventory for generation,
+unapproved projects.
+
+On 12 November 2026 Julian approved three further groups from his private
+project archive: own open-source projects, anonymised client projects and
+anonymised employment projects (kind `employer`). Employer, client and internal
+product names, availability, rates, server/backup details and all Astera GbR
+work stay out; the archive itself is not tracked. `allRoutes()` is the common inventory for generation,
 sitemap and tests.
 
 `src/pages/[...path].astro` prerenders every inventory route. `Layout.astro` owns

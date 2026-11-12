@@ -15,13 +15,13 @@ test('content is valid, complete and only approved projects ship', () => {
   validateContent();
   assert.equal(certificates.length, 13);
   assert.equal(career.length, 4);
-  assert.equal(projects.length, 24);
+  assert.equal(projects.length, 45);
   for (const p of projects) assert.equal(projectSchema.parse(p).approved, true);
   assert.throws(() => projectSchema.parse({ ...projects[0], approved: false }));
 });
 test('each route has one language counterpart', () => {
   const routes = allRoutes();
-  assert.equal(routes.length, 72);
+  assert.equal(routes.length, 114);
   for (const route of routes) {
     assert.ok(
       routes.some(

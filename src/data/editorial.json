@@ -224,8 +224,8 @@
     "en": "Search technologies"
   },
   "view-e-g-c-vue-rest": {
-    "de": "z. B. C#, Vue, REST …",
-    "en": "e.g. C#, Vue, REST …"
+    "de": "z. B. JS-Framework, Datenbank, C# …",
+    "en": "e.g. JS framework, database, C# …"
   },
   "view-category": {
     "de": "Kategorie",
@@ -234,14 +234,6 @@
   "view-all-categories": {
     "de": "Alle Kategorien",
     "en": "All categories"
-  },
-  "view-context": {
-    "de": "Einsatzgebiet",
-    "en": "Context"
-  },
-  "view-all-contexts": {
-    "de": "Alle Einsatzgebiete",
-    "en": "All contexts"
   },
   "view-reset": {
     "de": "Zurücksetzen",
@@ -514,5 +506,25 @@
   "view-mobile": {
     "de": "Mobil",
     "en": "Mobile"
+  },
+  "view-quick-search": {
+    "de": "Schnellsuche",
+    "en": "Quick search"
+  },
+  "view-skill-areas": {
+    "de": "Kompetenzbereiche",
+    "en": "Skill areas"
+  },
+  "view-skills-count": {
+    "de": "Kenntnisse",
+    "en": "skills"
+  },
+  "view-project-groups": {
+    "de": "Projektgruppen",
+    "en": "Project groups"
+  },
+  "view-projects-count": {
+    "de": "Projekte",
+    "en": "projects"
   }
 }
