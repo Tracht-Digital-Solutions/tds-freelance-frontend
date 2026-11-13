@@ -39,7 +39,7 @@ a named client: its TYPO3 website, linked to astera.one, with a screenshot. `all
 sitemap and tests.
 
 `src/pages/[...path].astro` prerenders every inventory route. `Layout.astro` owns
-the shared shell/head/navigation; `View.astro` composes the views. All substantive
+the shared shell/head/navigation; `View.astro` renders the page heading and picks one component from `components/views/` per view (split 2026-11-13). All substantive
 content is HTML at build time. No React hydration is needed for these interactions.
 Small TypeScript handlers enhance native details, filters and dialogs after each
 `astro:page-load`. The ClientRouter owns back/forward, scroll restoration and

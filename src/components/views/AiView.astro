@@ -1,0 +1,76 @@
+---
+import { copy } from '../../data/editorial';
+import {
+  type Locale,
+} from '../../data/content';
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+---
+
+<>
+  <section class="manifesto">
+    <span class="tiny-label">
+      {copy('view-my-approach-alternative', lang)}
+    </span>
+    <h2>
+      {copy(
+        'view-ai-speeds-up-development-it-doesn-t-take-responsibility',
+        lang,
+      )}
+    </h2>
+    <p>
+      {copy(
+        'view-i-m-open-to-ai-and-interested-in-exploring-its-possibilities-my-standard-remains-the',
+        lang,
+      )}
+    </p>
+  </section>
+  <section class="ai-sections">
+    {[
+      [
+        copy('view-a-tool-for-better-work', lang),
+        copy(
+          'view-ai-can-help-structure-ideas-explore-alternatives-document-decisions-and-draft-code-it',
+          lang,
+        ),
+      ],
+      [
+        copy('view-architecture-before-volume', lang),
+        copy(
+          'view-a-large-volume-of-generated-code-is-not-evidence-of-quality-without-clear-boundaries',
+          lang,
+        ),
+      ],
+      [
+        copy('view-validation-means-understanding', lang),
+        copy(
+          'view-i-consider-requirements-code-review-meaningful-tests-and-integration-and-security-che',
+          lang,
+        ),
+      ],
+      [
+        copy('view-human-oversight-remains-essential', lang),
+        copy(
+          'view-developers-remain-responsible-for-correctness-maintainability-and-the-overall-system',
+          lang,
+        ),
+      ],
+    ].map(([title, text]) => (
+      <article>
+        <div>
+          <h2>{title}</h2>
+          <p>{text}</p>
+        </div>
+      </article>
+    ))}
+  </section>
+  <p class="subtle-note">
+    {copy(
+      'view-this-page-describes-my-personal-approach-to-software-development',
+      lang,
+    )}
+  </p>
+</>

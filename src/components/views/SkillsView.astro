@@ -1,0 +1,151 @@
+---
+import { copy } from '../../data/editorial';
+import {
+  skills,
+  categories,
+  skillSubgroups,
+  skillSuggestions,
+  skillSearchText,
+  type Locale,
+  type Skill,
+  type SkillCategory,
+  type SkillSubgroup,
+} from '../../data/content';
+import { skillIcon } from '../../data/skillIcons';
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+
+// Areas and sub-groups keep their data order, skills sort A–Z.
+const collator = new Intl.Collator(lang, { sensitivity: 'base' });
+const skillAreas = (Object.keys(categories) as SkillCategory[]).map(
+  (category) => {
+    const groups = new Map<SkillSubgroup, Skill[]>();
+    for (const s of skills.filter((s) => s.category === category))
+      groups.set(s.subgroup, [...(groups.get(s.subgroup) ?? []), s]);
+    return [
+      category,
+      [...groups].map(
+        ([subgroup, items]) =>
+          [
+            subgroup,
+            items.sort((a, b) => collator.compare(a.name[lang], b.name[lang])),
+          ] as const,
+      ),
+    ] as const;
+  },
+);
+---
+
+<section
+  data-filter-scope
+  data-count-label={copy('interaction-entries', lang)}
+>
+  <div class="filter-panel" hidden data-filter-panel>
+    <label>
+      {copy('view-search-technologies', lang)}
+      <input
+        type="search"
+        data-search
+        placeholder={copy('view-e-g-c-vue-rest', lang)}
+      />
+    </label>
+    <label>
+      {copy('view-category', lang)}
+      <span class="select-field">
+        <select data-category>
+          <option value="all">{copy('view-all-categories', lang)}</option>
+          {Object.entries(categories).map(([id, t]) => (
+            <option value={id}>{t[lang]}</option>
+          ))}
+        </select>
+      </span>
+    </label>
+    <button type="button" class="reset-filter">
+      {copy('view-reset', lang)}
+    </button>
+    <div class="search-suggestions">
+      <span>{copy('view-quick-search', lang)}</span>
+      {skillSuggestions.map((s) => (
+        <button type="button" data-search-suggestion={s[lang]}>
+          {s[lang]}
+        </button>
+      ))}
+    </div>
+  </div>
+  <p
+    class="filter-count"
+    role="status"
+    aria-live="polite"
+    data-filter-count
+  ></p>
+  <div class="section-layout">
+    <nav class="section-nav" aria-label={copy('view-skill-areas', lang)}>
+      <span class="tiny-label">{copy('view-skill-areas', lang)}</span>
+      {skillAreas.map(([category, groups]) => (
+        <a href={`#skills-${category}`}>
+          <span class="nav-title">{categories[category][lang]}</span>
+          <small>
+            {groups.reduce((n, [, items]) => n + items.length, 0)}
+          </small>
+        </a>
+      ))}
+    </nav>
+    <div class="section-body">
+      {skillAreas.map(([category, groups]) => (
+        <section
+          class="skill-area"
+          id={`skills-${category}`}
+          data-filter-group
+        >
+          <header class="skill-area-head">
+            <span class="tiny-label">
+              {groups.reduce((n, [, items]) => n + items.length, 0)}{' '}
+              {copy('view-skills-count', lang)}
+            </span>
+            <h2>{categories[category][lang]}</h2>
+          </header>
+          {groups.map(([subgroup, items]) => (
+            <div class="skill-subgroup" data-filter-group>
+              <h3>{skillSubgroups[subgroup][lang]}</h3>
+              <div class="skill-grid">
+                {items.map((s) => (
+                  <div
+                    class="skill-card"
+                    data-filter-item
+                    data-category={s.category}
+                    data-search-text={skillSearchText(s)}
+                  >
+                    {skillIcon(s.name.en) ? (
+                      <span
+                        class="skill-symbol skill-symbol--logo"
+                        aria-hidden="true"
+                        set:html={skillIcon(s.name.en)}
+                      />
+                    ) : (
+                      <span class="skill-symbol" aria-hidden="true">
+                        {s.name[lang].slice(0, 2)}
+                      </span>
+                    )}
+                    <span>
+                      <strong>{s.name[lang]}</strong>
+                      <small>{skillSubgroups[subgroup][lang]}</small>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+      ))}
+    </div>
+  </div>
+  <p class="no-results" data-no-results hidden>
+    {copy(
+      'view-no-matching-skills-found-try-adjusting-the-filters',
+      lang,
+    )}
+  </p>
+</section>

@@ -1,0 +1,76 @@
+---
+import { copy } from '../../data/editorial';
+import {
+  profile,
+  contactUrl,
+  type Locale,
+} from '../../data/content';
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+---
+
+<>
+  <section class="contact-grid">
+    <a class="contact-card navy" href={contactUrl(lang)}>
+      <span class="tiny-label">
+        {copy('view-for-businesses-clients', lang)}
+      </span>
+      <h2>{copy('view-discuss-a-project-alternative', lang)}</h2>
+      <p>
+        {copy(
+          'view-an-idea-an-existing-system-or-a-process-that-could-be-simpler',
+          lang,
+        )}
+      </p>
+      <span class="contact-arrow" aria-hidden="true">
+        ↗
+      </span>
+      <span class="card-link">Tracht Digital Solutions</span>
+    </a>
+    <a class="contact-card rose" href={contactUrl(lang)}>
+      <span class="tiny-label">
+        {copy('view-for-recruiters-employers', lang)}
+      </span>
+      <h2>{copy('view-share-a-job-opportunity', lang)}</h2>
+      <p>
+        {copy(
+          'view-a-role-that-brings-together-technical-depth-and-an-understanding-of-the-whole-project',
+          lang,
+        )}
+      </p>
+      <span class="contact-arrow" aria-hidden="true">
+        ↗
+      </span>
+      <span class="card-link">Tracht Digital Solutions</span>
+    </a>
+  </section>
+  <section class="contact-details">
+    <div>
+      <span class="tiny-label">
+        {copy('view-connect-directly', lang)}
+      </span>
+      <h2>Julian Tracht</h2>
+      <p>
+        Tracht Digital Solutions
+        <br />
+        Schwarzenbek, {copy('view-germany', lang)}
+      </p>
+    </div>
+    <div>
+      <a href={`mailto:${profile.email}`}>{profile.email} ↗</a>
+      <a href="tel:+4941518788264">
+        {copy('view-phone', lang)}: {profile.phone} ↗
+      </a>
+      <a href="tel:+491788224022">
+        {copy('view-mobile', lang)}: {profile.mobile} ↗
+      </a>
+      <div class="social-links">
+        <a href={profile.linkedin}>LinkedIn ↗</a>
+        <a href={profile.github}>GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+</>

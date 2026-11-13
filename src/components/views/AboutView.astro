@@ -1,0 +1,84 @@
+---
+import { copy } from '../../data/editorial';
+import {
+  type Locale,
+} from '../../data/content';
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+---
+
+<>
+  <section class="story-grid">
+    <div class="story-lead">
+      <span class="tiny-label">
+        {copy('view-where-it-all-started', lang)}
+      </span>
+      <h2>{copy('view-first-a-robot-then-a-whole-new-world', lang)}</h2>
+      <p>
+        {copy(
+          'view-my-interest-in-programming-began-with-lego-mindstorms-nxt-suddenly-technology-could-r',
+          lang,
+        )}
+      </p>
+      <p>
+        {copy(
+          'view-that-curiosity-has-stayed-with-me-i-still-build-software-in-my-spare-time-because-tec',
+          lang,
+        )}
+      </p>
+    </div>
+    <div class="quote-panel">
+      <span aria-hidden="true">“</span>
+      <blockquote>
+        {copy(
+          'view-software-should-make-everyday-tasks-easier-its-complexity-shouldn-t-become-a-burden-f',
+          lang,
+        )}
+      </blockquote>
+      <p>Julian Tracht</p>
+    </div>
+  </section>
+  <section class="prose-section">
+    <span class="tiny-label">{copy('view-what-drives-me', lang)}</span>
+    <h2>{copy('view-digitalisation-can-be-better', lang)}</h2>
+    <p>
+      {copy(
+        'view-everyday-life-is-full-of-digital-systems-that-are-unnecessarily-complicated-unstable',
+        lang,
+      )}
+    </p>
+  </section>
+  <section class="values-grid">
+    {[
+      [
+        copy('view-quality', lang),
+        copy(
+          'view-the-first-version-is-only-the-beginning-software-must-remain-understandable-testable',
+          lang,
+        ),
+      ],
+      [
+        copy('view-transparency', lang),
+        copy(
+          'view-technical-decisions-and-their-implications-need-to-be-visible-clear-communication-cre',
+          lang,
+        ),
+      ],
+      [
+        copy('view-fairness', lang),
+        copy(
+          'view-good-collaboration-needs-honest-expectations-clear-agreements-and-mutual-respect',
+          lang,
+        ),
+      ],
+    ].map(([title, text]) => (
+      <article>
+        <h3>{title}</h3>
+        <p>{text}</p>
+      </article>
+    ))}
+  </section>
+</>

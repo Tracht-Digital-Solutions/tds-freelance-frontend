@@ -1,0 +1,127 @@
+---
+import { copy } from '../../data/editorial';
+import {
+  pathFor,
+  career,
+  education,
+  projects,
+  type Locale,
+} from '../../data/content';
+import { techLabel } from '../../data/techLabels';
+
+interface Props {
+  lang: Locale;
+  detail?: string;
+}
+const { lang, detail } = Astro.props;
+
+const entry = career.find((c) => c.id === detail);
+---
+
+{entry ? (
+  <>
+    <section class="detail-layout">
+      <div>
+        <span class="eyebrow">{entry.period[lang]}</span>
+        <h2>{entry.role[lang]}</h2>
+        <h3>{copy('view-responsibilities', lang)}</h3>
+        <ul class="task-list">
+          {entry.tasks.map((task) => (
+            <li>{task[lang]}</li>
+          ))}
+        </ul>
+        {entry.id === 'tracht-digital-solutions' && (
+          <section class="career-projects">
+            <h3>{copy('view-projects-from-this-role', lang)}</h3>
+            {projects
+              .filter((p) => p.careerId === entry.id)
+              .map((p) => (
+                <a
+                  class="text-link"
+                  href={`${pathFor('projects', lang)}${p.id}/`}
+                >
+                  {p.title[lang]} ↗
+                </a>
+              ))}
+          </section>
+        )}
+      </div>
+      <aside class="detail-note">
+        <span class="tiny-label">
+          {copy('view-technologies-topics', lang)}
+        </span>
+        <div class="tags">
+          {entry.tech.map((t) => (
+            <span>{techLabel(t, lang)}</span>
+          ))}
+        </div>
+        <p>
+          {copy(
+            'view-professional-background-as-documented-in-my-cv-updated-september-2026',
+            lang,
+          )}
+        </p>
+      </aside>
+    </section>
+    <a class="text-link back-link" href={pathFor('career', lang)}>
+      ← {copy('view-back-to-the-full-journey', lang)}
+    </a>
+  </>
+) : (
+  <>
+    <section
+      class="timeline"
+      aria-label={copy('view-professional-experience', lang)}
+    >
+      {career.map((c) => (
+        <article class="timeline-row">
+          <div class="timeline-date">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <span class="tiny-label">{c.period[lang]}</span>
+          </div>
+          <div>
+            <h2>
+              <a href={`${pathFor('career', lang)}${c.id}/`}>
+                {c.company}
+                <span aria-hidden="true"> ↗</span>
+              </a>
+            </h2>
+            <h3>{c.role[lang]}</h3>
+            <p>{c.summary[lang]}</p>
+            <div class="tags">
+              {c.tech.map((t) => (
+                <span>{techLabel(t, lang)}</span>
+              ))}
+            </div>
+            <a
+              class="text-link"
+              href={`${pathFor('career', lang)}${c.id}/`}
+            >
+              {copy('view-explore-this-role', lang)} →
+            </a>
+          </div>
+        </article>
+      ))}
+    </section>
+    <section class="education">
+      <span class="tiny-label">
+        {copy('view-education-languages', lang)}
+      </span>
+      <h2>{copy('view-the-foundations', lang)}</h2>
+      <div class="education-grid">
+        {education.map((e) => (
+          <article>
+            <span class="eyebrow">{e.period}</span>
+            <h3>{e.title[lang]}</h3>
+            <p>{e.institution}</p>
+          </article>
+        ))}
+        <article>
+          <span class="eyebrow">{copy('view-languages', lang)}</span>
+          <h3>{copy('view-german-english', lang)}</h3>
+          <p>{copy('view-german-native-english-fluent', lang)}</p>
+        </article>
+      </div>
+    </section>
+  </>
+)}

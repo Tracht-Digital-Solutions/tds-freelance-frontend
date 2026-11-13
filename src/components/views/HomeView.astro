@@ -1,0 +1,122 @@
+---
+import { copy } from '../../data/editorial';
+import {
+  profile,
+  pathFor,
+  type Locale,
+} from '../../data/content';
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+---
+
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">
+      {copy('view-software-processes-personality', lang)}
+    </span>
+    <h1>
+      Julian
+      <br />
+      <span>
+        Tracht<span class="pink-dot">.</span>
+      </span>
+    </h1>
+    <h2>{profile.role[lang]}</h2>
+    <p>
+      {copy(
+        'view-i-connect-technical-implementation-with-the-bigger-picture-building-software-that-sta',
+        lang,
+      )}
+    </p>
+    <div class="actions">
+      <a
+        class="button primary btn-primary"
+        href={pathFor('projects', lang)}
+      >
+        {copy('view-explore-projects', lang)}{' '}
+        <span aria-hidden="true">↗</span>
+      </a>
+      <a class="text-link" href={pathFor('career', lang)}>
+        {copy('view-my-journey', lang)} <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+  <div class="portrait-stage">
+    <div class="portrait-orbit" aria-hidden="true"></div>
+    <img
+      src="/images/julian-840.webp"
+      srcset="/images/julian-420.webp 420w, /images/julian-840.webp 840w"
+      sizes="(max-width: 700px) 85vw, 38vw"
+      width="840"
+      height="1176"
+      fetchpriority="high"
+      alt={copy('view-portrait-of-julian-tracht', lang)}
+    />
+    <div class="portrait-caption">
+      <span class="tiny-label">
+        {copy('view-technology-with-personality', lang)}
+      </span>
+      <span>Schwarzenbek, {copy('view-germany', lang)}</span>
+    </div>
+  </div>
+</section>
+<div class="tech-strip">
+  <span class="tiny-label">{copy('view-my-technical-focus', lang)}</span>
+  <div>
+    <span>C# / .NET</span>
+    <span>TypeScript</span>
+    <span>Vue / React</span>
+    <span>REST APIs</span>
+    <span>{copy('view-project-management', lang)}</span>
+  </div>
+</div>
+<section class="home-grid">
+  <a class="feature-card navy" href={pathFor('about', lang)}>
+    <span class="tiny-label">
+      {copy('view-the-person-behind-the-code', lang)}
+    </span>
+    <h2>{copy('view-always-curious', lang)}</h2>
+    <p>
+      {copy(
+        'view-from-lego-mindstorms-and-early-c-experiments-to-building-software-independently',
+        lang,
+      )}
+    </p>
+    <span class="card-link">{copy('view-my-story', lang)} ↗</span>
+  </a>
+  <a class="feature-card soft" href={pathFor('career', lang)}>
+    <span class="tiny-label">
+      {copy('view-experience-with-perspective', lang)}
+    </span>
+    <h2>{copy('view-frontend-backend-the-whole-picture', lang)}</h2>
+    <p>
+      {copy(
+        'view-vocational-training-from-2018-frontend-and-backend-development-independent-since-late',
+        lang,
+      )}
+    </p>
+    <span class="card-link">{copy('view-explore-my-career', lang)} ↗</span>
+  </a>
+  <a class="feature-card rose" href={pathFor('ai', lang)}>
+    <span class="tiny-label">
+      {copy('view-quality-is-a-choice', lang)}
+    </span>
+    <h2>{copy('view-ai-as-a-tool-responsibility-stays', lang)}</h2>
+    <p>
+      {copy(
+        'view-why-faster-code-needs-understanding-and-validation-to-become-good-software',
+        lang,
+      )}
+    </p>
+    <span class="card-link">{copy('view-my-approach', lang)} ↗</span>
+  </a>
+</section>
+<section class="closing-line">
+  <h2>{copy('view-something-good-starts-with-a-clear-idea', lang)}</h2>
+  <a class="text-link" href={pathFor('contact', lang)}>
+    {copy('view-let-s-talk', lang)} ↗
+  </a>
+</section>

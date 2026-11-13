@@ -1,0 +1,311 @@
+---
+import { copy } from '../../data/editorial';
+import {
+  pathFor,
+  contactUrl,
+  skills,
+  projects,
+  projectKinds,
+  projectGroups,
+  type Locale,
+} from '../../data/content';
+import { techLabel } from '../../data/techLabels';
+
+interface Props {
+  lang: Locale;
+  detail?: string;
+}
+const { lang, detail } = Astro.props;
+
+// One section per kind, in a fixed order.
+const projectOrder = [
+  'client',
+  'employer',
+  'own',
+  'development',
+  'demo',
+  'study',
+] as const;
+
+const project = projects.find((p) => p.id === detail);
+---
+
+{project ? (
+  <>
+    <section class="detail-layout">
+      <div>
+        {project.image && (
+          <img
+            class="project-image"
+            src={project.image}
+            alt={project.title[lang]}
+            width={project.imageWidth}
+            height={project.imageHeight}
+          />
+        )}
+        {project.sections.map((s) => (
+          <section class="prose-section">
+            <h2>{s.title[lang]}</h2>
+            <p>{s.text[lang]}</p>
+          </section>
+        ))}
+      </div>
+      <aside class="detail-note">
+        <span class="project-kind">
+          {projectKinds[project.kind][lang]}
+        </span>
+        <h2>{project.stage[lang]}</h2>
+        <p>{project.role[lang]}</p>
+        <div class="tags">
+          {project.tech.map((t) => (
+            <span>{techLabel(t, lang)}</span>
+          ))}
+        </div>
+        {project.github && <a href={project.github}>GitHub ↗</a>}
+        {project.website && (
+          <a href={project.website}>
+            {copy('view-project-website', lang)} ↗
+          </a>
+        )}
+      </aside>
+    </section>
+    <a href={pathFor('projects', lang)} class="text-link">
+      ← {copy('view-all-projects', lang)}
+    </a>
+  </>
+) : (
+  <>
+    {projects.length > 0 && (
+      <section
+        data-filter-scope
+        data-count-label={copy('interaction-entries', lang)}
+      >
+        <div class="filter-panel" data-filter-panel hidden>
+          <label>
+            {copy('view-project-type', lang)}
+            <span class="select-field">
+              <select data-kind>
+                <option value="all">
+                  {copy('view-all-project-types', lang)}
+                </option>
+                {Object.entries(projectKinds).map(([id, label]) => (
+                  <option value={id}>{label[lang]}</option>
+                ))}
+              </select>
+            </span>
+          </label>
+          <label>
+            {copy('view-search-projects', lang)}
+            <input type="search" data-search />
+          </label>
+          <label>
+            {copy('view-category', lang)}
+            <span class="select-field">
+              <select data-category>
+                <option value="all">
+                  {copy('view-all-categories', lang)}
+                </option>
+                {[...new Set(projects.map((p) => p.category[lang]))].map(
+                  (c) => (
+                    <option>{c}</option>
+                  ),
+                )}
+              </select>
+            </span>
+          </label>
+          <button type="button" class="reset-filter">
+            {copy('view-reset', lang)}
+          </button>
+        </div>
+        <p data-filter-count role="status" aria-live="polite"></p>
+        <div class="section-layout">
+          <nav
+            class="section-nav"
+            aria-label={copy('view-project-groups', lang)}
+          >
+            <span class="tiny-label">
+              {copy('view-project-groups', lang)}
+            </span>
+            {projectOrder
+              .filter((kind) => projects.some((p) => p.kind === kind))
+              .map((kind) => (
+                <a href={`#projects-${kind}`}>
+                  <span class="nav-title">
+                    {projectGroups[kind].title[lang]}
+                  </span>
+                  <small>
+                    {projects.filter((p) => p.kind === kind).length}
+                  </small>
+                </a>
+              ))}
+          </nav>
+          <div class="section-body">
+            {projectOrder
+              .filter((kind) => projects.some((p) => p.kind === kind))
+              .map((kind) => (
+                <section
+                  class="project-group"
+                  id={`projects-${kind}`}
+                  data-filter-group
+                >
+                  <header class="skill-area-head">
+                    <span class="tiny-label">
+                      {projects.filter((p) => p.kind === kind).length}{' '}
+                      {copy('view-projects-count', lang)}
+                    </span>
+                    <h2>{projectGroups[kind].title[lang]}</h2>
+                    <p>{projectGroups[kind].intro[lang]}</p>
+                  </header>
+                  <div class="project-grid">
+                    {projects
+                      .filter((p) => p.kind === kind)
+                      .sort(
+                        (a, b) => Number(b.featured) - Number(a.featured),
+                      )
+                      .map((p) => (
+                        <a
+                          class:list={[
+                            'project-card',
+                            p.featured && 'project-card--featured',
+                          ]}
+                          data-filter-item
+                          data-kind={p.kind}
+                          data-category={p.category[lang]}
+                          data-search-text={[
+                            p.title.de,
+                            p.title.en,
+                            p.summary[lang],
+                            p.category.de,
+                            p.category.en,
+                            p.role[lang],
+                            ...p.tech.flatMap((t) => [
+                              t,
+                              techLabel(t, 'en'),
+                            ]),
+                            ...p.tech.flatMap((t) =>
+                              skills
+                                .filter(
+                                  (s) =>
+                                    s.name.de === t ||
+                                    s.name.en === t ||
+                                    s.name.en === techLabel(t, 'en'),
+                                )
+                                .map((s) => s.keywords),
+                            ),
+                          ].join(' ')}
+                          href={`${pathFor('projects', lang)}${p.id}/`}
+                        >
+                          {p.image && (
+                            <img
+                              src={p.image}
+                              alt=""
+                              width={p.imageWidth}
+                              height={p.imageHeight}
+                              loading="lazy"
+                            />
+                          )}
+                          {!p.image && (
+                            <div
+                              class:list={[
+                                'project-cover',
+                                `project-cover-${p.kind}`,
+                              ]}
+                              aria-hidden="true"
+                            >
+                              <span>Julian Tracht</span>
+                              <strong>
+                                {p.cover ?? techLabel(p.tech[0], lang)}
+                              </strong>
+                              <span class="project-cover-tech">
+                                {p.tech
+                                  .slice(0, 3)
+                                  .map((t) => techLabel(t, lang))
+                                  .join(' · ')}
+                              </span>
+                            </div>
+                          )}
+                          <span class="project-kind">
+                            {projectKinds[p.kind][lang]}
+                          </span>
+                          <span class="eyebrow">{p.stage[lang]}</span>
+                          <h3 transition:name={`project-${p.id}`}>
+                            {p.title[lang]} ↗
+                          </h3>
+                          <span class="project-category">
+                            {p.category[lang]}
+                          </span>
+                          <p>{p.summary[lang]}</p>
+                          <p class="project-role">{p.role[lang]}</p>
+                          <div class="tags">
+                            {p.tech.map((t) => (
+                              <span>{techLabel(t, lang)}</span>
+                            ))}
+                          </div>
+                        </a>
+                      ))}
+                  </div>
+                </section>
+              ))}
+          </div>
+        </div>
+        <p data-no-results hidden>
+          {copy('view-no-matching-projects', lang)}
+        </p>
+      </section>
+    )}
+    <section class="project-intro">
+      <div>
+        <span class="tiny-label">
+          {copy('view-how-i-build-solutions', lang)}
+        </span>
+        <h2>{copy('view-the-process-is-part-of-the-result', lang)}</h2>
+        <p>
+          {copy(
+            'view-i-guide-custom-software-and-web-projects-from-requirements-and-design-through-technic',
+            lang,
+          )}
+        </p>
+        <p>
+          {copy(
+            'view-i-discuss-specific-references-in-person-respecting-confidentiality-and-usage-rights',
+            lang,
+          )}
+        </p>
+        <a class="button primary btn-primary" href={contactUrl(lang)}>
+          {copy('view-discuss-a-project', lang)} ↗
+        </a>
+      </div>
+    </section>
+    <section class="values-grid">
+      {[
+        [
+          copy('view-understand', lang),
+          copy(
+            'view-requirements-people-and-existing-processes-come-first',
+            lang,
+          ),
+        ],
+        [
+          copy('view-develop', lang),
+          copy(
+            'view-architecture-and-implementation-follow-the-task-and-its-long-term-use',
+            lang,
+          ),
+        ],
+        [
+          copy('view-validate', lang),
+          copy(
+            'view-tests-clear-decisions-and-documentation-make-the-result-dependable',
+            lang,
+          ),
+        ],
+      ].map(([title, text], i) => (
+        <article>
+          <span class="value-number">0{i + 1}</span>
+          <h3>{title}</h3>
+          <p>{text}</p>
+        </article>
+      ))}
+    </section>
+  </>
+)}

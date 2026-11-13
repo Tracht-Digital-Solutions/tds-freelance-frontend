@@ -1,0 +1,145 @@
+---
+import { copy } from '../../data/editorial';
+import {
+  certificates,
+  certCategories,
+  type Locale,
+} from '../../data/content';
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+
+const date = (value: string) =>
+  new Intl.DateTimeFormat(lang === 'de' ? 'de-DE' : 'en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(new Date(value));
+---
+
+<>
+  <div class="cert-intro">
+    <span class="credential-number">
+      {certificates.length}<span> {copy('view-learning-certificates', lang)}</span>
+    </span>
+  </div>
+  <section
+    data-filter-scope
+    data-count-label={copy('interaction-entries', lang)}
+  >
+    <div class="filter-panel" data-filter-panel hidden>
+      <label>
+        {copy('view-search-certificates', lang)}
+        <input
+          type="search"
+          data-search
+          placeholder={copy('view-title-issuer-subject', lang)}
+        />
+      </label>
+      <label>
+        {copy('view-subject', lang)}
+        <span class="select-field">
+          <select data-category>
+            <option value="all">{copy('view-all-subjects', lang)}</option>
+            {Object.entries(certCategories).map(([id, t]) => (
+              <option value={id}>{t[lang]}</option>
+            ))}
+          </select>
+        </span>
+      </label>
+      <button type="button" class="reset-filter">
+        {copy('view-reset', lang)}
+      </button>
+    </div>
+    <p
+      data-filter-count
+      class="filter-count"
+      role="status"
+      aria-live="polite"
+    ></p>
+    <div class="certificate-grid">
+      {certificates.map((c, i) => (
+        <article
+          class:list={['certificate-card', { highlight: i < 3 }]}
+          data-filter-item
+          data-category={c.category}
+          data-search-text={`${c.title} ${c.issuer} ${c.skills.join(' ')}`}
+        >
+          <span class="certificate-label tiny-label">
+            {certCategories[c.category][lang]}
+            <span aria-hidden="true">↗</span>
+          </span>
+          <img
+            src={c.image}
+            alt={`${copy('view-certificate-preview', lang)}: ${c.title}`}
+            width="1100"
+            height="711"
+            loading="lazy"
+          />
+          <div class="certificate-body">
+            <h2>{c.title}</h2>
+            <p>{c.issuer}</p>
+            <time datetime={c.date}>{date(c.date)}</time>
+            <details>
+              <summary>{copy('view-details-skills', lang)}</summary>
+              <div class="tags">
+                {c.skills.map((s) => (
+                  <span>{s}</span>
+                ))}
+              </div>
+              <button
+                type="button"
+                class="text-link preview-button"
+                data-dialog-target={`cert-${c.id}`}
+                hidden
+              >
+                {copy('view-enlarge-preview', lang)} ↗
+              </button>
+            </details>
+          </div>
+          <dialog id={`cert-${c.id}`} aria-labelledby={`title-${c.id}`}>
+            <button
+              type="button"
+              data-close-dialog
+              class="dialog-close"
+              aria-label={copy('view-close-preview', lang)}
+            >
+              ×
+            </button>
+            <h2 id={`title-${c.id}`}>{c.title}</h2>
+            <img
+              src={c.image}
+              alt={copy('view-certificate-preview', lang)}
+              width="1100"
+              height="711"
+              loading="lazy"
+            />
+            <p>
+              {c.issuer} · {date(c.date)}
+            </p>
+          </dialog>
+          <script
+            type="application/ld+json"
+            set:html={JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'EducationalOccupationalCredential',
+              name: c.title,
+              credentialCategory: 'Learning path completion certificate',
+              recognizedBy: { '@type': 'Organization', name: c.issuer },
+              dateCreated: c.date,
+            }).replace(/</g, '\\u003c')}
+          />
+        </article>
+      ))}
+    </div>
+    <p data-no-results class="no-results" hidden>
+      {copy(
+        'view-no-matching-certificates-found-try-adjusting-the-filters',
+        lang,
+      )}
+    </p>
+  </section>
+</>
