@@ -282,7 +282,7 @@ main:focus {
 }
 .desktop-nav a {
   display: grid;
-  grid-template-columns: 22px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
   gap: 8px;
   min-height: 44px;
@@ -290,11 +290,6 @@ main:focus {
   border-radius: var(--tds-radius-card);
   font-size: 0.95rem;
   transition: background-color 160ms ease;
-}
-.desktop-nav a > span:not(.nav-title),
-.mobile-menu nav a > span:not(.nav-title) {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
 }
 .nav-title {
   min-width: 0;
@@ -386,10 +381,6 @@ footer a {
 }
 .tiny-label {
   text-transform: uppercase;
-}
-.page-rule {
-  display: block;
-  margin-top: 28px;
 }
 .button {
   min-height: 48px;
@@ -488,10 +479,6 @@ p + p {
   background: var(--color-soft);
   color: var(--color-accent);
 }
-.little-cross {
-  font-size: 1rem;
-  line-height: 1;
-}
 .hero h1 {
   margin: 26px 0 0;
   font-size: clamp(3.75rem, 7vw, 7.5rem);
@@ -506,9 +493,6 @@ p + p {
 }
 .pink-dot {
   color: var(--color-accent-pink);
-}
-.hero .page-rule {
-  margin: 28px 0 24px;
 }
 .hero h2 {
   margin-bottom: 10px;
@@ -535,17 +519,6 @@ p + p {
   isolation: isolate;
   border-radius: var(--tds-radius-card);
   background: var(--color-surface-navy);
-}
-.portrait-type {
-  position: absolute;
-  left: 18px;
-  top: 8px;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(8rem, 14vw, 13rem);
-  line-height: 1;
-  letter-spacing: -0.08em;
-  color: #ffffff14;
 }
 /* Constructed quarter circle behind the shoulder, in the brand's second colour. */
 .portrait-orbit {
@@ -803,16 +776,6 @@ p + p {
   border-radius: 50%;
   background: var(--color-accent-pink);
   box-shadow: 0 0 0 3px var(--color-paper);
-}
-.timeline-index {
-  display: block;
-  margin-top: 12px;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 3.25rem;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  color: var(--color-muted);
 }
 .timeline-row > div:last-child {
   padding: 24px 28px;
@@ -1140,7 +1103,7 @@ p + p {
 }
 .section-nav a {
   display: grid;
-  grid-template-columns: 22px minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 8px;
   min-height: 44px;
@@ -1150,7 +1113,6 @@ p + p {
   line-height: 1.3;
   transition: background-color 160ms ease;
 }
-.section-nav a > span:first-child,
 .section-nav small {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -1168,7 +1130,6 @@ p + p {
   font-weight: 700;
   box-shadow: 3px 3px 0 0 #ff7a9c;
 }
-.section-nav a[aria-current] > span:first-child,
 .section-nav a[aria-current] small {
   color: var(--jt-coral-soft);
 }
@@ -1410,30 +1371,10 @@ p + p {
 }
 .project-intro {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  max-width: 52rem;
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(28px, 4vw, 56px);
   align-items: center;
-}
-.abstract-code {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 22px;
-  min-height: 300px;
-  padding: 32px;
-  border-radius: var(--tds-radius-card);
-  background: var(--color-surface-navy);
-}
-.abstract-code > span {
-  font-family: var(--font-mono);
-  font-size: clamp(0.95rem, 1.5vw, 1.25rem);
-  color: var(--jt-on-navy-soft);
-}
-.abstract-code > span:last-child {
-  color: var(--jt-coral-soft);
-}
-.code-dot {
-  padding-left: 10px;
 }
 .project-intro h2 {
   margin: 14px 0 18px;
@@ -1595,7 +1536,7 @@ dialog img {
 }
 .ai-sections article {
   display: grid;
-  grid-template-columns: 80px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 20px;
   padding: 32px 0;
   border-bottom: 1px solid var(--color-line);
@@ -1690,7 +1631,6 @@ dialog img {
 .portrait-stage,
 .quote-panel,
 .manifesto,
-.abstract-code,
 .feature-card.navy,
 .contact-card.navy {
   box-shadow: var(--jt-shadow-coral);
@@ -1975,9 +1915,6 @@ dialog img {
     left: -28px;
     top: 4px;
   }
-  .timeline-index {
-    display: none;
-  }
   .timeline-row > div:last-child {
     padding: 20px;
   }
@@ -2006,12 +1943,7 @@ dialog img {
     align-items: flex-start;
     gap: 22px;
   }
-  .abstract-code {
-    min-height: 240px;
-    padding: 26px;
-  }
   .ai-sections article {
-    grid-template-columns: 48px minmax(0, 1fr);
     gap: 12px;
   }
   dialog {

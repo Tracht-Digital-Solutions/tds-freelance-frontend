@@ -90,9 +90,6 @@ const intro = {
     <section class="hero">
       <div class="hero-copy">
         <span class="eyebrow">
-          <span class="little-cross" aria-hidden="true">
-            ＋
-          </span>{' '}
           {copy('view-software-processes-personality', lang)}
         </span>
         <h1>
@@ -102,7 +99,6 @@ const intro = {
             Tracht<span class="pink-dot">.</span>
           </span>
         </h1>
-        <span class="tds-brandbar page-rule" aria-hidden="true"></span>
         <h2>{profile.role[lang]}</h2>
         <p>
           {copy(
@@ -124,9 +120,6 @@ const intro = {
         </div>
       </div>
       <div class="portrait-stage">
-        <span class="portrait-type" aria-hidden="true">
-          JT
-        </span>
         <div class="portrait-orbit" aria-hidden="true"></div>
         <img
           src="/images/julian-840.webp"
@@ -158,7 +151,7 @@ const intro = {
     <section class="home-grid">
       <a class="feature-card navy" href={pathFor('about', lang)}>
         <span class="tiny-label">
-          01 / {copy('view-the-person-behind-the-code', lang)}
+          {copy('view-the-person-behind-the-code', lang)}
         </span>
         <h2>{copy('view-always-curious', lang)}</h2>
         <p>
@@ -171,7 +164,7 @@ const intro = {
       </a>
       <a class="feature-card soft" href={pathFor('career', lang)}>
         <span class="tiny-label">
-          02 / {copy('view-experience-with-perspective', lang)}
+          {copy('view-experience-with-perspective', lang)}
         </span>
         <h2>{copy('view-frontend-backend-the-whole-picture', lang)}</h2>
         <p>
@@ -184,7 +177,7 @@ const intro = {
       </a>
       <a class="feature-card rose" href={pathFor('ai', lang)}>
         <span class="tiny-label">
-          03 / {copy('view-quality-is-a-choice', lang)}
+          {copy('view-quality-is-a-choice', lang)}
         </span>
         <h2>{copy('view-ai-as-a-tool-responsibility-stays', lang)}</h2>
         <p>
@@ -207,8 +200,7 @@ const intro = {
   <>
     <section class="page-heading">
       <a class="eyebrow" href={page.paths[lang]}>
-        {String(views.findIndex((v) => v.id === view) + 1).padStart(2, '0')} /{' '}
-        {page.title[lang].toUpperCase()}
+        {page.title[lang]}
       </a>
       <h1 transition:name={project ? `project-${project.id}` : 'page-heading'}>
         {detail ? (entry?.company ?? project?.title[lang]) : intro[view]}
@@ -285,9 +277,8 @@ const intro = {
                 lang,
               ),
             ],
-          ].map(([title, text], i) => (
+          ].map(([title, text]) => (
             <article>
-              <span class="value-number">0{i + 1}</span>
               <h3>{title}</h3>
               <p>{text}</p>
             </article>
@@ -351,14 +342,11 @@ const intro = {
             class="timeline"
             aria-label={copy('view-professional-experience', lang)}
           >
-            {career.map((c, i) => (
+            {career.map((c) => (
               <article class="timeline-row">
                 <div class="timeline-date">
                   <span class="timeline-dot" aria-hidden="true"></span>
                   <span class="tiny-label">{c.period[lang]}</span>
-                  <span class="timeline-index" aria-hidden="true">
-                    0{career.length - i}
-                  </span>
                 </div>
                 <div>
                   <h2>
@@ -452,9 +440,8 @@ const intro = {
         <div class="section-layout">
           <nav class="section-nav" aria-label={copy('view-skill-areas', lang)}>
             <span class="tiny-label">{copy('view-skill-areas', lang)}</span>
-            {skillAreas.map(([category, groups], i) => (
+            {skillAreas.map(([category, groups]) => (
               <a href={`#skills-${category}`}>
-                <span>{String(i + 1).padStart(2, '0')}</span>
                 <span class="nav-title">{categories[category][lang]}</span>
                 <small>
                   {groups.reduce((n, [, items]) => n + items.length, 0)}
@@ -463,7 +450,7 @@ const intro = {
             ))}
           </nav>
           <div class="section-body">
-            {skillAreas.map(([category, groups], i) => (
+            {skillAreas.map(([category, groups]) => (
               <section
                 class="skill-area"
                 id={`skills-${category}`}
@@ -471,7 +458,6 @@ const intro = {
               >
                 <header class="skill-area-head">
                   <span class="tiny-label">
-                    {String(i + 1).padStart(2, '0')} /{' '}
                     {groups.reduce((n, [, items]) => n + items.length, 0)}{' '}
                     {copy('view-skills-count', lang)}
                   </span>
@@ -619,9 +605,8 @@ const intro = {
                   </span>
                   {projectOrder
                     .filter((kind) => projects.some((p) => p.kind === kind))
-                    .map((kind, i) => (
+                    .map((kind) => (
                       <a href={`#projects-${kind}`}>
-                        <span>{String(i + 1).padStart(2, '0')}</span>
                         <span class="nav-title">
                           {projectGroups[kind].title[lang]}
                         </span>
@@ -634,7 +619,7 @@ const intro = {
                 <div class="section-body">
                   {projectOrder
                     .filter((kind) => projects.some((p) => p.kind === kind))
-                    .map((kind, i) => (
+                    .map((kind) => (
                       <section
                         class="project-group"
                         id={`projects-${kind}`}
@@ -642,7 +627,6 @@ const intro = {
                       >
                         <header class="skill-area-head">
                           <span class="tiny-label">
-                            {String(i + 1).padStart(2, '0')} /{' '}
                             {projects.filter((p) => p.kind === kind).length}{' '}
                             {copy('view-projects-count', lang)}
                           </span>
@@ -747,14 +731,6 @@ const intro = {
             </section>
           )}
           <section class="project-intro">
-            <div class="abstract-code" aria-hidden="true">
-              <span>01 / understand</span>
-              <span>02 / design</span>
-              <span>03 / develop</span>
-              <span>
-                04 / validate<span class="code-dot">_</span>
-              </span>
-            </div>
             <div>
               <span class="tiny-label">
                 {copy('view-how-i-build-solutions', lang)}
@@ -814,7 +790,7 @@ const intro = {
       <>
         <div class="cert-intro">
           <span class="credential-number">
-            13<span> / {copy('view-learning-certificates', lang)}</span>
+            {certificates.length}<span> {copy('view-learning-certificates', lang)}</span>
           </span>
         </div>
         <section
@@ -984,9 +960,8 @@ const intro = {
                 lang,
               ),
             ],
-          ].map(([title, text], i) => (
+          ].map(([title, text]) => (
             <article>
-              <span class="value-number">0{i + 1}</span>
               <div>
                 <h2>{title}</h2>
                 <p>{text}</p>

@@ -181,7 +181,7 @@ test('sidebar navigation and values never overlap while scrolling', async ({
       });
       expect(
         bounds.navBottom,
-        `Navigation overlaps the values at ${width}px / scroll ${y}`,
+        `Navigation overlaps the company link at ${width}px / scroll ${y}`,
       ).toBeLessThanOrEqual(bounds.noteTop);
       expect(bounds.horizontalOverflow).toBe(false);
     }
@@ -207,7 +207,7 @@ test('responsive layouts stay within viewport', async ({ page }) => {
       if (width === 360 && route === '/') {
         await page.locator('.mobile-menu>summary').click();
         await page.locator('.mobile-menu a[href="/ueber-mich/"]').click();
-        await expect(page.locator('h1')).toContainText('Neugier');
+        await expect(page.locator('h1')).toContainText('Über mich');
       }
     }
   }

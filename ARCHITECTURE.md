@@ -33,8 +33,9 @@ unapproved projects.
 On 12 November 2026 Julian approved three further groups from his private
 project archive: own open-source projects, anonymised client projects and
 anonymised employment projects (kind `employer`). Employer, client and internal
-product names, availability, rates, server/backup details and all Astera GbR
-work stay out; the archive itself is not tracked. `allRoutes()` is the common inventory for generation,
+product names, availability, rates and server/backup details stay out; the
+archive itself is not tracked. On 13 November 2026 Julian approved Astera GbR as
+a named client: its TYPO3 website, linked to astera.one, with a screenshot. `allRoutes()` is the common inventory for generation,
 sitemap and tests.
 
 `src/pages/[...path].astro` prerenders every inventory route. `Layout.astro` owns

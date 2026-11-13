@@ -114,6 +114,63 @@
     "imageHeight": 600
   },
   {
+    "id": "astera",
+    "approved": true,
+    "kind": "client",
+    "title": {
+      "de": "Astera GbR",
+      "en": "Astera GbR"
+    },
+    "summary": {
+      "de": "Zweisprachige Firmenwebsite auf TYPO3 14 für Software-Audits und individuelle Softwareentwicklung.",
+      "en": "Bilingual company website on TYPO3 14 for software audits and custom software development."
+    },
+    "category": {
+      "de": "Webentwicklung · TYPO3",
+      "en": "Web development · TYPO3"
+    },
+    "stage": {
+      "de": "Neubau, live unter astera.one",
+      "en": "New build, live at astera.one"
+    },
+    "role": {
+      "de": "Konzeption, Entwicklung & Betrieb",
+      "en": "Concept, development & operation"
+    },
+    "tech": [
+      "TYPO3",
+      "PHP",
+      "Fluid",
+      "Docker",
+      "Playwright",
+      "axe-core"
+    ],
+    "sections": [
+      {
+        "title": {
+          "de": "Ausgangslage",
+          "en": "Starting point"
+        },
+        "text": {
+          "de": "Die Astera GbR brauchte für ihre Leistungen einen Webauftritt auf Deutsch und Englisch, den das Team selbst pflegen kann.",
+          "en": "Astera GbR needed a website in German and English for its services that the team can maintain itself."
+        }
+      },
+      {
+        "title": {
+          "de": "Mein Beitrag",
+          "en": "My contribution"
+        },
+        "text": {
+          "de": "Ich habe die Website auf TYPO3 14 LTS neu gebaut: ein eigenes Sitepackage mit Seitenvorlagen, Inhaltselementen und Scroll-Szenen sowie eine Funktions-Extension mit Anfrageformular und eigenem Backend-Modul. Automatische Tests mit PHPUnit, Playwright und axe prüfen Logik, Darstellung und Barrierefreiheit.",
+          "en": "I rebuilt the website on TYPO3 14 LTS: its own site package with page templates, content elements and scroll scenes, plus a feature extension with an enquiry form and its own backend module. Automated tests with PHPUnit, Playwright and axe check logic, layout and accessibility."
+        }
+      }
+    ],
+    "cover": "astera.one",
+    "website": "https://astera.one/"
+  },
+  {
     "id": "licht-schatten-framework",
     "approved": true,
     "kind": "development",
@@ -1034,12 +1091,12 @@
       "en": "Own software · Kanban"
     },
     "stage": {
-      "de": "Entwicklungsversion 0.2.0-dev.1, privat, noch kein stabiles Release",
-      "en": "Development version 0.2.0-dev.1, private, no stable release yet"
+      "de": "Version 1.0.0, öffentlich auf GitHub",
+      "en": "Version 1.0.0, public on GitHub"
     },
     "role": {
-      "de": "Entwicklung · Privates Projekt",
-      "en": "Development · Private project"
+      "de": "Entwicklung · Eigenes Projekt",
+      "en": "Development · Own project"
     },
     "tech": [
       "Rust",
@@ -1073,18 +1130,19 @@
       },
       {
         "title": {
-          "de": "Stand und Grenzen",
-          "en": "Status and limits"
+          "de": "Stand",
+          "en": "Status"
         },
         "text": {
-          "de": "Es gibt private Debian-13-Pakete für AMD64, ARM64 und armhf. Offen sind die native TV-Anzeige, Kiosk-Einrichtung, Installer und Messungen auf echter Pi-Hardware. Das Repository ist privat, eine öffentliche Lizenz ist noch nicht freigegeben.",
-          "en": "There are private Debian 13 packages for AMD64, ARM64 and armhf. Still open are the native TV display, kiosk setup, an installer and measurements on real Pi hardware. The repository is private, and no public licence has been released yet."
+          "de": "Version 1.0.0 ist veröffentlicht, mit Downloads für AMD64, ARM64 und armhf. Dazu kommen Geräte-Images für Raspberry Pi und UEFI-Geräte mit Autostart und einer nativen Board-Anzeige für einen Bildschirm am Gerät. Der Quellcode steht unter der PolyForm-Noncommercial-Lizenz.",
+          "en": "Version 1.0.0 is released, with downloads for AMD64, ARM64 and armhf. Device images for Raspberry Pi and UEFI machines add autostart and a native board display for a screen on the device. The source code is under the PolyForm Noncommercial licence."
         }
       }
     ],
-    "image": "/images/projects/kanlo-2611.webp",
+    "image": "/images/projects/kanlo-2611f.webp",
     "imageWidth": 1440,
-    "imageHeight": 900
+    "imageHeight": 900,
+    "github": "https://github.com/jtracht/Kanlo"
   },
   {
     "id": "rampi-os",

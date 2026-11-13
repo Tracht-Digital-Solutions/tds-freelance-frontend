@@ -24,7 +24,7 @@ export const TECH_EN: Record<string, string> = {
 };
 
 export const NEUTRAL_TECH = new Set([
-  '.NET', 'Android USB Host', 'ASP.NET Core', 'Astro', 'Axum', 'BPMN',
+  '.NET', 'Android USB Host', 'ASP.NET Core', 'Astro', 'axe-core', 'Axum', 'BPMN',
   'Browser APIs', 'C#', 'C++', 'Claude Code', 'CMake', 'CSS', 'Debian',
   'E-Commerce', 'Gitea API', 'GitHub Actions', 'GPT/MBR', 'GTK 4', 'HTML',
   'Jenkins', 'JavaScript', 'Jetpack Compose', 'Kotlin', 'libaums', 'Magento 2',

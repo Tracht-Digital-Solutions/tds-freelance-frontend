@@ -1,39 +1,39 @@
 {
   "view-curiosity-is-where-i-start-good-software-is-where-i-m-headed": {
-    "de": "Neugier ist mein Ausgangspunkt. Gute Software mein Ziel.",
-    "en": "Curiosity is where I start. Good software is where I’m headed."
+    "de": "Über mich",
+    "en": "About me"
   },
   "view-one-journey-many-perspectives": {
-    "de": "Ein Weg. Viele Perspektiven.",
-    "en": "One journey. Many perspectives."
+    "de": "Berufserfahrung und Ausbildung",
+    "en": "Experience and education"
   },
   "view-the-right-tools-for-the-right-solution": {
-    "de": "Das richtige Werkzeug. Für die richtige Lösung.",
-    "en": "The right tools. For the right solution."
+    "de": "Technologien, mit denen ich arbeite",
+    "en": "Technologies I work with"
   },
   "view-from-an-idea-to-software-that-works": {
-    "de": "Von der Idee zur nutzbaren Software.",
-    "en": "From an idea to software that works."
+    "de": "Projekte aus Beruf, Kundenarbeit und Freizeit",
+    "en": "Projects from employment, client work and my own time"
   },
   "view-learning-doesn-t-end-with-graduation": {
-    "de": "Lernen hört nicht mit dem Abschluss auf.",
-    "en": "Learning doesn’t end with graduation."
+    "de": "Zertifikate und Weiterbildungen",
+    "en": "Certificates and further training"
   },
   "view-develop-faster-decide-with-care": {
-    "de": "Schneller entwickeln. Bewusster entscheiden.",
-    "en": "Develop faster. Decide with care."
+    "de": "Wie ich KI in der Entwicklung einsetze",
+    "en": "How I use AI in development"
   },
   "view-good-collaboration-starts-with-a-conversation": {
-    "de": "Gute Zusammenarbeit beginnt mit einem Gespräch.",
-    "en": "Good collaboration starts with a conversation."
+    "de": "Kontakt",
+    "en": "Contact"
   },
   "view-software-processes-personality": {
-    "de": "SOFTWARE. PROZESSE. PERSÖNLICHKEIT.",
-    "en": "SOFTWARE. PROCESSES. PERSONALITY."
+    "de": "Softwareentwickler aus Schwarzenbek",
+    "en": "Software developer from Schwarzenbek"
   },
   "view-i-connect-technical-implementation-with-the-bigger-picture-building-software-that-sta": {
-    "de": "Ich verbinde technische Umsetzung mit dem Blick aufs Ganze. Für Software, die verständlich bleibt, zuverlässig arbeitet und den Alltag einfacher macht.",
-    "en": "I connect technical implementation with the bigger picture. Building software that stays understandable, works reliably and makes everyday tasks easier."
+    "de": "Ich entwickle Web- und Business-Software mit C#/.NET, TypeScript und Vue oder React und begleite Projekte von der Anforderung bis zum Betrieb.",
+    "en": "I build web and business software with C#/.NET, TypeScript and Vue or React, and follow projects from requirements through to operation."
   },
   "view-explore-projects": {
     "de": "Projekte entdecken",
@@ -48,28 +48,28 @@
     "en": "Portrait of Julian Tracht"
   },
   "view-technology-with-personality": {
-    "de": "TECHNIK MIT PERSÖNLICHKEIT",
-    "en": "TECHNOLOGY WITH PERSONALITY"
+    "de": "Standort",
+    "en": "Location"
   },
   "view-germany": {
     "de": "Deutschland",
     "en": "Germany"
   },
   "view-my-technical-focus": {
-    "de": "MEIN TECHNISCHER FOKUS",
-    "en": "MY TECHNICAL FOCUS"
+    "de": "Schwerpunkte",
+    "en": "Focus"
   },
   "view-project-management": {
     "de": "Projektmanagement",
     "en": "Project management"
   },
   "view-the-person-behind-the-code": {
-    "de": "DER MENSCH DAHINTER",
-    "en": "THE PERSON BEHIND THE CODE"
+    "de": "Über mich",
+    "en": "About me"
   },
   "view-always-curious": {
-    "de": "Schon immer neugierig.",
-    "en": "Always curious."
+    "de": "Angefangen mit LEGO Mindstorms",
+    "en": "It started with LEGO Mindstorms"
   },
   "view-from-lego-mindstorms-and-early-c-experiments-to-building-software-independently": {
     "de": "Von LEGO Mindstorms und ersten C++-Experimenten bis zur eigenen Softwareentwicklung.",
@@ -80,12 +80,12 @@
     "en": "My story"
   },
   "view-experience-with-perspective": {
-    "de": "ERFAHRUNG MIT PERSPEKTIVE",
-    "en": "EXPERIENCE WITH PERSPECTIVE"
+    "de": "Werdegang",
+    "en": "Career"
   },
   "view-frontend-backend-the-whole-picture": {
-    "de": "Frontend. Backend. Das Ganze.",
-    "en": "Frontend. Backend. The whole picture."
+    "de": "Seit 2018 in der Softwareentwicklung",
+    "en": "In software development since 2018"
   },
   "view-vocational-training-from-2018-frontend-and-backend-development-independent-since-late": {
     "de": "Ausbildung ab 2018, Frontend- und Backend-Entwicklung, selbstständig seit Ende 2024.",
@@ -96,12 +96,12 @@
     "en": "Explore my career"
   },
   "view-quality-is-a-choice": {
-    "de": "QUALITÄT IST EINE ENTSCHEIDUNG",
-    "en": "QUALITY IS A CHOICE"
+    "de": "KI",
+    "en": "AI"
   },
   "view-ai-as-a-tool-responsibility-stays": {
-    "de": "KI als Werkzeug. Verantwortung bleibt.",
-    "en": "AI as a tool. Responsibility stays."
+    "de": "Wie ich mit KI-generiertem Code umgehe",
+    "en": "How I handle AI-generated code"
   },
   "view-why-faster-code-needs-understanding-and-validation-to-become-good-software": {
     "de": "Warum schnellerer Code erst durch Verständnis und Prüfung zu guter Software wird.",
@@ -112,20 +112,20 @@
     "en": "My approach"
   },
   "view-something-good-starts-with-a-clear-idea": {
-    "de": "Etwas Gutes beginnt mit einer klaren Idee.",
-    "en": "Something good starts with a clear idea."
+    "de": "Ein Projekt oder eine Stelle besprechen",
+    "en": "Discuss a project or a role"
   },
   "view-let-s-talk": {
-    "de": "Lass uns sprechen",
-    "en": "Let’s talk"
+    "de": "Nachricht schreiben",
+    "en": "Send a message"
   },
   "view-where-it-all-started": {
-    "de": "WIE ALLES ANFING",
-    "en": "WHERE IT ALL STARTED"
+    "de": "Wie alles anfing",
+    "en": "How it started"
   },
   "view-first-a-robot-then-a-whole-new-world": {
-    "de": "Erst ein Roboter. Dann eine ganze Welt.",
-    "en": "First a robot. Then a whole new world."
+    "de": "Vom LEGO-Roboter zur eigenen Software",
+    "en": "From a LEGO robot to my own software"
   },
   "view-my-interest-in-programming-began-with-lego-mindstorms-nxt-suddenly-technology-could-r": {
     "de": "Meine Begeisterung für Programmierung begann mit LEGO Mindstorms NXT. Technik konnte plötzlich auf eigene Ideen reagieren. Mit zwölf Jahren beschäftigte ich mich mit C++; später brachte ich mir Batch und Java bei und experimentierte mit Raspberry Pis.",
@@ -140,8 +140,8 @@
     "en": "Software should make everyday tasks easier. Its complexity shouldn’t become a burden for the people using it."
   },
   "view-what-drives-me": {
-    "de": "WAS MICH ANTREIBT",
-    "en": "WHAT DRIVES ME"
+    "de": "Was mich antreibt",
+    "en": "What drives me"
   },
   "view-digitalisation-can-be-better": {
     "de": "Digitalisierung kann besser sein.",
@@ -180,8 +180,8 @@
     "en": "Responsibilities"
   },
   "view-technologies-topics": {
-    "de": "TECHNOLOGIEN & THEMEN",
-    "en": "TECHNOLOGIES & TOPICS"
+    "de": "Technologien und Themen",
+    "en": "Technologies and topics"
   },
   "view-professional-background-as-documented-in-my-cv-updated-september-2026": {
     "de": "Beruflicher Werdegang gemäß Lebenslauf, Stand September 2026.",
@@ -200,16 +200,16 @@
     "en": "Explore this role"
   },
   "view-education-languages": {
-    "de": "AUSBILDUNG & SPRACHEN",
-    "en": "EDUCATION & LANGUAGES"
+    "de": "Ausbildung und Sprachen",
+    "en": "Education and languages"
   },
   "view-the-foundations": {
-    "de": "Das Fundament.",
-    "en": "The foundations."
+    "de": "Ausbildung",
+    "en": "Education"
   },
   "view-languages": {
-    "de": "SPRACHEN",
-    "en": "LANGUAGES"
+    "de": "Sprachen",
+    "en": "Languages"
   },
   "view-german-english": {
     "de": "Deutsch & Englisch",
@@ -260,12 +260,12 @@
     "en": "No matching projects."
   },
   "view-how-i-build-solutions": {
-    "de": "SO ENTSTEHEN MEINE LÖSUNGEN",
-    "en": "HOW I BUILD SOLUTIONS"
+    "de": "Vorgehen",
+    "en": "Approach"
   },
   "view-the-process-is-part-of-the-result": {
-    "de": "Der Prozess gehört zum Ergebnis.",
-    "en": "The process is part of the result."
+    "de": "So arbeite ich an Projekten",
+    "en": "How I work on projects"
   },
   "view-i-guide-custom-software-and-web-projects-from-requirements-and-design-through-technic": {
     "de": "Ich begleite individuelle Software- und Webprojekte von der Anforderung über die Konzeption bis zur technischen Umsetzung. Dazu kommen Geschäftsprozesse, Schnittstellen und die Weiterentwicklung bestehender Systeme.",
@@ -304,8 +304,8 @@
     "en": "Tests, clear decisions and documentation make the result dependable."
   },
   "view-learning-certificates": {
-    "de": "WEITERBILDUNGEN",
-    "en": "LEARNING CERTIFICATES"
+    "de": "Weiterbildungen",
+    "en": "Learning certificates"
   },
   "view-search-certificates": {
     "de": "Zertifikate suchen",
@@ -344,12 +344,12 @@
     "en": "No matching certificates found. Try adjusting the filters."
   },
   "view-my-approach-alternative": {
-    "de": "MEINE HALTUNG",
-    "en": "MY APPROACH"
+    "de": "Haltung",
+    "en": "Approach"
   },
   "view-ai-speeds-up-development-it-doesn-t-take-responsibility": {
-    "de": "KI beschleunigt die Entwicklung. Sie übernimmt nicht die Verantwortung.",
-    "en": "AI speeds up development. It doesn’t take responsibility."
+    "de": "KI in der Softwareentwicklung: meine Haltung",
+    "en": "AI in software development: my approach"
   },
   "view-i-m-open-to-ai-and-interested-in-exploring-its-possibilities-my-standard-remains-the": {
     "de": "Ich bin offen für KI und beschäftige mich intensiv mit ihren Möglichkeiten. Gleichzeitig bleibt mein Maßstab derselbe: Code muss zur Aufgabe passen, verstanden werden und überprüfbar sein.",
@@ -392,8 +392,8 @@
     "en": "This page describes my personal approach to using AI in software development."
   },
   "view-for-businesses-clients": {
-    "de": "FÜR UNTERNEHMEN & AUFTRAGGEBER",
-    "en": "FOR BUSINESSES & CLIENTS"
+    "de": "Für Unternehmen und Auftraggeber",
+    "en": "For businesses and clients"
   },
   "view-discuss-a-project-alternative": {
     "de": "Projekt anfragen",
@@ -404,8 +404,8 @@
     "en": "An idea, an existing system or a process that could be simpler."
   },
   "view-for-recruiters-employers": {
-    "de": "FÜR RECRUITER & ARBEITGEBER",
-    "en": "FOR RECRUITERS & EMPLOYERS"
+    "de": "Für Recruiter und Arbeitgeber",
+    "en": "For recruiters and employers"
   },
   "view-share-a-job-opportunity": {
     "de": "Jobangebot senden",
@@ -416,8 +416,8 @@
     "en": "A role that brings together technical depth and an understanding of the whole project."
   },
   "view-connect-directly": {
-    "de": "DIREKT VERBINDEN",
-    "en": "CONNECT DIRECTLY"
+    "de": "Direkt",
+    "en": "Direct"
   },
   "shell-home": {
     "de": "Start",
@@ -454,26 +454,6 @@
   "shell-main-navigation": {
     "de": "Hauptnavigation",
     "en": "Main navigation"
-  },
-  "shell-my-commitment": {
-    "de": "MEINE PRIORITÄTEN",
-    "en": "MY PRIORITIES"
-  },
-  "shell-quality": {
-    "de": "Qualität.",
-    "en": "Quality."
-  },
-  "shell-transparency": {
-    "de": "Transparenz.",
-    "en": "Transparency."
-  },
-  "shell-fairness": {
-    "de": "Fairness.",
-    "en": "Fairness."
-  },
-  "shell-built-with-curiosity-developed-with-care": {
-    "de": "Mit Neugier gebaut. Mit Sorgfalt entwickelt.",
-    "en": "Built with curiosity. Developed with care."
   },
   "shell-legal-notice": {
     "de": "Impressum",

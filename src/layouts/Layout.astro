@@ -271,12 +271,11 @@ const schema = {
             {copy('shell-navigation', lang)} <span aria-hidden="true">＋</span>
           </summary>
           <nav aria-label={copy('shell-mobile-main-navigation', lang)}>
-            {views.map((v, i) => (
+            {views.map((v) => (
               <a
                 href={v.paths[lang]}
                 aria-current={view === v.id ? 'page' : undefined}
               >
-                <span>{String(i + 1).padStart(2, '0')}</span>
                 <span class="nav-title">{v.title[lang]}</span>
               </a>
             ))}
@@ -287,25 +286,16 @@ const schema = {
             class="desktop-nav"
             aria-label={copy('shell-main-navigation', lang)}
           >
-            {views.map((v, i) => (
+            {views.map((v) => (
               <a
                 href={v.paths[lang]}
                 aria-current={view === v.id ? 'page' : undefined}
               >
-                <span>{String(i + 1).padStart(2, '0')}</span>
                 <span class="nav-title">{v.title[lang]}</span>
               </a>
             ))}
           </nav>
           <div class="sidebar-note">
-            <span class="tiny-label">{copy('shell-my-commitment', lang)}</span>
-            <p>
-              {copy('shell-quality', lang)}
-              <br />
-              {copy('shell-transparency', lang)}
-              <br />
-              {copy('shell-fairness', lang)}
-            </p>
             <a href="https://tracht-digital.de">Tracht Digital Solutions ↗</a>
           </div>
         </div>
@@ -321,9 +311,6 @@ const schema = {
     </div>
     <footer>
       <span>© {new Date().getUTCFullYear()} Julian Tracht</span>
-      <span>
-        {copy('shell-built-with-curiosity-developed-with-care', lang)}
-      </span>
       <div>
         <a href="https://tracht-digital.de/legal/impressum">
           {copy('shell-legal-notice', lang)}
