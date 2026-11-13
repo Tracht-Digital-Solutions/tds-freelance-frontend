@@ -21,7 +21,7 @@
     "@fontsource-variable/instrument-sans": "5.2.8",
     "@fontsource-variable/jetbrains-mono": "5.2.8",
     "@tailwindcss/postcss": "4.3.3",
-    "@tracht-digital-solutions/tds-shared": "0.66.0",
+    "@tracht-digital-solutions/tds-shared": "0.66.1",
     "astro": "7.3.8",
     "tailwindcss": "4.3.3",
     "zod": "4.6.7"
